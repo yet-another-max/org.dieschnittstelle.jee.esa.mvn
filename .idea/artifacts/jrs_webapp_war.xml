@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jrs-webapp:war">
+    <output-path>$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs/target</output-path>
+    <root id="archive" name="jrs-webapp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="jrs-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>

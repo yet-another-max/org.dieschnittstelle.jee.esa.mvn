@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ser-webapp:war exploded">
+    <output-path>$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/target/ser-webapp-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ser-webapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="archive" name="lib-entities-crm-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="lib-entities-crm" />
+          </element>
+          <element id="archive" name="lib-entities-erp-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="lib-entities-erp" />
+          </element>
+          <element id="archive" name="lib-esa-utils-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="lib-esa-utils" />
+          </element>
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/target/ser-webapp-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="ser-webapp/web/Web" />
+    </root>
+  </artifact>
+</component>

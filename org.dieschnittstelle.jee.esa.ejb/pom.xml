@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.dieschnittstelle.jee.esa</groupId>
+    <artifactId>ejb-earapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <version>1.4</version>
+                    <modules>
+                        <webModule>
+                            <groupId>org.dieschnittstelle.jee.esa</groupId>
+                            <artifactId>ejb-webapp</artifactId>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.ejb.webapp.war</bundleFileName>
+                            <unpack>true</unpack>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>org.dieschnittstelle.jee.esa</groupId>
+                            <artifactId>ejb-ejbmodule-crm</artifactId>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.jar</bundleFileName>
+                            <unpack>true</unpack>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>org.dieschnittstelle.jee.esa</groupId>
+                            <artifactId>ejb-ejbmodule-erp</artifactId>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.jar</bundleFileName>
+                            <unpack>true</unpack>
+                        </ejbModule>
+                        <jarModule>
+                            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+                            <artifactId>lib-entities-crm</artifactId>
+                            <bundleDir>lib</bundleDir>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.entities.crm.jar</bundleFileName>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+                            <artifactId>lib-entities-erp</artifactId>
+                            <bundleDir>lib</bundleDir>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.entities.erp.jar</bundleFileName>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+                            <artifactId>lib-esa-utils</artifactId>
+                            <bundleDir>lib</bundleDir>
+                            <bundleFileName>org.dieschnittstelle.jee.esa.utils.jar</bundleFileName>
+                        </jarModule>
+                    </modules>
+                    <earName>org.dieschnittstelle.jee.esa.ejb</earName>
+                    <finalName>org.dieschnittstelle.jee.esa.ejb</finalName>
+                    <displayName>org.dieschnittstelle.jee.esa.ejb</displayName>
+                    <!-- applicationXml identifies a file that will be included in the target as application.xml -->
+                    <!--<applicationXml>src/main/application/META-INF/jboss-deployment-structure.xml</applicationXml>-->
+                    <generateApplicationXml>true</generateApplicationXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- we need to postprocess the regular output of maven's 'package' phase as the obligatorily generated application.xml conflicts with jboss-deployment-structure.xml and needs to be removed -->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <property name="ant.earName" value="org.dieschnittstelle.jee.esa.ejb" />
+                                <!-- the build may either be run from inside the project directory itself or as as multi-module build -->
+                                <property name="ant.projectName" value="org.dieschnittstelle.jee.esa.ejb" />
+                                <echo message="RUNNING ANT in ${user.dir} for artifact ${project.build.finalName} with name ${ant.earName}"/>
+                                <!-- remove the application.xml file from the target directory -->
+                                <delete file="${user.dir}/../${ant.projectName}/target/${project.build.finalName}/META-INF/application.xml"/>
+                                <!-- remove the existing .ear file -->
+                                <delete file="${user.dir}/../${ant.projectName}/target/${project.build.finalName}.ear"/>
+                                <!-- create the ear again -->
+                                <jar basedir="${user.dir}/../${ant.projectName}/target/${project.build.finalName}" destfile="${user.dir}/target/${ant.earName}.ear"/>
+                                <!-- and copy it using the default name (this is required in order for the multi-module build to succeed -->
+                                <copy file="${user.dir}/../${ant.projectName}/target/${ant.earName}.ear" tofile="${user.dir}/target/${project.build.finalName}.ear"/>
+                                <!-- and delete the ear again -->
+                                <delete file="${user.dir}/../${ant.projectName}/target/${project.build.finalName}.ear"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa</groupId>
+            <artifactId>ejb-ejbmodule-crm</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa</groupId>
+            <artifactId>ejb-ejbmodule-erp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+            <artifactId>lib-entities-crm</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+            <artifactId>lib-entities-erp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
+            <artifactId>lib-esa-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.jee.esa</groupId>
+            <artifactId>ejb-webapp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

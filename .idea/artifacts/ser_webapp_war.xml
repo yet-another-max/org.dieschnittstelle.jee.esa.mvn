@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ser-webapp:war">
+    <output-path>$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/target</output-path>
+    <root id="archive" name="ser-webapp-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ser-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>

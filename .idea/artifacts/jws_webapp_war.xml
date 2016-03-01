@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jws-webapp:war">
+    <output-path>$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws/target</output-path>
+    <root id="archive" name="org.dieschnittstelle.jee.esa.jws.war">
+      <element id="artifact" artifact-name="jws-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
