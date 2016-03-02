@@ -61,6 +61,11 @@
         <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/pom.xml" />
         <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/pom.xml" />
         <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/pom.xml" />
+        <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/pom.xml" />
+        <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/pom.xml" />
+        <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/pom.xml" />
+        <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/pom.xml" />
+        <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/pom.xml" />
       </list>
     </option>
   </component>

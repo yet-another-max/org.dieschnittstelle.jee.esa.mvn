@@ -62,6 +62,11 @@
     <bytecodeTargetLevel>
       <module name="bas" target="1.5" />
       <module name="build-all" target="1.5" />
+      <module name="build-ejb" target="1.5" />
+      <module name="build-jrs" target="1.5" />
+      <module name="build-jsf" target="1.5" />
+      <module name="build-jws" target="1.5" />
+      <module name="build-ser" target="1.5" />
       <module name="ejb-client" target="1.7" />
       <module name="ejb-earapp" target="1.6" />
       <module name="ejb-ejbmodule-crm" target="1.5" />

@@ -11,6 +11,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ejb-ejbmodule-crm" />
+    <orderEntry type="module" module-name="ejb-ejbmodule-erp" />
+    <orderEntry type="module" module-name="lib-entities-erp" />
+    <orderEntry type="module" module-name="lib-entities-crm" />
+    <orderEntry type="module" module-name="lib-esa-utils" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jboss:jboss-remote-naming:2.0.1.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jboss:jboss-ejb-client:2.0.0.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jboss.marshalling:jboss-marshalling:1.4.3.Final" level="project" />
