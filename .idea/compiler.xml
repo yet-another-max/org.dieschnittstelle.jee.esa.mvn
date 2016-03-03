@@ -62,6 +62,7 @@
     <bytecodeTargetLevel>
       <module name="bas" target="1.5" />
       <module name="build-all" target="1.5" />
+      <module name="build-all-modules" target="1.5" />
       <module name="build-ejb" target="1.5" />
       <module name="build-jrs" target="1.5" />
       <module name="build-jsf" target="1.5" />
