@@ -23,7 +23,7 @@
                             <sourceRoot>${basedir}/target/generated-sources/jaxws</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>http://localhost:8080/org.dieschnittstelle.jee.esa.jws/ProductCRUDWebService?wsdl</wsdl>
+                                    <wsdl>TODO: Specify URL for JWS5</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>

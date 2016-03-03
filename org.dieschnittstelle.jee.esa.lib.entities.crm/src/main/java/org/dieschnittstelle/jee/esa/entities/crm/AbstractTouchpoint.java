@@ -35,7 +35,7 @@ import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
  */
 // jaxb annotations
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://dieschnittstelle.org/jee/esa/crm/entities")
+@XmlType(namespace = "http://dieschnittstelle.org/jee/esa/entities/crm")
 @XmlSeeAlso({StationaryTouchpoint.class,MobileTouchpoint.class})
 
 // jpa annotations

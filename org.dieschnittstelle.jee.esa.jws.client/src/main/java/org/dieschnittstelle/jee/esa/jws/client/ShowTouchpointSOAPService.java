@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.dieschnittstelle.jee.esa.crm.entities.AbstractTouchpoint;
-import org.dieschnittstelle.jee.esa.crm.entities.StationaryTouchpoint;
+import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
+import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.jws.Address;
 import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebService;
 import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebServiceSOAP;

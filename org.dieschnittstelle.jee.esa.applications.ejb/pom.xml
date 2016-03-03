@@ -16,7 +16,6 @@
         <module>../org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp</module>
         <module>../org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm</module>
         <module>../org.dieschnittstelle.jee.esa.ejb.webapp</module>
-        <!--<module>../org.dieschnittstelle.jee.esa.ejbjrs.client</module>-->
         <module>../org.dieschnittstelle.jee.esa.ejb</module>
         <module>../org.dieschnittstelle.jee.esa.ejb.client</module>
     </modules>
