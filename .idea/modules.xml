@@ -3,12 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" group="deployments"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" group="deployments"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" group="deployments"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" group="deployments"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" group="deployments"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" group="deployments"/>
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" />
@@ -26,11 +26,11 @@
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" group="ue-skeletons" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" group="ue-skeletons" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" group="ue-skeletons" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" group="ue-skeletons" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" group="ue-skeletons" />
     </modules>
   </component>
 </project>
