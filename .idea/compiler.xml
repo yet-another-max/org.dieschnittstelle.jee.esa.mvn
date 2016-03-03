@@ -40,6 +40,8 @@
         <module name="org.dieschnittstelle.jee.esa.jws.client" />
         <module name="org.dieschnittstelle.jee.esa.ue.jws4" />
         <module name="ser-webapp" />
+        <module name="ue-add2" />
+        <module name="ue-add3" />
         <module name="ue-jsf5" />
         <module name="ue-jws4" />
         <module name="ue-jws5" />
@@ -88,6 +90,8 @@
       <module name="org.dieschnittstelle.jee.esa.ue.jws4" target="1.5" />
       <module name="ser-client" target="1.5" />
       <module name="ser-webapp" target="1.5" />
+      <module name="ue-add2" target="1.5" />
+      <module name="ue-add3" target="1.5" />
       <module name="ue-jsf5" target="1.5" />
       <module name="ue-jws4" target="1.5" />
       <module name="ue-jws5" target="1.5" />

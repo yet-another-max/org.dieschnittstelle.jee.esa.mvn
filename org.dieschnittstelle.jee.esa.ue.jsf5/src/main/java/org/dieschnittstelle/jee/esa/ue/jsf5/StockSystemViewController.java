@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
@@ -26,10 +30,10 @@ public class StockSystemViewController {
 	/*
 	 * TODO declare a dependency to the stock system ejb via a new local interface,
 	 * using the @Resource annotation and the mappedName:
-	 * java:global/org.dieschnittstelle.jee.esa.ejbs/org.dieschnittstelle
+	 * java:global/org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle
 	 * .jee.esa
-	 * .shared.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee
-	 * .esa.erp.ejbs.StockSystemLocal
+	 * .ejb.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee
+	 * .esa.ejb.ejbmodule.erp.StockSystemLocal
 	 */
 
 	/*
@@ -42,9 +46,9 @@ public class StockSystemViewController {
 	 * TODO: later on (after only displaying the list), we also need access to the
 	 * touchpoints ejb, using the @Resource annotation and the mappedName:
 	 * java:global/org.dieschnittstelle.jee
-	 * .esa.ejbs/org.dieschnittstelle.jee.esa
-	 * .shared.ejbmodule.crm/TouchpointAccessStateless
-	 * !org.dieschnittstelle.jee.esa.crm.ejbs.TouchpointAccessLocal
+	 * .esa.ejb/org.dieschnittstelle.jee.esa
+	 * .ejb.ejbmodule.crm/TouchpointAccessStateless
+	 * !org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessLocal
 	 */
 
 	/*

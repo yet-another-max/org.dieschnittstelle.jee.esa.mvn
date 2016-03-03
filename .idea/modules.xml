@@ -26,6 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" />
