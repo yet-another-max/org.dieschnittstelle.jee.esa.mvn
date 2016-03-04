@@ -65,7 +65,7 @@ public interface StockSystemLocal {
 	 * @param product
 	 * @return
 	 */
-	public List<Integer> getPointsOfSale(IndividualisedProductItem product);
+	public List<Long> getPointsOfSale(IndividualisedProductItem product);
 
 
 	/**
