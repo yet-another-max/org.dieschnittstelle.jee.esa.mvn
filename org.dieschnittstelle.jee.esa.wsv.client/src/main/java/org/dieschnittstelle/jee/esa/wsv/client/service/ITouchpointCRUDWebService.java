@@ -1,4 +1,4 @@
-package org.dieschnittstelle.jee.esa.jrs;
+package org.dieschnittstelle.jee.esa.wsv.client.service;
 
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 
@@ -22,10 +22,10 @@ public interface ITouchpointCRUDWebService {
 	
 	@DELETE
 	@Path("/{touchpointId}")
-	public boolean deleteTouchpoint(@PathParam("touchpointId") long id); 
-		
-	/*
-	 * UE JRS1: add a new annotated method for using the updateTouchpoint functionality of TouchpointCRUDExecutor and implement it
-	 */
-	
+	public boolean deleteTouchpoint(@PathParam("touchpointId") long id);
+
+	@PUT
+	@Path("/{touchpointId}")
+	public StationaryTouchpoint updateTouchpoint(@PathParam("touchpointId") long id,StationaryTouchpoint touchpoint);
+
 }

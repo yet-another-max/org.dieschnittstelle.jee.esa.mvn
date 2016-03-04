@@ -3,12 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" group="deployable"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" group="deployable"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" group="deployable"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" group="deployable"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" group="deployable"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" group="deployable"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" group="deployable" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" />
@@ -31,6 +31,7 @@
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" group="ue-skeletons" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" group="ue-skeletons" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" group="ue-skeletons" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" />
     </modules>
   </component>
 </project>
