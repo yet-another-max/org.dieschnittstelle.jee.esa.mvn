@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="bas" />
         <module name="ejb-client" />
+        <module name="ejb-earapp" />
         <module name="ejb-ejbmodule-crm" />
         <module name="ejb-ejbmodule-erp" />
         <module name="ejb-webapp" />
@@ -48,13 +49,6 @@
         <module name="ue-jws5" />
         <module name="wsv-client" />
       </profile>
-      <profile default="false" name="Annotation profile for ejb-earapp" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="ejb-earapp" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bas" target="1.5" />
@@ -66,7 +60,7 @@
       <module name="build-jws" target="1.5" />
       <module name="build-ser" target="1.5" />
       <module name="ejb-client" target="1.5" />
-      <module name="ejb-earapp" target="1.6" />
+      <module name="ejb-earapp" target="1.5" />
       <module name="ejb-ejbmodule-crm" target="1.5" />
       <module name="ejb-ejbmodule-erp" target="1.5" />
       <module name="ejb-webapp" target="1.5" />

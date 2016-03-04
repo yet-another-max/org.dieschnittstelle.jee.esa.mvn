@@ -53,7 +53,7 @@ public class StockSystemClient implements StockSystemRemote {
 	}
 
 	@Override
-	public List<Integer> getPointsOfSale(IndividualisedProductItem product) {
+	public List<Long> getPointsOfSale(IndividualisedProductItem product) {
 		//return this.proxy.getPointsOfSale(product);
 		return null;
 	}

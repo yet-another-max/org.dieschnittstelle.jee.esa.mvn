@@ -66,8 +66,8 @@ public class TestStockSystem {
 		assertEquals("total units on stock correct for p1", 170, stockSystemClient.getTotalUnitsOnStock(PRODUCT_1));
 		
 		// check that we get the correct touchpoints for the products
-		List<Integer> touchpoints_p1 = stockSystemClient.getPointsOfSale(PRODUCT_1);
-		List<Integer> touchpoints_p2 = stockSystemClient.getPointsOfSale(PRODUCT_2);
+		List<Long> touchpoints_p1 = stockSystemClient.getPointsOfSale(PRODUCT_1);
+		List<Long> touchpoints_p2 = stockSystemClient.getPointsOfSale(PRODUCT_2);
 			
 		assertEquals("number of touchpoints correct for p1",2,touchpoints_p1.size());
 		assertEquals("number of touchpoints correct for p2",1,touchpoints_p2.size());
