@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="bas" />
+        <module name="demo-bas" />
         <module name="ejb-client" />
         <module name="ejb-earapp" />
         <module name="ejb-ejbmodule-crm" />
@@ -41,6 +42,7 @@
         <module name="org.dieschnittstelle.jee.esa.bas" />
         <module name="org.dieschnittstelle.jee.esa.jws.client" />
         <module name="org.dieschnittstelle.jee.esa.ue.jws4" />
+        <module name="ser-client" />
         <module name="ser-webapp" />
         <module name="ue-add2" />
         <module name="ue-add3" />
@@ -59,6 +61,7 @@
       <module name="build-jsf" target="1.5" />
       <module name="build-jws" target="1.5" />
       <module name="build-ser" target="1.5" />
+      <module name="demo-bas" target="1.5" />
       <module name="ejb-client" target="1.5" />
       <module name="ejb-earapp" target="1.5" />
       <module name="ejb-ejbmodule-crm" target="1.5" />
