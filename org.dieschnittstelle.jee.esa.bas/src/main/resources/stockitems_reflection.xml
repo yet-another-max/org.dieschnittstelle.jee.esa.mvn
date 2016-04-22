@@ -5,7 +5,8 @@
        <class>org.dieschnittstelle.jee.esa.basics.reflection.stockitemtypes.Chocolate</class>
        <units>24</units>        
        <price>119</price>
-    </stockitem>    
+    </stockitem>
+    <!--
     <stockitem>
        <brandname>Ritter Sport</brandname>
        <class>org.dieschnittstelle.jee.esa.basics.reflection.stockitemtypes.Chocolate</class>
@@ -17,6 +18,6 @@
        <class>org.dieschnittstelle.jee.esa.basics.reflection.stockitemtypes.Milk</class>
        <units>10</units>        
        <price>109</price>
-    </stockitem>    
+    </stockitem>    -->
 </stockitems>
 
