@@ -57,7 +57,7 @@
 			<td>
 				<!--  we add a delete button -->
 				<form method="POST"
-					action="/org.dieschnittstelle.jee.esa.ser/gui/touchpoints/delete/<%=touchpoint.getId()%>">
+					action="gui/touchpoints/delete/<%=touchpoint.getId()%>">
 					<input type="submit" value="delete">
 				</form>
 			</td>
@@ -69,7 +69,7 @@
 	</table>
 	<!--  create a new touchpoint -->
 	<h3>New Touchpoint</h3>
-	<form method="POST" action="/org.dieschnittstelle.jee.esa.ser/gui/touchpoints/create/">
+	<form method="POST" action="gui/touchpoints/create/">
 		<table>
 			<tr>
 				<td>Name:</td>
@@ -90,3 +90,4 @@
 	</form>
 </body>
 </html>
+<% if (request.getAttribute("redirectToRoot") != null) response.sendRedirect("/org.dieschnittstelle.jee.esa.ser/");%>

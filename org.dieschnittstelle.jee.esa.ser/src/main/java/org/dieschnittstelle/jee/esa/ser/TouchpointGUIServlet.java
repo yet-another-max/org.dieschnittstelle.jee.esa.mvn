@@ -62,6 +62,7 @@ public class TouchpointGUIServlet extends HttpServlet {
 			exec.createTouchpoint(tp);
 		}
 
+		request.setAttribute("redirectToRoot",true);
 		displayView(request, response);
 	}
 
