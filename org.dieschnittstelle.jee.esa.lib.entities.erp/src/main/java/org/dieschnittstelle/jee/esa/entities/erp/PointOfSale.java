@@ -29,6 +29,10 @@ public class PointOfSale implements Serializable {
 	@GeneratedValue
 	private long id;
 
+	public PointOfSale() {
+		logger.info("<constructor>");
+	}
+
 	public long getId() {
 		return id;
 	}

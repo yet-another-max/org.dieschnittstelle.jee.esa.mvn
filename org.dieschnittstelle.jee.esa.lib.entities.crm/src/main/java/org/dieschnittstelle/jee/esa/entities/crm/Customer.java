@@ -21,12 +21,16 @@ import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.log4j.Logger;
 
 /*
  * 
  */
 @Entity
 public class Customer implements Serializable {
+
+	protected static Logger logger = Logger.getLogger(Customer.class);
+
 
 	/**
 	 * 
@@ -79,7 +83,7 @@ public class Customer implements Serializable {
 	}
 	
 	public Customer() {
-		System.out.println("<constructor>");	
+		logger.info("<constructor>");
 	}
 
 	public Customer(String firstName, String lastName, Gender gender) {

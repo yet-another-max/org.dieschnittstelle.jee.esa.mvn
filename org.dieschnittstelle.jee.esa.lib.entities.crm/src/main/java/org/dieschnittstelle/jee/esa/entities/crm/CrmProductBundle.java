@@ -14,6 +14,7 @@ import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
+import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 /**
@@ -22,6 +23,9 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
  */
 @Entity
 public class CrmProductBundle implements Serializable {
+
+	protected static Logger logger = Logger.getLogger(CrmProductBundle.class);
+
 
 	/**
 	 * 
@@ -42,7 +46,7 @@ public class CrmProductBundle implements Serializable {
 	private AbstractProduct productObj;
 	
 	public CrmProductBundle() {
-		System.out.println("<constructor>");
+		logger.info("<constructor>");
 	}
 	
 	public CrmProductBundle(long erpProductId, int units) {

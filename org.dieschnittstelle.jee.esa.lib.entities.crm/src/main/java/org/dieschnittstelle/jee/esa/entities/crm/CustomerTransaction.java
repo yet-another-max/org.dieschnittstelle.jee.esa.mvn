@@ -1,5 +1,7 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
+import org.apache.log4j.Logger;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +25,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class CustomerTransaction implements Serializable {
+
+	protected static Logger logger = Logger.getLogger(CustomerTransaction.class);
 
 	/**
 	 * 
@@ -54,7 +58,7 @@ public class CustomerTransaction implements Serializable {
 	private boolean completed;
 	
 	public CustomerTransaction() {
-		System.out.println("constructor");
+		logger.info("constructor");
 	}
 	
 	public CustomerTransaction(Customer customer,AbstractTouchpoint tp,List<CrmProductBundle> products) {

@@ -1,5 +1,7 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
+import org.apache.log4j.Logger;
+
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
@@ -25,7 +27,9 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @DiscriminatorValue("stationary")
 public class StationaryTouchpoint extends AbstractTouchpoint  implements Serializable {
-	
+
+	protected static Logger logger = Logger.getLogger(StationaryTouchpoint.class);
+
 	/**
 	 * 
 	 */
@@ -38,7 +42,7 @@ public class StationaryTouchpoint extends AbstractTouchpoint  implements Seriali
 	private Address location;
 	
 	public StationaryTouchpoint() {
-		System.out.println("<constructor>");
+		logger.info("<constructor>");
 	}
 	
 	public StationaryTouchpoint(int erpPointOfSaleId) {

@@ -1,6 +1,7 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
 import java.io.Serializable;
+import org.apache.log4j.Logger;
 
 import javax.persistence.Entity;
 
@@ -9,7 +10,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 @Entity
 public class Address extends Location  implements Serializable {
-	
+
+	protected static Logger logger = Logger.getLogger(Address.class);
+
 	/**
 	 * 
 	 */
@@ -24,7 +27,7 @@ public class Address extends Location  implements Serializable {
 	private String city;
 	
 	public Address() {
-		System.out.println("<constructor>");
+		logger.info("<constructor>");
 	}
 	
 	public Address(String street,String houseNr,String zipCode,String city) {

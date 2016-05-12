@@ -34,7 +34,7 @@ public class StockItem {
 	private int units;
 
 	public StockItem() {
-
+		logger.info("<constructor>");
 	}
 
 	public StockItem(IndividualisedProductItem product,

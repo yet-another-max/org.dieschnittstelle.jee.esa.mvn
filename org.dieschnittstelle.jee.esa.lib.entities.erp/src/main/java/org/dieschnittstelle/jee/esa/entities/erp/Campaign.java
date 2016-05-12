@@ -6,9 +6,12 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.log4j.Logger;
 
 
 public class Campaign extends AbstractProduct implements Serializable {
+
+	protected static Logger logger = Logger.getLogger(Campaign.class);
 
 	/**
 	 * 
@@ -18,7 +21,7 @@ public class Campaign extends AbstractProduct implements Serializable {
 	private List<ProductBundle> bundles;
 
 	public Campaign() {
-		this.bundles = new ArrayList<ProductBundle>();
+		logger.info("<constructor>"); this.bundles = new ArrayList<ProductBundle>();
 	}
 
 	public Campaign(String name) {

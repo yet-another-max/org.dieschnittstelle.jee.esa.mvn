@@ -3,9 +3,12 @@ package org.dieschnittstelle.jee.esa.entities.erp;
 import java.io.Serializable;
 
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.log4j.Logger;
 
 public class IndividualisedProductItem extends AbstractProduct implements Serializable {
-	
+
+	protected static Logger logger = Logger.getLogger(IndividualisedProductItem.class);
+
 	/**
 	 * 
 	 */
@@ -16,7 +19,7 @@ public class IndividualisedProductItem extends AbstractProduct implements Serial
 	private int expirationAfterStocked;
 	
 	public IndividualisedProductItem() {
-		
+		logger.info("<constructor>");
 	}
 	
 	public IndividualisedProductItem(String name,ProductType type,int expirationAfterStocked) {

@@ -23,6 +23,8 @@ import org.apache.log4j.Logger;
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Location implements Serializable {
 
+	protected static Logger logger = Logger.getLogger(Location.class);
+
 	/**
 	 * 
 	 */
@@ -33,6 +35,10 @@ public class Location implements Serializable {
 	private long geoLat;
 	
 	private long geoLong;
+
+	public Location() {
+		logger.info("<constructor>");
+	}
 	
 	@Id
 	@GeneratedValue

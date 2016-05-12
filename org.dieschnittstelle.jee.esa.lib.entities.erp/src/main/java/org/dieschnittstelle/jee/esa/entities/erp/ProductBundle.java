@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.log4j.Logger;
 
 public class ProductBundle implements Serializable {
+
+	protected static Logger logger = Logger.getLogger(ProductBundle.class);
 
 	/**
 	 * 
@@ -19,6 +22,7 @@ public class ProductBundle implements Serializable {
 	private int units;
 
 	public ProductBundle() {
+		logger.info("<constructor>");
 	}
 
 	public ProductBundle(IndividualisedProductItem product, int units) {
