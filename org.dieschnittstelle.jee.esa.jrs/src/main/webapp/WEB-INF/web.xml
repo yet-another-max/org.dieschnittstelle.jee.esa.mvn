@@ -19,6 +19,7 @@
     <!--  JK: taken from http://www.packtpub.com/article/restful-web-service-implementation-with-resteasy -->
     <!--  for using resteasy, just copy&paste the following section as a whole and adapt the URL pattern (see comment below) -->
 
+    <!-- PLEASE LEAVE THIS PART COMMENTED! OTHERWISE, THE EXAMPLES FOR JRS WILL NOT WORK -->
 
    <!-- <context-param>
         <param-name>resteasy.servlet.mapping.prefix</param-name>
