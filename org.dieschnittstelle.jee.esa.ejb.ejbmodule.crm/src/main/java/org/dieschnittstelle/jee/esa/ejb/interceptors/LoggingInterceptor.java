@@ -1,15 +1,18 @@
 package org.dieschnittstelle.jee.esa.ejb.interceptors;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
+import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
 @Interceptor
+@Transactional
 public class LoggingInterceptor {
 
 	protected static Logger logger = Logger.getLogger(LoggingInterceptor.class);
@@ -17,7 +20,7 @@ public class LoggingInterceptor {
 	/*
 	 * a map of loggers
 	 */
-	private Map<Class<?>, Logger> loggers = new HashMap<Class<?>, Logger>();
+	private static Map<Class<?>, Logger> loggers = Collections.synchronizedMap(new HashMap<Class<?>, Logger>());
 
 	/**
 	 * obtain a logger
