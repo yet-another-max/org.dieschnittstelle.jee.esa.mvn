@@ -90,37 +90,37 @@ public class CrmProductBundle implements Serializable {
 
 	@PostLoad
 	public void onPostLoad() {
-		System.out.println("@PostLoad: " + this);
+		logger.info("@PostLoad: " + this);
 	}
 
 	@PostPersist
 	public void onPostPersist() {
-		System.out.println("@PostPersist: " + this);
+		logger.info("@PostPersist: " + this);
 	}
 
 	@PostRemove
 	public void onPostRemove() {
-		System.out.println("@PostRemove: " + this);
+		logger.info("@PostRemove: " + this);
 	}
 
 	@PostUpdate
 	public void onPostUpdate() {
-		System.out.println("@PostUpdate: " + this);
+		logger.info("@PostUpdate: " + this);
 	}
 
 	@PrePersist
 	public void onPrePersist() {
-		System.out.println("@PrePersist: " + this);
+		logger.info("@PrePersist: " + this);
 	}
 
 	@PreRemove
 	public void onPreRemove() {
-		System.out.println("@PreRemove: " + this);
+		logger.info("@PreRemove: " + this);
 	}
 
 	@PreUpdate
 	public void onPreUpdate() {
-		System.out.println("@PreUpdate: " + this);
+		logger.info("@PreUpdate: " + this);
 	}
 
 	public AbstractProduct getProductObj() {
