@@ -6,6 +6,8 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.log4j.Logger;
 
+import javax.persistence.*;
+
 public class ProductBundle implements Serializable {
 
 	protected static Logger logger = Logger.getLogger(ProductBundle.class);
@@ -64,6 +66,41 @@ public class ProductBundle implements Serializable {
 
 	public int hashCode() {
 		return HashCodeBuilder.reflectionHashCode(this, new String[] { "id" });
+	}
+
+	@PostLoad
+	public void onPostLoad() {
+		logger.info("@PostLoad: " + this);
+	}
+
+	@PostPersist
+	public void onPostPersist() {
+		logger.info("@PostPersist: " + this);
+	}
+
+	@PostRemove
+	public void onPostRemove() {
+		logger.info("@PostRemove: " + this);
+	}
+
+	@PostUpdate
+	public void onPostUpdate() {
+		logger.info("@PostUpdate: " + this);
+	}
+
+	@PrePersist
+	public void onPrePersist() {
+		logger.info("@PrePersist: " + this);
+	}
+
+	@PreRemove
+	public void onPreRemove() {
+		logger.info("@PreRemove: " + this);
+	}
+
+	@PreUpdate
+	public void onPreUpdate() {
+		logger.info("@PreUpdate: " + this);
 	}
 
 }
