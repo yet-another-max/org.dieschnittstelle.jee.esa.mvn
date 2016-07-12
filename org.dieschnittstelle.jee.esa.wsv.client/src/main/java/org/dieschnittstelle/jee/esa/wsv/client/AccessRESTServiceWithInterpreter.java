@@ -36,19 +36,21 @@ public class AccessRESTServiceWithInterpreter {
 
         step();
 
-//		// 1) read out all touchpoints
-//		List<StationaryTouchpoint> tps = serviceClient.readAllTouchpoints();
-//		show("read all: " + tps);
-//
+        // 1) read out all touchpoints
+        List<StationaryTouchpoint> tps = serviceClient.readAllTouchpoints();
+        show("read all: " + tps);
+
+
+        // TODO: comment-in the call to delete() once this is handled by the invocation handler
 //		// 2) delete the touchpoint if there is one
-//		step();
 //		if (tps.size() > 0) {
+//          step();
 //			show("deleted: "
 //					+ serviceClient.deleteTouchpoint(tps.get(0).getId()));
 //		}
 //
 //		// 3) create a new touchpoint
-//		step();
+        step();
 
         Address addr = new Address("Luxemburger Strasse", "10", "13353",
                 "Berlin");
@@ -57,21 +59,21 @@ public class AccessRESTServiceWithInterpreter {
         tp = (StationaryTouchpoint)serviceClient.createTouchpoint(tp);
         show("created: " + tp);
 
-//		// we read it out again
+        // TODO: comment-in the call to read() once this is handled
+//		/*
+//		 * 4) read out the new touchpoint
+//		 */
 //		show("read created: " + serviceClient.readTouchpoint(tp.getId()));
 //
+
+        // TODO: comment-in the call to update() once this is handled
 //		/*
-//		 * 4) update the touchpoint
+//		 * 5) update the touchpoint
 //		 */
 //		// change the name
 //		step();
 //		tp.setName("BHT Mensa");
 //
-//		/*
-//		 * UE JRS1: add a call to the update method, passing tp
-//		 */
-//		logger.info("renamed touchpoint with id " + tp.getId() + " to "
-//				+ tp.getName());
 //
 //		tp = serviceClient.updateTouchpoint(tp.getId(), tp);
 //		show("updated: " + tp);
@@ -92,3 +94,4 @@ public class AccessRESTServiceWithInterpreter {
         }
     }
 }
+
