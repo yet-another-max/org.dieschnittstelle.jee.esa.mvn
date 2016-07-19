@@ -30,11 +30,11 @@ public class ProductCRUDClient {
 //		return proxy.updateProduct(update);
 //	}
 //
-//	public AbstractProduct readProduct(int productID) {
+//	public AbstractProduct readProduct(long productID) {
 //		return proxy.readProduct(productID);
 //	}
 //
-//	public boolean deleteProduct(int productID) {
+//	public boolean deleteProduct(long productID) {
 //		return proxy.deleteProduct(productID);
 //	}
 
