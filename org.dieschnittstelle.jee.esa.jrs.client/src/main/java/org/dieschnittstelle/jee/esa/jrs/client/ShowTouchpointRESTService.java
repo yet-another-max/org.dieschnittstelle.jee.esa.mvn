@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
-import org.dieschnittstelle.jee.esa.jrs.ITouchpointCRUDWebService;
+import org.dieschnittstelle.jee.esa.jrs.ITouchpointCRUDService;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -27,8 +27,8 @@ public class ShowTouchpointRESTService {
 		 * this uses the most recent resteasy client api rather than the deprecated ProxyFactory.create() method
 		 */
 		ResteasyClient client = new ResteasyClientBuilder().build();
-		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/resteasy/");
-		ITouchpointCRUDWebService serviceClient = target.proxy(ITouchpointCRUDWebService.class);
+		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/api/");
+		ITouchpointCRUDService serviceClient = target.proxy(ITouchpointCRUDService.class);
 
 		// 1) read out all touchpoints
 		List<StationaryTouchpoint> touchpoints = serviceClient.readAllTouchpoints();

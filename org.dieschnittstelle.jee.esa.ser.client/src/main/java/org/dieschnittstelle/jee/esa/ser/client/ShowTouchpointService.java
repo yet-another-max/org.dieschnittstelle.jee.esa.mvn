@@ -113,8 +113,8 @@ public class ShowTouchpointService {
 
 				logger.info("read touchpoints: " + touchpoints);
 
-				// this is necessary to be able to use the client for a
-				// subsequent request
+				// this is necessary to be able to use the client for
+				// subsequent requests
 				EntityUtils.consume(response.getEntity());
 
 				return touchpoints;
@@ -140,6 +140,10 @@ public class ShowTouchpointService {
 	 */
 	public void deleteTouchpoint(AbstractTouchpoint tp) {
 		logger.info("deleteTouchpoint(): " + tp);
+
+		// once you have received a response this is necessary to be able to
+		// use the client for subsequent requests:
+		// EntityUtils.consume(response.getEntity());
 
 	}
 
@@ -187,6 +191,7 @@ public class ShowTouchpointService {
 			// cleanup the request
 			// EntityUtils.consume(response.getEntity());
 
+			// return the object that you hae read from the response
 			return null;
 		} catch (Exception e) {
 			logger.error("got exception: " + e, e);

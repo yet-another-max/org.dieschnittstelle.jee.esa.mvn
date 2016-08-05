@@ -9,11 +9,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-@ApplicationPath("/resteasy")
+@ApplicationPath("/api")
 public class MyResteasyApplication extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-        return new HashSet(Arrays.asList(new Class[]{TouchpointCRUDWebServiceImpl.class, ProductCRUDWebServiceImpl.class, JacksonJaxbJsonProvider.class}));
+        return new HashSet(Arrays.asList(new Class[]{TouchpointCRUDServiceImpl.class, ProductCRUDServiceImpl.class, JacksonJaxbJsonProvider.class}));
     }
 }

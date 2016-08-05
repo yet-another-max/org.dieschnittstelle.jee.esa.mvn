@@ -8,7 +8,7 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 UE JRS2: implementieren Sie hier die im Interface deklarierten Methoden
  */
 
-public class ProductCRUDWebServiceImpl implements IProductCRUDWebService {
+public class ProductCRUDServiceImpl implements IProductCRUDService {
 
 	@Override
 	public IndividualisedProductItem createProduct(

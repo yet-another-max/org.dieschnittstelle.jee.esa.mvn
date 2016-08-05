@@ -11,9 +11,9 @@ import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
 
-public class TouchpointCRUDWebServiceImpl implements ITouchpointCRUDWebService {
+public class TouchpointCRUDServiceImpl implements ITouchpointCRUDService {
 	
-	protected static Logger logger = Logger.getLogger(TouchpointCRUDWebServiceImpl.class);
+	protected static Logger logger = Logger.getLogger(TouchpointCRUDServiceImpl.class);
 
 	/**
 	 * this accessor will be provided by the ServletContext, to which it is written by the TouchpointServletContextListener
@@ -25,7 +25,7 @@ public class TouchpointCRUDWebServiceImpl implements ITouchpointCRUDWebService {
 	 * note that the request context is only declared for illustration purposes, but will not be further used here
 	 * @param servletContext
 	 */
-	public TouchpointCRUDWebServiceImpl(@Context ServletContext servletContext, @Context HttpServletRequest request) {
+	public TouchpointCRUDServiceImpl(@Context ServletContext servletContext, @Context HttpServletRequest request) {
 		logger.info("<constructor>: " + servletContext + "/" + request);
 		// read out the dataAccessor
 		this.touchpointCRUD = (GenericCRUDExecutor<AbstractTouchpoint>)servletContext.getAttribute("touchpointCRUD");

@@ -6,11 +6,11 @@ import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
-import org.dieschnittstelle.jee.esa.jrs.IProductCRUDWebService;
+import org.dieschnittstelle.jee.esa.jrs.IProductCRUDService;
 
 public class ProductCRUDClient {
 
-	private IProductCRUDWebService proxy;
+	private IProductCRUDService proxy;
 	
 	protected static Logger logger = Logger.getLogger(ProductCRUDClient.class);
 
