@@ -6,10 +6,9 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
-import org.dieschnittstelle.jee.esa.wsv.client.service.ITouchpointCRUDWebService;
+import org.dieschnittstelle.jee.esa.wsv.client.service.ITouchpointCRUDService;
 
 import org.dieschnittstelle.jee.esa.wsv.interpreter.JAXRSClientInterpreter;
-import java.lang.reflect.Proxy;
 
 public class AccessRESTServiceWithInterpreter {
 
@@ -30,7 +29,7 @@ public class AccessRESTServiceWithInterpreter {
 		/*
 		 * TODO: create a client for the web service using Proxy.newProxyInstance()
 		 */
-        ITouchpointCRUDWebService serviceClient = null;
+        ITouchpointCRUDService serviceClient = null;
 
         show("serviceClient: " + serviceClient);
 
