@@ -25,7 +25,6 @@ import org.dieschnittstelle.jee.esa.entities.erp.ProductType;
  * die Umetzung der beiden Methoden die Instanz von GenericCRUDExecutor<AbstractProduct>, 
  * die Sie aus dem ServletContext auslesen koennen
  */
-@WebService
 public class ProductCRUDWebService {
 	
 	
