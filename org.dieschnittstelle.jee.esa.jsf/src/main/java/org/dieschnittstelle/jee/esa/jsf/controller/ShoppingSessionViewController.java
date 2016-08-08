@@ -223,28 +223,27 @@ public class ShoppingSessionViewController {
 
 	/**
 	 * obtain the touchpoints at which the selected products are available in
-	 * the given quantity
+	 * the given quantity (the dependency on products is dealt with in one of the exercices)
 	 */
-	public List<String> getAvailableTouchpoints() {
+	public List<AbstractTouchpoint> getAvailableTouchpoints() {
 		logger.info("getAvailableTouchpoints()");
 
 		this.touchpointsMap.clear();
-		List<String> tpnames = new ArrayList<String>();
+		List<AbstractTouchpoint> tps = touchpointAccess.readAllTouchpoints();
 
 		/*
-		 * UE JSF2: here we need to check whether the products are available at the
-		 * given touchpoints using StockSystem
+		 * UE JSF2: here we need to check whether the products are available at
+		 * the given touchpoints using StockSystem
 		 */
-		for (AbstractTouchpoint tp : touchpointAccess.readAllTouchpoints()) {
+		for (AbstractTouchpoint tp : tps) {
 			// we use a local map for being able to convert between touchpoint
 			// strings and touchpoint objects
 			this.touchpointsMap.put(tp.getName(), tp);
-			tpnames.add(tp.getName());
 		}
 
-		logger.info("getAvailableTouchpoints(): " + tpnames);
+		logger.info("getAvailableTouchpoints(): " + tps);
 
-		return tpnames;
+		return tps;
 	}
 
 	/*
@@ -336,9 +335,9 @@ public class ShoppingSessionViewController {
 
 			@Override
 			public String getAsString(FacesContext arg0, UIComponent arg1,
-					Object arg2) {
-				logger.info("getAsString(): " + arg2);
-				return String.valueOf(arg2);
+									  Object arg2) {
+				logger.info("getAsString(): " + arg2 + " of class " + (arg2 != null ? arg2.getClass() : "<null>"));
+				return arg2 instanceof AbstractTouchpoint ? ((AbstractTouchpoint)arg2).getName() : String.valueOf(arg2);
 			}
 
 		};

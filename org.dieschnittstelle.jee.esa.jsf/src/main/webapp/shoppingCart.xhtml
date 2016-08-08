@@ -59,7 +59,7 @@
 			id="touchpointSelection"
 			converter="#{shoppingSessionVC.touchpointConverter}">
 			<!--  these are the values that are offered as a selection -->
-			<f:selectItems value="#{shoppingSessionVC.availableTouchpoints}" />
+			<f:selectItems value="#{shoppingSessionVC.availableTouchpoints}" var="tp" itemLabel="#{tp.name}"/>
 		</h:selectOneMenu>
 		<h:commandButton type="submit" id="setTouchpoint" value="auswaehlen" />
 		<h:outputText value="#{shoppingSessionVC.touchpoint.name}" />
