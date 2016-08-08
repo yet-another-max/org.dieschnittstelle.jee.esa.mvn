@@ -23,10 +23,10 @@ public class PointOfSaleCRUDStateless implements PointOfSaleCRUDRemote, PointOfS
 	private EntityManager em;
 	
 	/*
-	 * UE ADD1: comment out/in @TransactionAttribute
+	 * UE ADD1: comment in/out @TransactionAttribute
 	 */
 	@Override
-	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+	//@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public PointOfSale createPointOfSale(PointOfSale pos) {
 		logger.info("createPointOfSale(): before persist: " + pos);
 		
