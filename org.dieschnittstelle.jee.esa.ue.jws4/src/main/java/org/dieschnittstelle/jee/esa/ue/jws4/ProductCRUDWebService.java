@@ -26,14 +26,25 @@ import org.dieschnittstelle.jee.esa.entities.erp.ProductType;
  * die Sie aus dem ServletContext auslesen koennen
  */
 public class ProductCRUDWebService {
-	
-	
+
 	public List<AbstractProduct> readAllProducts() {
 		return new ArrayList();
 	}
 
-	public AbstractProduct createProduct(AbstractProduct product) {				
+	public AbstractProduct createProduct(AbstractProduct product) {
 		return product;
 	}
-	
+
+	public AbstractProduct updateProduct(AbstractProduct update) {
+		return update;
+	}
+
+	public boolean deleteProduct(long id) {
+		return false;
+	}
+
+	public IndividualisedProductItem readProduct(long id) {
+		return null;
+	}
+
 }
