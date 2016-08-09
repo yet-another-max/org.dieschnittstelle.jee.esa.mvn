@@ -49,7 +49,7 @@ import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
 @SequenceGenerator(name = "touchpoint_sequence", sequenceName = "touchpoint_id_sequence")
 
 // jrs/jackson annotations
-//@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include=JsonTypeInfo.As.PROPERTY, property="@class")
+// @JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include=JsonTypeInfo.As.PROPERTY, property="@class")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEntity {
 
@@ -80,13 +80,11 @@ public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEnt
 	 * UE JWS2: kommentieren Sie @XmlTransient aus
 	 */
 	@XmlTransient
-	@JsonIgnore
 	@ManyToMany
 	private Collection<Customer> customers = new HashSet<Customer>();
 	
 	@XmlTransient
 	@OneToMany(mappedBy="touchpoint")
-	@JsonIgnore
 	private Collection<CustomerTransaction> transactions;
 
 
@@ -118,6 +116,8 @@ public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEnt
 		this.name = name;
 	}
 
+	// this annotation must be set on accessor methods rather than on the attributes themselves
+	@JsonIgnore
 	public Collection<Customer> getCustomers() {
 		return customers;
 	}
@@ -139,6 +139,7 @@ public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEnt
 		return this.getId() == ((AbstractTouchpoint) obj).getId();
 	}
 
+	@JsonIgnore
 	public Collection<CustomerTransaction> getTransactions() {
 		return transactions;
 	}
