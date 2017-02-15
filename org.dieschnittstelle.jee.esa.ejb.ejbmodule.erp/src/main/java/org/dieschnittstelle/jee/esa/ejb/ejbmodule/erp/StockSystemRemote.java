@@ -21,7 +21,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @param units
 	 */
-	public void addToStock(IndividualisedProductItem product,long pointOfSaleId,int units);
+    void addToStock(IndividualisedProductItem product, long pointOfSaleId, int units);
 
 	/**
 	 * removes some units of a product from the stock of a point of sale
@@ -32,7 +32,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @param units
 	 */
-	public void removeFromStock(IndividualisedProductItem product,long pointOfSaleId,int units);
+    void removeFromStock(IndividualisedProductItem product, long pointOfSaleId, int units);
 
 	/**
 	 * returns all products on stock of some pointOfSale
@@ -44,7 +44,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @return
 	 */
-	public List<IndividualisedProductItem> getProductsOnStock(long pointOfSaleId);
+    List<IndividualisedProductItem> getProductsOnStock(long pointOfSaleId);
 
 	/**
 	 * returns all products on stock
@@ -55,7 +55,7 @@ public interface StockSystemRemote {
 	 *
 	 * @return
 	 */
-	public List<IndividualisedProductItem> getAllProductsOnStock();
+    List<IndividualisedProductItem> getAllProductsOnStock();
 
 	/**
 	 * returns the units on stock for a product at some point of sale
@@ -67,28 +67,27 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @return
 	 */
-	public int getUnitsOnStock(IndividualisedProductItem product, long pointOfSaleId);
+    int getUnitsOnStock(IndividualisedProductItem product, long pointOfSaleId);
 
 	/**
 	 * returns the total number of units on stock for some product
 	 *
-	 * here you can combine the readAllPointsOfSale() method from the PointOfSale CRUD EJB with the
-	 * getUnitsOnStock() method above
+	 * here you can use readStockItemsForProduct() and sum up the units
 	 *
 	 * @param product
 	 * @return
 	 */
-	public int getTotalUnitsOnStock(IndividualisedProductItem product);
+    int getTotalUnitsOnStock(IndividualisedProductItem product);
 
 	/**
 	 * returns the points of sale where some product is available
 	 *
-	 * here you can use readStockItemsForProduct(product) and create a list of the stock items'
+	 * here you can use readStockItemsForProduct() and create a list of the stock items'
 	 * pointOfSale Ids
 	 *
 	 * @param product
 	 * @return
 	 */
-	public List<Long> getPointsOfSale(IndividualisedProductItem product);
+    List<Long> getPointsOfSale(IndividualisedProductItem product);
 
 }

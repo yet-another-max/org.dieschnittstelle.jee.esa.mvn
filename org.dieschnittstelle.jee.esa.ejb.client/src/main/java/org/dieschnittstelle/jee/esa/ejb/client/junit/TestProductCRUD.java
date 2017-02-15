@@ -73,12 +73,12 @@ public class TestProductCRUD {
 				- prodlistBefore.size());
 
 		Campaign createdCampaign = (Campaign) client.readProduct(CAMPAIGN_1.getId());
-		assertEquals("campaign contains correct number of bundles", createdCampaign.getBundles().size(), 2);
+		assertEquals("campaign contains correct number of bundles", 2, createdCampaign.getBundles().size());
 
 		// make sure that campaign does not use cascade on products (to make clear that we are testing on the first bundle, which is the one we added for PRODUCT_1, we cast to
 		// List, which is the type actually used for the bundles)
 		assertTrue("campaign is persisted using references to existing products",
-				((List<ProductBundle>) createdCampaign.getBundles()).iterator().next().getProduct().getId() == PRODUCT_1
+				createdCampaign.getBundles().iterator().next().getProduct().getId() == PRODUCT_1
 						.getId());
 
 		/* DELETE */
