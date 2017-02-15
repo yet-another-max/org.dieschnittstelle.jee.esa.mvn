@@ -3,26 +3,27 @@ package org.dieschnittstelle.jee.esa.jrs;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/touchpoints")
-@Consumes({ "application/json" })
-@Produces({ "application/json" })
+@Consumes({MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_JSON})
 public interface ITouchpointCRUDService {
 	
 	@GET
-	public List<StationaryTouchpoint> readAllTouchpoints();
+	List<StationaryTouchpoint> readAllTouchpoints();
 
 	@GET
 	@Path("/{touchpointId}")
-	public StationaryTouchpoint readTouchpoint(@PathParam("touchpointId") long id);
+	StationaryTouchpoint readTouchpoint(@PathParam("touchpointId") long id);
 
 	@POST
-	public StationaryTouchpoint createTouchpoint(StationaryTouchpoint touchpoint); 
+	StationaryTouchpoint createTouchpoint(StationaryTouchpoint touchpoint);
 	
 	@DELETE
 	@Path("/{touchpointId}")
-	public boolean deleteTouchpoint(@PathParam("touchpointId") long id); 
+	boolean deleteTouchpoint(@PathParam("touchpointId") long id);
 		
 	/*
 	 * UE JRS1: add a new annotated method for using the updateTouchpoint functionality of TouchpointCRUDExecutor and implement it
