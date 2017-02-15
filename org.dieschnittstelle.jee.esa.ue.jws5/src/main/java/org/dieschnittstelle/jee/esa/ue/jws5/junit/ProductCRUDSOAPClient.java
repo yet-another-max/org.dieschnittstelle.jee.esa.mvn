@@ -16,15 +16,10 @@ public class ProductCRUDSOAPClient {
 //
 //	public ProductCRUDSOAPClient() throws Exception {
 //
-<<<<<<< HEAD
 //
 //		/*
 //		 * create a client for the web service using ResteasyClientBuilder and ResteasyWebTarget
-=======
-//		/*
-//		 * create a client for the web service using the WebService class ProductCRUDSOAPService and accessing the "port" for ProductCRUDWebService using the appropriate getter
 //       * DO NOT FORGET TO SPECIFY THE WSDL URL IN THE pom.xml FILE OF THE JWS PROJECT (search for TODO)
->>>>>>> origin/master
 //		 */
 //		proxy = null;
 //	}
