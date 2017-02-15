@@ -42,15 +42,10 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="javaeeApplication" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.webapp" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf.cdi" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5" />
-    <file type="web" url="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4" />
+    <type id="javaeeApplication"/>
+    <type id="ejb" />
+    <type id="jpa" />
+    <type id="web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
