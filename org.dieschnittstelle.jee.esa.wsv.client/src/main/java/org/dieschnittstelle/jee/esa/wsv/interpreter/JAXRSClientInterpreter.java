@@ -79,7 +79,7 @@ public class JAXRSClientInterpreter implements InvocationHandler {
 
         // TODO: check whether we have method arguments - only consider pathparam annotations (if any) on the first argument here - if no args are passed, the value of args is null! if no pathparam annotation is present assume that the argument value is passed via the body of the http request
         if (args != null && args.length > 0) {
-            if (meth.getParameterAnnotations()[0].length > 0 && meth.getParameterAnnotations()[0][0].getClass() == PathParam.class) {
+            if (meth.getParameterAnnotations()[0].length > 0 && meth.getParameterAnnotations()[0][0].annotationType() == PathParam.class) {
                 // TODO: handle PathParam on the first argument - do not forget that in this case we might have a second argument providing a bodyValue
                 // TODO: if we have a path param, we need to replace the corresponding pattern in the url with the parameter value
             }

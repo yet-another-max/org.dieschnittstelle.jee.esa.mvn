@@ -35,11 +35,11 @@ public class TestStockSystemWebService {
 //		IndividualisedProductItem testprod = products.get(0);
 //
 //		// obtain the poss where the first product is available
-//		List<Integer> poss = serviceProxy.getPointsOfSale(testprod);
+//		List<Long> poss = serviceProxy.getPointsOfSale(testprod);
 //		assertTrue("selected product is associated with at least one point of sale", poss.size() > 0);
 //
 //		// we are using the first pos for the tests...
-//		int testpos = poss.get(0);
+//		long testpos = poss.get(0);
 //
 //		// obtain the local and total units
 //		int unitsAtPos = serviceProxy.getUnitsOnStock(testprod, testpos);
