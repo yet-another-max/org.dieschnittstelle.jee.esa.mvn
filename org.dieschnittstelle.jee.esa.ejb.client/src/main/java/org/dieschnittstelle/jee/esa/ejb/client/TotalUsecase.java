@@ -16,7 +16,8 @@ import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.StockSystemClient;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.TouchpointAccessClient;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingBusinessDelegate;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSession;
-import org.dieschnittstelle.jee.esa.utils.Utils;
+
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class TotalUsecase {
 
@@ -150,7 +151,7 @@ public class TotalUsecase {
 					session.addProduct(Constants.CAMPAIGN_1, 1);
 					session.addProduct(Constants.CAMPAIGN_2, 2);
 
-					if (this.stepping) Utils.step();
+					if (this.stepping) step();
 
 					// now try to commit the session
 					session.purchase();
@@ -160,7 +161,7 @@ public class TotalUsecase {
 					// need it to interrupt shopping in TotalUsecase
 					throw new RuntimeException(e);
 				}
-				if (this.stepping) Utils.step();
+				if (this.stepping) step();
 			}
 		} catch (Exception e) {
 			logger.error("got exception during shopping: " + e, e);

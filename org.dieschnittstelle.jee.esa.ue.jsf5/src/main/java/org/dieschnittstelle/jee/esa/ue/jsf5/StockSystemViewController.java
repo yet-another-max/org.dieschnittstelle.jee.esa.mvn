@@ -17,6 +17,9 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 import org.dieschnittstelle.jee.esa.entities.erp.StockItem;
 import org.apache.log4j.Logger;
+
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 // declare a stocksystem local interface
 
 /* declare the class as named component using CDI annotations */  
