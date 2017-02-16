@@ -10,6 +10,8 @@ import org.dieschnittstelle.jee.esa.jws.Address;
 import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebService;
 import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebServiceSOAP;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 public class ShowTouchpointSOAPService {
 
 	protected static Logger logger = Logger
@@ -89,7 +91,7 @@ public class ShowTouchpointSOAPService {
 			 * UE JWS3: add a call to the update method of the web service, passing tp
 			 */
 			
-			System.err.println("TestTouchpointSOAPService: done.\n");
+			show("TestTouchpointSOAPService: done.\n");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

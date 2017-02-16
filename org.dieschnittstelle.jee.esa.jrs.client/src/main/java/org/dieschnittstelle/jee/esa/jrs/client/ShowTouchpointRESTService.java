@@ -11,6 +11,8 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 public class ShowTouchpointRESTService {
 
 	protected static Logger logger = Logger
@@ -87,7 +89,7 @@ public class ShowTouchpointRESTService {
 		 */
 		logger.info("renamed touchpoint with id " + tp.getId() + " to " + tp.getName());
 
-		System.err.println("TestTouchpointRESTService: done.\n");
+		show("TestTouchpointRESTService: done.\n");
 
 	}
 

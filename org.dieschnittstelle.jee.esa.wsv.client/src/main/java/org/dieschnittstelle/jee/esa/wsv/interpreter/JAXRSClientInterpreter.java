@@ -28,6 +28,9 @@ import org.apache.http.util.EntityUtils;
 
 import org.dieschnittstelle.jee.esa.wsv.interpreter.json.JSONObjectSerialiser;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
+
 /*
  * TODO: implement this class such that the crud operations declared on ITouchpointCRUDService in .esa.wsv can be successfully called from the class AccessRESTServiceWithInterpreter in the .esa.wsv.client project
  */
@@ -141,11 +144,5 @@ public class JAXRSClientInterpreter implements InvocationHandler {
             throw new RuntimeException("Got unexpected status from server: " + response.getStatusLine());
         }
     }
-
-    // instead of the logger, you can also use the show() method for creating console output
-    public static void show(Object content) {
-        System.err.println(content + "\n");
-    }
-
 
 }

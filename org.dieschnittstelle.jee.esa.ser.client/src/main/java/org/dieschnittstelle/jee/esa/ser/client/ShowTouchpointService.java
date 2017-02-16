@@ -79,7 +79,7 @@ public class ShowTouchpointService {
 
 		createNewTouchpoint(tp);
 
-		System.err.println("TestTouchpointService: done.\n");
+		show("TestTouchpointService: done.\n");
 	}
 
 	/**

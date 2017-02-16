@@ -57,11 +57,11 @@ public class ReflectedStockItemBuilder implements IStockItemBuilder {
 			IStockItem instance = (IStockItem) klass.newInstance();
 
 //			for (Field field : klass.getDeclaredFields()) {
-//				System.err.println("found field: " + field.getClass() + " of name " + field.getName());
+//				show("found field: " + field.getClass() + " of name " + field.getName());
 //			}
 //			
 //			for (Method method : klass.getDeclaredMethods()) {
-//				System.err.println("found method: " + method.getClass() + " of name " + method.getName());
+//				show("found method: " + method.getClass() + " of name " + method.getName());
 //			}
 						
 			instance.initialise(Integer.parseInt(instanceAttributes.get("units")),

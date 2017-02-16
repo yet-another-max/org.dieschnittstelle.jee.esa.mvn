@@ -10,6 +10,8 @@ import org.dieschnittstelle.jee.esa.wsv.client.service.ITouchpointCRUDService;
 
 import org.dieschnittstelle.jee.esa.wsv.interpreter.JAXRSClientInterpreter;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 public class AccessRESTServiceWithInterpreter {
 
     protected static Logger logger = Logger
@@ -77,10 +79,6 @@ public class AccessRESTServiceWithInterpreter {
 //		tp = serviceClient.updateTouchpoint(tp.getId(), tp);
 //		show("updated: " + tp);
 
-    }
-
-    public static void show(Object content) {
-        System.err.println(content + "\n");
     }
 
     public static void step() {

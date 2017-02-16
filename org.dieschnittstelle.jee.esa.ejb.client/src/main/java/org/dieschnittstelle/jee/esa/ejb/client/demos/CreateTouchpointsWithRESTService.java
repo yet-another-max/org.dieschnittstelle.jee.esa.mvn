@@ -7,6 +7,8 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 import org.dieschnittstelle.jee.esa.ejb.client.restclient.ITouchpointAccessRESTService;
 
 public class CreateTouchpointsWithRESTService {
@@ -66,7 +68,7 @@ public class CreateTouchpointsWithRESTService {
 
 		logger.info("created touchpoint: " + tp2);
 		
-		System.err.println("CreateTouchpointsWithRESTService: done.\n");
+		show("CreateTouchpointsWithRESTService: done.\n");
 	}
 
 }

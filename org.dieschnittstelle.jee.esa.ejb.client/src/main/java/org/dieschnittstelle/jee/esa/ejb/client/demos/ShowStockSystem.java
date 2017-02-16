@@ -11,6 +11,8 @@ import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.ProductCRUDClient;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.StockSystemClient;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.TouchpointAccessClient;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 public class ShowStockSystem {
 
 	protected static Logger logger = Logger.getLogger(ShowStockSystem.class);
@@ -96,10 +98,6 @@ public class ShowStockSystem {
 //				TOUCHPOINT_2.getErpPointOfSaleId(), 100);
 
 		System.out.println("\n***************** created stock\n");
-	}
-
-	public static void show(Object content) {
-		System.err.println(content + "\n");
 	}
 
 }
