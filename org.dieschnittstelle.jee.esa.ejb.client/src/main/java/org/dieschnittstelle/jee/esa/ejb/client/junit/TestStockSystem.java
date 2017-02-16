@@ -33,8 +33,8 @@ public class TestStockSystem {
 		productCRUDClient.createProduct(PRODUCT_1);
 		productCRUDClient.createProduct(PRODUCT_2);
 		
-		touchpointCRUDClient.createTouchpoint(TOUCHPOINT_1);
-		touchpointCRUDClient.createTouchpoint(TOUCHPOINT_2);
+		touchpointCRUDClient.createTouchpointAndPointOfSale(TOUCHPOINT_1);
+		touchpointCRUDClient.createTouchpointAndPointOfSale(TOUCHPOINT_2);
 	}
 	
 	@Test 

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
@@ -24,8 +25,8 @@ public class TouchpointAccessClient implements TouchpointAccessRemote {
 	}
 
 	@Override
-	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint) {
-		AbstractTouchpoint created = ejbProxy.createTouchpoint(touchpoint);
+	public AbstractTouchpoint createTouchpointAndPointOfSale(AbstractTouchpoint touchpoint) throws ShoppingException {
+		AbstractTouchpoint created = ejbProxy.createTouchpointAndPointOfSale(touchpoint);
 		touchpoint.setId(created.getId());
 		touchpoint.setErpPointOfSaleId(created.getErpPointOfSaleId());
 		

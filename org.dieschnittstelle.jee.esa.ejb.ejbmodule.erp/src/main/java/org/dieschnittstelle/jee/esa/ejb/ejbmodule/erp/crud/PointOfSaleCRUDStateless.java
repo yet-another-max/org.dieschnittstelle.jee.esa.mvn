@@ -19,7 +19,7 @@ public class PointOfSaleCRUDStateless implements PointOfSaleCRUDRemote, PointOfS
 
 	protected static Logger logger = Logger.getLogger(PointOfSaleCRUDStateless.class);
 	
-	@PersistenceContext(unitName = "crm_erp_PU")
+	@PersistenceContext(unitName = "erp_PU")
 	private EntityManager em;
 	
 	/*

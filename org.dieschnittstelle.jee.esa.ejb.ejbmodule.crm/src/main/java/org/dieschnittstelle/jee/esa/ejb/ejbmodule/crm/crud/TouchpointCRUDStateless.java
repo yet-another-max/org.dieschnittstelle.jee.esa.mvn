@@ -18,7 +18,7 @@ public class TouchpointCRUDStateless implements TouchpointCRUDRemote,
 	protected static Logger logger = Logger
 			.getLogger(TouchpointCRUDStateless.class);
 
-	@PersistenceContext(unitName = "crm_erp_PU")
+	@PersistenceContext(unitName = "crm_PU")
 	private EntityManager em;
 
 	/*
@@ -26,7 +26,7 @@ public class TouchpointCRUDStateless implements TouchpointCRUDRemote,
 	 */
 	@Override
 	//@TransactionAttribute(TransactionAttributeType.MANDATORY)
-	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint) {
+	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint) throws ShoppingException {
 
 		/*
 		 * UE ADD1: swap true/false

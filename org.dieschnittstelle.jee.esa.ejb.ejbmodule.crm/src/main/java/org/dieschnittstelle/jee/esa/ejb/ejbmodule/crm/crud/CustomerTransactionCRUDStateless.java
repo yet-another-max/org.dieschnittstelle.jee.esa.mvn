@@ -20,7 +20,7 @@ public class CustomerTransactionCRUDStateless implements
 	protected static Logger logger = Logger
 			.getLogger(CustomerTransactionCRUDStateless.class);
 
-	@PersistenceContext(unitName = "crm_erp_PU")
+	@PersistenceContext(unitName = "crm_PU")
 	private EntityManager em;
 
 	@Override

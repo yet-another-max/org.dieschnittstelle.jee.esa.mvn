@@ -22,7 +22,7 @@ import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 public interface TouchpointAccessRemote {
 
 	@POST
-	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint);
+	public AbstractTouchpoint createTouchpointAndPointOfSale(AbstractTouchpoint touchpoint) throws ShoppingException;
 
 	@GET
 	public List<AbstractTouchpoint> readAllTouchpoints();

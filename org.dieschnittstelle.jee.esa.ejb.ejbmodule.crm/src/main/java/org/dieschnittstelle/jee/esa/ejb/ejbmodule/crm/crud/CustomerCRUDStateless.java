@@ -12,7 +12,7 @@ public class CustomerCRUDStateless implements CustomerCRUDRemote, CustomerCRUDLo
 
 	protected static Logger logger = Logger.getLogger(CustomerCRUDStateless.class);
 	
-	@PersistenceContext(unitName = "crm_erp_PU")
+	@PersistenceContext(unitName = "crm_PU")
 	private EntityManager em;
 	
 	@Override

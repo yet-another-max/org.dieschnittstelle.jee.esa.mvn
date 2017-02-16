@@ -9,7 +9,7 @@ import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 @Local
 public interface TouchpointAccessLocal {
 
-	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint);
+	public AbstractTouchpoint createTouchpointAndPointOfSale(AbstractTouchpoint touchpoint) throws ShoppingException;
 
 	public List<AbstractTouchpoint> readAllTouchpoints();
 	

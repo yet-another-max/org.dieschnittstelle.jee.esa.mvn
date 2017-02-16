@@ -5,6 +5,7 @@ import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
@@ -87,10 +88,15 @@ public class TotalUsecase {
 
 	public void createTouchpoints() {
 		// create touchpoints
-		touchpointAccess.createTouchpoint(TOUCHPOINT_1);
-		touchpointAccess.createTouchpoint(TOUCHPOINT_2);
+		try {
+			touchpointAccess.createTouchpointAndPointOfSale(TOUCHPOINT_1);
+			touchpointAccess.createTouchpointAndPointOfSale(TOUCHPOINT_2);
 
-		System.out.println("\n***************** created touchpoints\n");
+			System.out.println("\n***************** created touchpoints\n");
+		}
+		catch (ShoppingException e) {
+			throw new RuntimeException("createTouchpoints(): got exception " + e,e);
+		}
 	}
 
 	public void createStock() {
