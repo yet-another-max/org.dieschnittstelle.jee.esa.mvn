@@ -10,7 +10,7 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 
 public class ProductCRUDSOAPClient {
 
-//	private ProductCRUDWebService proxy;
+//	private ProductCRUDWebService serviceProxy;
 //
 //	protected static Logger logger = Logger.getLogger(ProductCRUDSOAPClient.class);
 //
@@ -21,30 +21,30 @@ public class ProductCRUDSOAPClient {
 //		 * create a client for the web service using ResteasyClientBuilder and ResteasyWebTarget
 //       * DO NOT FORGET TO SPECIFY THE WSDL URL IN THE pom.xml FILE OF THE JWS PROJECT (search for TODO)
 //		 */
-//		proxy = null;
+//		serviceProxy = null;
 //	}
 //
 //	public AbstractProduct createProduct(IndividualisedProductItem prod) {
-//		AbstractProduct created = proxy.createProduct(prod);
+//		AbstractProduct created = serviceProxy.createProduct(prod);
 //		// as a side-effect we set the id of the created product on the argument before returning
 //		prod.setId(created.getId());
 //		return created;
 //	}
 //
 //	public List<?> readAllProducts() {
-//		return proxy.readAllProducts();
+//		return serviceProxy.readAllProducts();
 //	}
 //
 //	public AbstractProduct updateProduct(AbstractProduct update) {
-//		return proxy.updateProduct(update);
+//		return serviceProxy.updateProduct(update);
 //	}
 //
 //	public boolean deleteProduct(long id) {
-//		return proxy.deleteProduct(id);
+//		return serviceProxy.deleteProduct(id);
 //	}
 //
 //	public AbstractProduct readProduct(long id) {
-//		return proxy.readProduct(id);
+//		return serviceProxy.readProduct(id);
 //	}
 
 }

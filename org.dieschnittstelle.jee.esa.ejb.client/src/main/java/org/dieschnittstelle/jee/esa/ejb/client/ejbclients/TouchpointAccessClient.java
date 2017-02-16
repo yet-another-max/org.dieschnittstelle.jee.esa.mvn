@@ -11,21 +11,21 @@ import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class TouchpointAccessClient implements TouchpointAccessRemote {
 	
-	private TouchpointAccessRemote touchpointAccessProxy;
+	private TouchpointAccessRemote ejbProxy;
 	
 	public TouchpointAccessClient() throws Exception {
 		Context context = new InitialContext();
-		this.touchpointAccessProxy = (TouchpointAccessRemote) context.lookup(Constants.TOUCHPOINT_ACCESS_BEAN);
+		this.ejbProxy = (TouchpointAccessRemote) context.lookup(Constants.TOUCHPOINT_ACCESS_BEAN);
 	}
 	
 	
 	public List<AbstractTouchpoint> readAllTouchpoints() {
-		return touchpointAccessProxy.readAllTouchpoints();
+		return ejbProxy.readAllTouchpoints();
 	}
 
 	@Override
 	public AbstractTouchpoint createTouchpoint(AbstractTouchpoint touchpoint) {
-		AbstractTouchpoint created = touchpointAccessProxy.createTouchpoint(touchpoint);
+		AbstractTouchpoint created = ejbProxy.createTouchpoint(touchpoint);
 		touchpoint.setId(created.getId());
 		touchpoint.setErpPointOfSaleId(created.getErpPointOfSaleId());
 		

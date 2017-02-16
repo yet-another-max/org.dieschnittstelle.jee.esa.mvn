@@ -11,22 +11,22 @@ import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class CustomerTrackingClient implements CustomerTrackingRemote {
 
-	private CustomerTrackingRemote proxy;
+	private CustomerTrackingRemote ejbProxy;
 	
 	public CustomerTrackingClient() throws Exception {
 		Context context = new InitialContext();
-		proxy = (CustomerTrackingRemote) context
+		ejbProxy = (CustomerTrackingRemote) context
 				.lookup(Constants.CUSTOMER_TRACKING_BEAN);
 	}
 	
 	@Override
 	public void createTransaction(CustomerTransaction transaction) {
-		proxy.createTransaction(transaction);
+		ejbProxy.createTransaction(transaction);
 	}
 
 	@Override
 	public List<CustomerTransaction> readAllTransactions() {
-		return proxy.readAllTransactions();
+		return ejbProxy.readAllTransactions();
 	}
 
 }

@@ -16,42 +16,42 @@ import java.util.List;
  */
 public class TestStockSystemWebService {
 	
-//	private StockSystemRemote serviceClient;
+//	private StockSystemRemote serviceProxy;
 //
 //
 //	@Before
 //	public void prepareContext() {
-//		// TODO instantiate the serviceClient by instantiating the generated web service class and getting the port for StockSystemRemote
-//		serviceClient = null;
+//		// TODO instantiate the serviceProxy by instantiating the generated web service class and getting the port for StockSystemRemote
+//		serviceProxy = null;
 //	}
 //
 //	@Test
 //	public void stockSystemServiceWorks() {
 //		// read out all products
-//		List<IndividualisedProductItem> products = serviceClient.getAllProductsOnStock();
+//		List<IndividualisedProductItem> products = serviceProxy.getAllProductsOnStock();
 //		assertTrue("stock exists and can be read", products.size() > 0);
 //
 //		// we are using the first product for the tests...
 //		IndividualisedProductItem testprod = products.get(0);
 //
 //		// obtain the poss where the first product is available
-//		List<Integer> poss = serviceClient.getPointsOfSale(testprod);
+//		List<Integer> poss = serviceProxy.getPointsOfSale(testprod);
 //		assertTrue("selected product is associated with at least one point of sale", poss.size() > 0);
 //
 //		// we are using the first pos for the tests...
 //		int testpos = poss.get(0);
 //
 //		// obtain the local and total units
-//		int unitsAtPos = serviceClient.getUnitsOnStock(testprod, testpos);
-//		int unitsTotal = serviceClient.getTotalUnitsOnStock(testprod);
+//		int unitsAtPos = serviceProxy.getUnitsOnStock(testprod, testpos);
+//		int unitsTotal = serviceProxy.getTotalUnitsOnStock(testprod);
 //
 //		// add units for the first pos
 //		int unitsToAdd = 5;
-//		serviceClient.addToStock(testprod, testpos, unitsToAdd);
+//		serviceProxy.addToStock(testprod, testpos, unitsToAdd);
 //
 //		// compare the final units
-//		assertEquals("after adding units, units at pos correctly incremented", unitsAtPos + unitsToAdd, serviceClient.getUnitsOnStock(testprod, testpos));
-//		assertEquals("after adding units, total units correctly incremented", unitsTotal + unitsToAdd, serviceClient.getTotalUnitsOnStock(testprod));
+//		assertEquals("after adding units, units at pos correctly incremented", unitsAtPos + unitsToAdd, serviceProxy.getUnitsOnStock(testprod, testpos));
+//		assertEquals("after adding units, total units correctly incremented", unitsTotal + unitsToAdd, serviceProxy.getTotalUnitsOnStock(testprod));
 //
 //
 //	}

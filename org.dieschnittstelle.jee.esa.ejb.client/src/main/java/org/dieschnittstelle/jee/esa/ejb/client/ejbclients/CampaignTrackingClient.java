@@ -12,34 +12,34 @@ import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class CampaignTrackingClient implements CampaignTrackingRemote {
 
-	private CampaignTrackingRemote proxy;
+	private CampaignTrackingRemote ejbProxy;
 	
 	public CampaignTrackingClient() throws Exception {
 		Context context = new InitialContext();
-		proxy = (CampaignTrackingRemote) context
+		ejbProxy = (CampaignTrackingRemote) context
 				.lookup(Constants.CAMPAIGN_TRACKING_BEAN);
 	}
 	
 	@Override
 	public void addCampaignExecution(CampaignExecution campaign) {
-		proxy.addCampaignExecution(campaign);
+		ejbProxy.addCampaignExecution(campaign);
 	}
 
 	@Override
 	public int existsValidCampaignExecutionAtTouchpoint(long erpProductId,
 			AbstractTouchpoint tp) {
-		return proxy.existsValidCampaignExecutionAtTouchpoint(erpProductId, tp);
+		return ejbProxy.existsValidCampaignExecutionAtTouchpoint(erpProductId, tp);
 	}
 
 	@Override
 	public void purchaseCampaignAtTouchpoint(long erpProductId,
 			AbstractTouchpoint tp, int units) {
-		proxy.purchaseCampaignAtTouchpoint(erpProductId, tp, units);
+		ejbProxy.purchaseCampaignAtTouchpoint(erpProductId, tp, units);
 	}
 
 	@Override
 	public List<CampaignExecution> getAllCampaignExecutions() {
-		return proxy.getAllCampaignExecutions();
+		return ejbProxy.getAllCampaignExecutions();
 	}
 
 }

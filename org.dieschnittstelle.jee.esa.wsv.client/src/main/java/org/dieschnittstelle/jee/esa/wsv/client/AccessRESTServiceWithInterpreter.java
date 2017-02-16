@@ -31,14 +31,14 @@ public class AccessRESTServiceWithInterpreter {
 		/*
 		 * TODO: create a client for the web service using Proxy.newProxyInstance()
 		 */
-        ITouchpointCRUDService serviceClient = null;
+        ITouchpointCRUDService serviceProxy = null;
 
-        show("serviceClient: " + serviceClient);
+        show("serviceProxy: " + serviceProxy);
 
         step();
 
         // 1) read out all touchpoints
-        List<StationaryTouchpoint> tps = serviceClient.readAllTouchpoints();
+        List<StationaryTouchpoint> tps = serviceProxy.readAllTouchpoints();
         show("read all: " + tps);
 
 
@@ -47,7 +47,7 @@ public class AccessRESTServiceWithInterpreter {
 //		if (tps.size() > 0) {
 //          step();
 //			show("deleted: "
-//					+ serviceClient.deleteTouchpoint(tps.get(0).getId()));
+//					+ serviceProxy.deleteTouchpoint(tps.get(0).getId()));
 //		}
 //
 //		// 3) create a new touchpoint
@@ -57,14 +57,14 @@ public class AccessRESTServiceWithInterpreter {
                 "Berlin");
         StationaryTouchpoint tp = new StationaryTouchpoint(-1,
                 "BHT Verkaufsstand", addr);
-        tp = (StationaryTouchpoint)serviceClient.createTouchpoint(tp);
+        tp = (StationaryTouchpoint)serviceProxy.createTouchpoint(tp);
         show("created: " + tp);
 
         // TODO: comment-in the call to read() once this is handled
 //		/*
 //		 * 4) read out the new touchpoint
 //		 */
-//		show("read created: " + serviceClient.readTouchpoint(tp.getId()));
+//		show("read created: " + serviceProxy.readTouchpoint(tp.getId()));
 //
 
         // TODO: comment-in the call to update() once this is handled
@@ -76,7 +76,7 @@ public class AccessRESTServiceWithInterpreter {
 //		tp.setName("BHT Mensa");
 //
 //
-//		tp = serviceClient.updateTouchpoint(tp.getId(), tp);
+//		tp = serviceProxy.updateTouchpoint(tp.getId(), tp);
 //		show("updated: " + tp);
 
     }

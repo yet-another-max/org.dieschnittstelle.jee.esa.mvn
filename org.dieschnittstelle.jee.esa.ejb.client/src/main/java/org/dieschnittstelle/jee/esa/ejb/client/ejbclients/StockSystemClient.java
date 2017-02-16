@@ -7,54 +7,54 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
 public class StockSystemClient implements StockSystemRemote {
 
-	private StockSystemRemote proxy;
+	private StockSystemRemote ejbProxy;
 	
 	public StockSystemClient() throws Exception {
 //		Context context = new InitialContext();
 //		
-//		this.proxy = (StockSystemRemote) context
+//		this.ejbProxy = (StockSystemRemote) context
 //				.lookup("");
 	}
 	
 	
 	@Override
 	public void addToStock(IndividualisedProductItem product, long pointOfSaleId, int units) {
-		//this.proxy.addToStock(product, pointOfSaleId, units);
+		//this.ejbProxy.addToStock(product, pointOfSaleId, units);
 	}
 
 	@Override
 	public void removeFromStock(IndividualisedProductItem product, long pointOfSaleId,
 			int units) {
-		//this.proxy.removeFromStock(product, pointOfSaleId, units);
+		//this.ejbProxy.removeFromStock(product, pointOfSaleId, units);
 	}
 
 	@Override
 	public List<IndividualisedProductItem> getProductsOnStock(long pointOfSaleId) {
-		//return this.proxy.getProductsOnStock(pointOfSaleId);
+		//return this.ejbProxy.getProductsOnStock(pointOfSaleId);
 		return null;
 	}
 
 	@Override
 	public List<IndividualisedProductItem> getAllProductsOnStock() {
-		//return this.proxy.getAllProductsOnStock();
+		//return this.ejbProxy.getAllProductsOnStock();
 		return null;
 	}
 
 	@Override
 	public int getUnitsOnStock(IndividualisedProductItem product, long pointOfSaleId) {
-		//return this.proxy.getUnitsOnStock(product, pointOfSaleId);
+		//return this.ejbProxy.getUnitsOnStock(product, pointOfSaleId);
 		return 0;
 	}
 
 	@Override
 	public int getTotalUnitsOnStock(IndividualisedProductItem product) {
-		//return this.proxy.getTotalUnitsOnStock(product);
+		//return this.ejbProxy.getTotalUnitsOnStock(product);
 		return 0;
 	}
 
 	@Override
 	public List<Long> getPointsOfSale(IndividualisedProductItem product) {
-		//return this.proxy.getPointsOfSale(product);
+		//return this.ejbProxy.getPointsOfSale(product);
 		return null;
 	}
 

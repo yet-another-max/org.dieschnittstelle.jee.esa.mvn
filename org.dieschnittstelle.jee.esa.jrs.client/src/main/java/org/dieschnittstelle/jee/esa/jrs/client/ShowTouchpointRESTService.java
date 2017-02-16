@@ -30,10 +30,10 @@ public class ShowTouchpointRESTService {
 		 */
 		ResteasyClient client = new ResteasyClientBuilder().build();
 		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/api/");
-		ITouchpointCRUDService serviceClient = target.proxy(ITouchpointCRUDService.class);
+		ITouchpointCRUDService serviceProxy = target.proxy(ITouchpointCRUDService.class);
 
 		// 1) read out all touchpoints
-		List<StationaryTouchpoint> touchpoints = serviceClient.readAllTouchpoints();
+		List<StationaryTouchpoint> touchpoints = serviceProxy.readAllTouchpoints();
 		logger.info("read touchpoints: " + touchpoints);
 
 		// 2) delete the touchpoint after next console input
@@ -47,7 +47,7 @@ public class ShowTouchpointRESTService {
 			}
 
 			StationaryTouchpoint tp = touchpoints.get(0);
-			serviceClient.deleteTouchpoint(tp.getId());
+			serviceProxy.deleteTouchpoint(tp.getId());
 			logger.info("deleted touchpoint: " + tp);
 		}
 		else {
@@ -68,7 +68,7 @@ public class ShowTouchpointRESTService {
 		StationaryTouchpoint tp = new StationaryTouchpoint(-1,
 				"BHT Verkaufsstand", addr);
 
-		tp = serviceClient.createTouchpoint(tp);
+		tp = serviceProxy.createTouchpoint(tp);
 		logger.info("created touchpoint: " + tp);
 
 		/*

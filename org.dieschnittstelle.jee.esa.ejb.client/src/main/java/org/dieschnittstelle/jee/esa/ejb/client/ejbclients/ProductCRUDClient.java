@@ -8,12 +8,12 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 public class ProductCRUDClient implements ProductCRUDRemote {
 
-	private ProductCRUDRemote proxy;
+	private ProductCRUDRemote ejbProxy;
 
 	public ProductCRUDClient() throws Exception {
 		// obtain the beans using a jndi context
 //		Context context = new InitialContext();
-//		proxy = (ProductCRUDRemote) context
+//		ejbProxy = (ProductCRUDRemote) context
 //				.lookup("");
 	}
 
@@ -24,29 +24,29 @@ public class ProductCRUDClient implements ProductCRUDRemote {
 		return prod;
 
 		// JPA3: KOMMENTIEREN SIE DEN FOLGENDEN CODE EIN		
-//		AbstractProduct created = proxy.createProduct(prod);
+//		AbstractProduct created = ejbProxy.createProduct(prod);
 //		// as a side-effect we set the id of the created product on the argument before returning
 //		prod.setId(created.getId());
 //		return created;
 	}
 
 	public List<AbstractProduct> readAllProducts() {
-//		return proxy.readAllProducts();
+//		return ejbProxy.readAllProducts();
 		return null;
 	}
 
 	public AbstractProduct updateProduct(AbstractProduct update) {
-//		return proxy.updateProduct(update);
+//		return ejbProxy.updateProduct(update);
 		return null;
 	}
 
 	public AbstractProduct readProduct(long productID) {
-//		return proxy.readProduct(productID);
+//		return ejbProxy.readProduct(productID);
 		return null;
 	}
 
 	public boolean deleteProduct(long productID) {
-//		return proxy.deleteProduct(productID);
+//		return ejbProxy.deleteProduct(productID);
 		return false;
 	}
 

@@ -35,9 +35,9 @@ public class CreateTouchpointsWithRESTService {
 		ResteasyClient client = new ResteasyClientBuilder().build();
 		ResteasyWebTarget target = client.target("http://localhost:8080/org.dieschnittstelle.jee.esa.ejb.webapp/rest/");
 
-		ITouchpointAccessRESTService serviceClient = target.proxy(ITouchpointAccessRESTService.class);
+		ITouchpointAccessRESTService serviceProxy = target.proxy(ITouchpointAccessRESTService.class);
 
-		logger.info("created client: " + serviceClient);
+		logger.info("created client: " + serviceProxy);
 
 		// create the touchpoint
 		Address addr1 = new Address();
@@ -50,7 +50,7 @@ public class CreateTouchpointsWithRESTService {
 		tp.setLocation(addr1);
 
 		// invoke the creation method
-		tp = (StationaryTouchpoint) serviceClient.createNewTouchpoint(tp);
+		tp = (StationaryTouchpoint) serviceProxy.createNewTouchpoint(tp);
 
 		logger.info("created touchpoint: " + tp);
 
@@ -64,7 +64,7 @@ public class CreateTouchpointsWithRESTService {
 		tp2.setName("BHT Mensa");
 		tp2.setLocation(addr1);
 
-		tp2 = (StationaryTouchpoint) serviceClient.createNewTouchpoint(tp2);
+		tp2 = (StationaryTouchpoint) serviceProxy.createNewTouchpoint(tp2);
 
 		logger.info("created touchpoint: " + tp2);
 		

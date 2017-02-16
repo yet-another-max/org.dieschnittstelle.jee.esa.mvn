@@ -30,10 +30,10 @@ public class ShowTouchpointSOAPService {
 //			// create an instance of the client-side web service class
 //			TouchpointCRUDWebService service = new TouchpointCRUDWebService();
 //			// obtain an interface to the operations provided by the service
-//			TouchpointCRUDWebServiceSOAP serviceOperations = service.getTouchpointCRUDWebServiceSOAPPort();
+//			TouchpointCRUDWebServiceSOAP serviceProxy = service.getTouchpointCRUDWebServiceSOAPPort();
 //
 //			// 1) read out all touchpoints
-//			List<AbstractTouchpoint> touchpoints = serviceOperations
+//			List<AbstractTouchpoint> touchpoints = serviceProxy
 //					.readAllTouchpoints();
 //			logger.info("read touchpoints: " + touchpoints);
 //
@@ -49,7 +49,7 @@ public class ShowTouchpointSOAPService {
 //
 //				StationaryTouchpoint tp = (StationaryTouchpoint) touchpoints
 //						.get(0);
-//				serviceOperations.deleteTouchpoint(tp.getId());
+//				serviceProxy.deleteTouchpoint(tp.getId());
 //				logger.info("deleted touchpoint: " + tp);
 //			} else {
 //				logger.warn("no touchpoints available for deletion...");
@@ -74,7 +74,7 @@ public class ShowTouchpointSOAPService {
 //			tp.setName("BHT SOAP Store");
 //			tp.setLocation(addr);
 //
-//			tp = (StationaryTouchpoint) serviceOperations.createTouchpoint(tp);
+//			tp = (StationaryTouchpoint) serviceProxy.createTouchpoint(tp);
 //			logger.info("created touchpoint: " + tp);
 //
 //			/*

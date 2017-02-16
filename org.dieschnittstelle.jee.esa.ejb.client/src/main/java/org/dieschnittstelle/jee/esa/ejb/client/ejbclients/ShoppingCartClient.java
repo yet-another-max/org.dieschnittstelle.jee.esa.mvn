@@ -11,22 +11,22 @@ import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class ShoppingCartClient implements ShoppingCartRemote {
 
-	private ShoppingCartRemote proxy;
+	private ShoppingCartRemote ejbProxy;
 
 	public ShoppingCartClient() throws Exception {
 		Context context = new InitialContext();
-		this.proxy = (ShoppingCartRemote) context
+		this.ejbProxy = (ShoppingCartRemote) context
 				.lookup(Constants.SHOPPING_CART_BEAN);
 	}
 
 	@Override
 	public void addProductBundle(CrmProductBundle product) {
-		proxy.addProductBundle(product);
+		ejbProxy.addProductBundle(product);
 	}
 
 	@Override
 	public List<CrmProductBundle> getProductBundles() {
-		return proxy.getProductBundles();
+		return ejbProxy.getProductBundles();
 	}
 
 }

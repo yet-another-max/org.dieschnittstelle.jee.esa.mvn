@@ -11,7 +11,7 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 			.getLogger(ShoppingSessionFacadeClient.class);
 
 	/*
-	 * use the ShoppingSessionFacadeRemote interface
+	 * use a proxy for the ShoppingSessionFacadeRemote interface
 	 */
 
 	@Override
