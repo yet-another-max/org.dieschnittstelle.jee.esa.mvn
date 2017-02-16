@@ -44,8 +44,8 @@ public class Campaign extends AbstractProduct implements Serializable {
 	}
 
 	public String toString() {
-		return "{Campaign " + this.getId() + ", " + this.getName() + ", "
-				+ this.bundles + "}";
+		return "[Campaign " + this.getId() + ", " + this.getName() + ", "
+				+ this.bundles + "]";
 	}
 
 //	public boolean equals(Object other) {

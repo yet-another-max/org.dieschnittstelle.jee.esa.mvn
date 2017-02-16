@@ -53,6 +53,6 @@ public class Schokolade {
 	 * toString
 	 */
 	public String toString() {
-		return "{Milch " + this.marke + " " + this.anzahlStuecke + "}";
+		return "[Schokolade " + this.marke + " " + this.anzahlStuecke + "]";
 	}
 }

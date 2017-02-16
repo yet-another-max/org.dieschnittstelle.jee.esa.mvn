@@ -80,8 +80,8 @@ public class CrmProductBundle implements Serializable {
 	}
 
 	public String toString() {
-		return "{CrmProductBundle " + this.id + " (" + this.erpProductId + ":"
-				+ this.units + ")}";
+		return "[CrmProductBundle " + this.id + " (" + this.erpProductId + ":"
+				+ this.units + ")]";
 	}
 
 	/*

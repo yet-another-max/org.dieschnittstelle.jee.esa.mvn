@@ -49,7 +49,7 @@ public class ProductBundle implements Serializable {
 	}
 
 	public String toString() {
-		return "{" + this.product + " (" + this.units + ")}";
+		return "[ProductBundle " + this.product + " (" + this.units + ")]";
 	}
 
 	public long getId() {

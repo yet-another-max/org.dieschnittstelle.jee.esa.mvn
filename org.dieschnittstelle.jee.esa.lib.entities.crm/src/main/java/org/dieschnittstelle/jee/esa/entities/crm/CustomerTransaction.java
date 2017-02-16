@@ -117,8 +117,8 @@ public class CustomerTransaction implements Serializable {
 	}
 
 	public String toString() {
-		return "{CustomerTransaction " + this.id + " " + this.customer + " "
-				+ this.touchpoint + ", " + this.products + "}";
+		return "[CustomerTransaction " + this.id + " " + this.customer + " "
+				+ this.touchpoint + ", " + this.products + "]";
 	}
 
 	public List<CrmProductBundle> getProducts() {

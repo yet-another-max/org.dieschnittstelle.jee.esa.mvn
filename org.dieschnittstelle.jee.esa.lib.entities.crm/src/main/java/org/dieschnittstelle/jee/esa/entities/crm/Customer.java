@@ -159,9 +159,9 @@ public class Customer implements Serializable {
 	}
 
 	public String toString() {
-		return "{Customer " +  this.id + " " + this.firstName + " " + this.lastName
+		return "[Customer " +  this.id + " " + this.firstName + " " + this.lastName
 				+ " (" + this.gender + ") " + this.email + ", "
-				+ this.mobilePhoneId + ", " + this.address + "}";
+				+ this.mobilePhoneId + ", " + this.address + "]";
 	}
 	
 	public void setGender(Gender gd) {

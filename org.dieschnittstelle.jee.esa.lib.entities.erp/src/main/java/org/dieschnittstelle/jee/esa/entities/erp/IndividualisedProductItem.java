@@ -47,7 +47,7 @@ public class IndividualisedProductItem extends AbstractProduct implements Serial
 	}
 	
 	public String toString() {
-		return "{IProductItem " + this.getId() + ", " + this.getName() + ", " + this.productType + "}";
+		return "[IndividualisedProductItem " + this.getId() + ", " + this.getName() + ", " + this.productType + "]";
 	}
 	
 	public boolean equals(Object other) {

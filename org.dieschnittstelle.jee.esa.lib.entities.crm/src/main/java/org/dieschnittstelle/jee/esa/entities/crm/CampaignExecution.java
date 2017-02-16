@@ -88,7 +88,7 @@ public class CampaignExecution implements Serializable {
 	}
 
 	public String toString() {
-		return "{CampaignExecution "
+		return "[CampaignExecution "
 				+ this.erpCampaignId
 				+ " "
 				+ this.touchpoint
@@ -98,7 +98,7 @@ public class CampaignExecution implements Serializable {
 				+ this.units
 				+ ", "
 				+ (duration == -1 ? "<no time limit>" : (System.currentTimeMillis()
-						- startDate - duration)) + "}";
+						- startDate - duration)) + "]";
 	}
 
 }
