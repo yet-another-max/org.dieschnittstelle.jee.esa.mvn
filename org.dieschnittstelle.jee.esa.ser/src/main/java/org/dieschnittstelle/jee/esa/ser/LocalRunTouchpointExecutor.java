@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.MobileTouchpoint;
 
@@ -64,11 +66,5 @@ public class LocalRunTouchpointExecutor {
 		
 		return "";
 	}
-	
-	public static void show(Object content) {
-		System.err.println(content + "\n");
-	}
-	
-	
 	
 }

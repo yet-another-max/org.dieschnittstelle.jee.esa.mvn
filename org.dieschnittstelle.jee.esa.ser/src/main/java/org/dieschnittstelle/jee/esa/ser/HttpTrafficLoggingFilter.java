@@ -13,6 +13,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -36,7 +38,7 @@ public class HttpTrafficLoggingFilter implements Filter {
 	 * constructor for lifecycle logging
 	 */
 	public HttpTrafficLoggingFilter() {
-		System.err.println("HttpTrafficLoggingFilter: constructor invoked\n");		
+		show("HttpTrafficLoggingFilter: constructor invoked\n");
 	}
 	
 	@Override
@@ -47,7 +49,10 @@ public class HttpTrafficLoggingFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		System.err.println("HttpTrafficLoggingFilter: doFilter() invoked\n");
+
+		System.out.println("\n\n%%%%%%%%%%%%%%% start request processing %%%%%%%%%%%%%%%");
+
+		show("HttpTrafficLoggingFilter: doFilter() invoked\n");
 		
 		logger.info("doFilter(): " + request + ", " + response + ", " + chain);
 		
@@ -59,6 +64,8 @@ public class HttpTrafficLoggingFilter implements Filter {
 		
 		// continue filtering
 		chain.doFilter(request, response);
+
+		System.out.println("%%%%%%%%%%%%%%% request processing done %%%%%%%%%%%%%%%\n\n");
 	}
 
 	@Override

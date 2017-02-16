@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 import org.apache.log4j.Logger;
 
 public class TouchpointWebServiceServlet extends HttpServlet {
@@ -14,7 +16,7 @@ public class TouchpointWebServiceServlet extends HttpServlet {
 			.getLogger(TouchpointWebServiceServlet.class);
 
 	public TouchpointWebServiceServlet() {
-		System.err.println("TouchpointWebServiceServlet: constructor invoked\n");
+		show("TouchpointWebServiceServlet: constructor invoked\n");
 	}
 	
 	@Override

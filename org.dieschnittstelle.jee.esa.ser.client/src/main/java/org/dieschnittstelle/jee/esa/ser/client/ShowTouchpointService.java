@@ -15,6 +15,8 @@ import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 public class ShowTouchpointService {
 
 	protected static Logger logger = Logger
@@ -139,7 +141,7 @@ public class ShowTouchpointService {
 	 * @param tp
 	 */
 	public void deleteTouchpoint(AbstractTouchpoint tp) {
-		logger.info("deleteTouchpoint(): " + tp);
+		logger.info("deleteTouchpoint(): will delete: " + tp);
 
 		// once you have received a response this is necessary to be able to
 		// use the client for subsequent requests:
@@ -158,7 +160,7 @@ public class ShowTouchpointService {
 	 * @param tp
 	 */
 	public AbstractTouchpoint createNewTouchpoint(AbstractTouchpoint tp) {
-		logger.info("createNewTouchpoint(): " + tp);
+		logger.info("createNewTouchpoint(): will create: " + tp);
 
 		try {
 

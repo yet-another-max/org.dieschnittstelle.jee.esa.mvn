@@ -12,6 +12,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -25,7 +27,7 @@ public class TouchpointGUIServletFilter implements Filter {
 			.getLogger(TouchpointGUIServletFilter.class);
 
 	public TouchpointGUIServletFilter() {
-		System.err.println("TouchpointGUIServletFilter: constructor invoked\n");
+		show("TouchpointGUIServletFilter: constructor invoked\n");
 	}
 
 	
@@ -38,7 +40,7 @@ public class TouchpointGUIServletFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		System.err.println("TouchpointGUIServletFilter: doFilter() invoked\n");
+		show("TouchpointGUIServletFilter: doFilter() invoked\n");
 		
 		// check whether we have a an accept-language header that will be set by the browser but not by the apache http client.
 		// otherwise reject the request
