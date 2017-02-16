@@ -33,7 +33,7 @@ public class CreateTouchpointsWithRESTService {
 		 * not declared on the client's classes
 		 */
 		ResteasyClient client = new ResteasyClientBuilder().build();
-		ResteasyWebTarget target = client.target("http://localhost:8080/org.dieschnittstelle.jee.esa.ejb.webapp/rest/");
+		ResteasyWebTarget target = client.target("http://localhost:8080/org.dieschnittstelle.jee.esa.ejb.webapp/api/");
 
 		ITouchpointAccessRESTService serviceProxy = target.proxy(ITouchpointAccessRESTService.class);
 

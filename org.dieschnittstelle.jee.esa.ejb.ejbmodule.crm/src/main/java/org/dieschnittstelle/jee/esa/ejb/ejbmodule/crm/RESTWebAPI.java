@@ -5,12 +5,12 @@ import javax.ws.rs.core.Application;
 
 import org.apache.log4j.Logger;
 
-@ApplicationPath("/rest")
-public class CrmRESTApplication extends Application {
+@ApplicationPath("/api")
+public class RESTWebAPI extends Application {
 
-	protected static Logger logger = Logger.getLogger(CrmRESTApplication.class);
+	protected static Logger logger = Logger.getLogger(RESTWebAPI.class);
 	
-	public CrmRESTApplication() {
+	public RESTWebAPI() {
 		logger.info("<constructor>");
 	}
 	
