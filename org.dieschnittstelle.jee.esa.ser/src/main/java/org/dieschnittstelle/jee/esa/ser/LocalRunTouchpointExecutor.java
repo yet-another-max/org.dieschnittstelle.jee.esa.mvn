@@ -31,7 +31,7 @@ public class LocalRunTouchpointExecutor {
 			if ("c".equals(cmd)) {
 				AbstractTouchpoint tp = new MobileTouchpoint("01700000000");
 				tp.setName("TP" + (count++));
-				exec.createTouchpoint(tp);
+				show(exec.createTouchpoint(tp));
 			}
 			else if ("r".equals(cmd)) {
 				show(exec.readAllTouchpoints());
@@ -39,7 +39,7 @@ public class LocalRunTouchpointExecutor {
 			else if ("d".equals(cmd)) {
 				List<AbstractTouchpoint> tps = exec.readAllTouchpoints();
 				if (tps.size() > 0) {
-					exec.deleteTouchpoint(tps.get(0).getId());
+					show(exec.deleteTouchpoint(tps.get(0).getId()));
 				}				
 			}
 			else if ("s".equals(cmd)) {
