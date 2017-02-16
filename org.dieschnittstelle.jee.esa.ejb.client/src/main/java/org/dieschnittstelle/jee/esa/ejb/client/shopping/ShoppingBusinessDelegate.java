@@ -6,8 +6,6 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 public interface ShoppingBusinessDelegate {
 	
-	public void initialise();
-	
 	public void setTouchpoint(AbstractTouchpoint touchpoint);
 	
 	public void setCustomer(Customer customer);

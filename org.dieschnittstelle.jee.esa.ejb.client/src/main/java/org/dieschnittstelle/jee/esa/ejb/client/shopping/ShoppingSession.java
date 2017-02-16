@@ -41,12 +41,6 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 
 	public ShoppingSession() {
 		logger.info("<constructor>");
-	}
-
-	/**
-	 * access the beans that we need
-	 */
-	public void initialise() {
 		try {
 			this.campaignTracking = new CampaignTrackingClient();
 			this.customerTracking = new CustomerTrackingClient();

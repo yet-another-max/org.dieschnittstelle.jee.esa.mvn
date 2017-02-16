@@ -138,8 +138,6 @@ public class TotalUsecase {
 					// for PAT1, use the ShoppingSessionFacadeClient as implementation of session
 					// ShoppingBusinessDelegate session = new ShoppingSessionFacadeClient();
 					
-					session.initialise();
-
 					// add a customer and a touchpoint
 					session.setCustomer(Constants.CUSTOMER_1);
 					session.setTouchpoint(Constants.TOUCHPOINT_1);

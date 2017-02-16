@@ -14,11 +14,10 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 	 * use a proxy for the ShoppingSessionFacadeRemote interface
 	 */
 
-	@Override
-	public void initialise() {
+	public ShoppingSessionFacadeClient() {
 		/* create a jndi context */
 		
-		/* lookup the bean */
+		/* lookup the bean and instantiate the proxy */
 	}
 
 	@Override
