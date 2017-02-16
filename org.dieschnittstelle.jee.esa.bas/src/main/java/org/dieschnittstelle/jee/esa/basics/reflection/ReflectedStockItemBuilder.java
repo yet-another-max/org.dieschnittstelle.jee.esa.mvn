@@ -13,6 +13,8 @@ import org.w3c.dom.NodeList;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+
 // this builder only reads in the 
 public class ReflectedStockItemBuilder implements IStockItemBuilder {
 
