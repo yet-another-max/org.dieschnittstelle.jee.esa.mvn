@@ -28,11 +28,7 @@ public class PointOfSaleCRUDStateless implements PointOfSaleCRUDRemote, PointOfS
 	@Override
 	//@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public PointOfSale createPointOfSale(PointOfSale pos) {
-		logger.info("createPointOfSale(): before persist: " + pos);
-		
-		em.persist(pos);		
-
-		logger.info("createPointOfSale(): after persist: " + pos);
+		em.persist(pos);
 
 		return pos;
 	}
