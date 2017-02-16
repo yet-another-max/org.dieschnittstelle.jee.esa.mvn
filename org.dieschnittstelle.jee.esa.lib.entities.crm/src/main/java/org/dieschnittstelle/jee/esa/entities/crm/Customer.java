@@ -62,7 +62,11 @@ public class Customer implements Serializable {
 
 	private String email;
 
-	@ManyToOne(cascade={CascadeType.ALL})
+	/*
+	 * here, cascading has the effect that when calling merge on a transient Customer instance, which on its part
+	 * contains a transient Address instance, both instances will be persisted, see CustomerCRUDStateless
+	 */
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Address address;
 
 	@ManyToMany(mappedBy="customers")

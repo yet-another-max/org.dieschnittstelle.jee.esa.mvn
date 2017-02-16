@@ -82,14 +82,16 @@ public class Constants {
 		// CAMPAIGN_2.setId(4);
 		CAMPAIGN_2.addBundle(new ProductBundle(PRODUCT_2, 3));
 
+        // use a shared address for the two customers
+		Address addr3 = new Address("Kopernikusstrasse", "11", "10245",
+				"Berlin");
+
 		CUSTOMER_1 = new Customer("Anna", "Musterfrau", Gender.W);
-		CUSTOMER_1.setAddress(new Address("Kopernikusstrasse", "11", "10245",
-				"Berlin"));
+		CUSTOMER_1.setAddress(addr3);
 		CUSTOMER_1.setEmail("anna@example.com");
 
 		CUSTOMER_2 = new Customer("Benedikt", "Mustermann", Gender.M);
-		CUSTOMER_2.setAddress(new Address("Corinthstrasse", "44", "10245",
-				"Berlin"));
+		CUSTOMER_2.setAddress(addr3);
 		CUSTOMER_2.setEmail("bene@example.com");
 	}
 

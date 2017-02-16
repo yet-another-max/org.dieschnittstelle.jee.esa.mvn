@@ -17,7 +17,10 @@ public class CustomerCRUDStateless implements CustomerCRUDRemote, CustomerCRUDLo
 	
 	@Override
 	public Customer createCustomer(Customer customer) {
-		em.persist(customer);
+
+		// using merge rather than persist here will result in persisting the Customer instance, as well as its
+		// address value in case the latter has not been persisted yet
+		customer = em.merge(customer);
 
 		return customer;
 	}
