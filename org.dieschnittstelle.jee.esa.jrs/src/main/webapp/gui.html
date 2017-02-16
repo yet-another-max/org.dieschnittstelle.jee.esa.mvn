@@ -98,8 +98,6 @@ function callWebapp(method, requestpath, obj, onsuccess, onerror) {
 	// set the header that we only accept json content
 	xmlhttp.setRequestHeader("Accept", "application/json");
 
-	xmlhttp.setRequestHeader("Connection", "close");
-
 	// define the callback function using our own callback arguments
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {

@@ -28,19 +28,19 @@ public class HttpTrafficLoggingFilter implements Filter {
 	 * the logger
 	 */
 	protected static Logger logger = Logger.getLogger(HttpTrafficLoggingFilter.class);
-	
+
 	/**
 	 * the config passed with the init method
 	 */
 	private FilterConfig config;
-	
+
 	/**
 	 * constructor for lifecycle logging
 	 */
 	public HttpTrafficLoggingFilter() {
 		show("HttpTrafficLoggingFilter: constructor invoked\n");
 	}
-	
+
 	@Override
 	public void destroy() {
 		logger.info("destroy()");
@@ -48,20 +48,20 @@ public class HttpTrafficLoggingFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
-			FilterChain chain) throws IOException, ServletException {
+						 FilterChain chain) throws IOException, ServletException {
 
 		System.out.println("\n\n%%%%%%%%%%%%%%% start request processing %%%%%%%%%%%%%%%\n");
 
 		show("HttpTrafficLoggingFilter: doFilter() invoked\n");
-		
+
 		logger.info("doFilter(): " + request + ", " + response + ", " + chain);
-		
+
 		// obtain the servlet context
 		ServletContext sc = config.getServletContext();
-		
+
 		// log the request
 		logger.info("request is:\n" + logRequest((HttpServletRequest)request));
-		
+
 		// continue filtering
 		chain.doFilter(request, response);
 
@@ -71,20 +71,20 @@ public class HttpTrafficLoggingFilter implements Filter {
 	@Override
 	public void init(FilterConfig config) throws ServletException {
 		logger.info("init(): " + config);
-		
+
 		this.config = config;
 	}
-	
+
 	/**
 	 * static method for logging a request
-	 * 
+	 *
 	 * this also exemplifies access to the attributes, parameters and headers of
 	 * a request
 	 */
 	public static String logRequest(HttpServletRequest request) {
 		StringBuffer buf = new StringBuffer();
 
-		
+
 		// access the attributes
 		buf.append("Request Properties:");
 		buf.append("\nMethod: " + request.getMethod());
@@ -100,7 +100,7 @@ public class HttpTrafficLoggingFilter implements Filter {
 		buf.append("\nPathInfo: " + request.getPathInfo());
 		buf.append("\nRealPath: "
 				+ request.getServletContext().getRealPath(
-						request.getServletPath()));
+				request.getServletPath()));
 		buf.append("\nContentType: " + request.getContentType());
 
 		buf.append("\nParameters:");
@@ -134,5 +134,5 @@ public class HttpTrafficLoggingFilter implements Filter {
 
 		return buf.toString();
 	}
-	
+
 }
