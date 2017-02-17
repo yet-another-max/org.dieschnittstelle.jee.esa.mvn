@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
+import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSessionFacadeClient;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
@@ -32,6 +33,13 @@ public class TotalUsecase {
 	
 	// declare the session as stepping or not
 	private boolean stepping = true;
+	// allow to switch error provocation from outside via setting this attribute
+	// TODO: ADD4: set to true for testing ShoppingException, set to false for testing success-case for transactions
+	private boolean provokeErrorOnPurchase = false /*true*/;
+
+	// TODO: PAT1: set to true for testing facade
+	// TODO: ADD4: set to true for testing success-case for transactions and ShoppingException
+	private boolean useShoppingSessionFacade = false /*true*/;
 
 	// declare the attributes that will be instantiated with the ejb clients
 	private ProductCRUDClient productCRUD;
@@ -47,10 +55,16 @@ public class TotalUsecase {
 	
 	public void runAll() {
 
+		System.out.println("\n%%%%%%%%%%%% TotalUsecase: " + (this.provokeErrorOnPurchase ? "ShoppingException will be provoked (ADD4)" : "will run regularly") + ", " + (this.useShoppingSessionFacade ? "remote ShoppingSessionFacade will be used (PAT)" : "will use local ShoppingSession implementation") + " %%%%%%%%%%%\n\n");
+
+		step();
+
 		try {
 			createProducts();
 			createTouchpoints();
-			createStock();
+
+			createStock(this.provokeErrorOnPurchase);
+
 			prepareCampaigns();
 			createCustomers();
 
@@ -97,16 +111,20 @@ public class TotalUsecase {
 		}
 	}
 
-	public void createStock() {
+	// in order to verify the usage of shopping exception in ADD4 this method can be called with provokeError
+	// being set to true
+	public void createStock(boolean provokeError) {
+		int units = provokeError ? 5 : 100;
+
 		// create stock
 		stockSystem.addToStock(PRODUCT_1,
-				TOUCHPOINT_1.getErpPointOfSaleId(), 100);
+				TOUCHPOINT_1.getErpPointOfSaleId(), units);
 		stockSystem.addToStock(PRODUCT_1,
-				TOUCHPOINT_2.getErpPointOfSaleId(), 100);
+				TOUCHPOINT_2.getErpPointOfSaleId(), units);
 		stockSystem.addToStock(PRODUCT_2,
-				TOUCHPOINT_1.getErpPointOfSaleId(), 100);
+				TOUCHPOINT_1.getErpPointOfSaleId(), units);
 		stockSystem.addToStock(PRODUCT_2,
-				TOUCHPOINT_2.getErpPointOfSaleId(), 100);
+				TOUCHPOINT_2.getErpPointOfSaleId(), units);
 
 		System.out.println("\n***************** created stock\n");
 	}
@@ -138,9 +156,15 @@ public class TotalUsecase {
 				try {
 					// create a shopping session and initialise it such that
 					// it can access the required beans
-					ShoppingBusinessDelegate session = new ShoppingSession();
-					// for PAT1, use the ShoppingSessionFacadeClient as implementation of session
-					// ShoppingBusinessDelegate session = new ShoppingSessionFacadeClient();
+					ShoppingBusinessDelegate session;
+
+					if (!useShoppingSessionFacade) {
+						session = new ShoppingSession();
+					}
+					else {
+						// for PAT1: use the ShoppingSessionFacadeClient as implementation of the business delegate
+						session = new ShoppingSessionFacadeClient();
+					}
 					
 					// add a customer and a touchpoint
 					session.setCustomer(Constants.CUSTOMER_1);
@@ -198,5 +222,14 @@ public class TotalUsecase {
 	public void setStepping(boolean stepping) {
 		this.stepping = stepping;
 	}
+
+	public void setProvokeErrorOnPurchase(boolean provoke) {
+		this.provokeErrorOnPurchase = provoke;
+	}
+
+	public void setUseShoppingSessionFacade(boolean use) {
+		this.useShoppingSessionFacade = use;
+	}
+
 
 }
