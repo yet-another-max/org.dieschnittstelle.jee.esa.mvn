@@ -5,9 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.PostActivate;
-import javax.ejb.PrePassivate;
-import javax.ejb.Stateful;
+import javax.ejb.*;
 
 
 import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
@@ -49,23 +47,29 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 
 		return this.productBundles;
 	}
-	
+
+	// lifecycle logging: jboss complains about usage of default transaction attribute (REQUIRED), hence we explicitly set allowed values
+
 	@PostConstruct
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public void beginn() {
 		logger.info("@PostConstruct");
 	}
 
 	@PreDestroy
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public void abschluss() {
 		logger.info("@PreDestroy");
 	}
 
 	@PrePassivate
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public void passiviere() {
 		logger.info("@PrePassivate");
 	}
 
 	@PostActivate
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public void aktiviere() {
 		logger.info("@PostActivate");
 	}

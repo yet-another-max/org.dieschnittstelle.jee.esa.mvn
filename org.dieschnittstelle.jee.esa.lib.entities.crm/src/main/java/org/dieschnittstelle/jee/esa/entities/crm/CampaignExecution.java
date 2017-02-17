@@ -1,5 +1,7 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 
 /**
@@ -23,34 +25,14 @@ public class CampaignExecution implements Serializable {
 
 	private long duration;
 
-	public AbstractTouchpoint getTouchpoint() {
-		return touchpoint;
-	}
-
-	public long getErpCampaignId() {
-		return erpCampaignId;
-	}
-
-	public int getUnits() {
-		return units;
-	}
-
-	public long getStartDate() {
-		return startDate;
-	}
-
-	public long getDuration() {
-		return duration;
-	}
-
-	public int getUnitsLeft() {
-		return unitsLeft;
-	}
-
 	/**
 	 * track the units that are left for this execution
 	 */
 	private int unitsLeft;
+
+	public CampaignExecution() {
+
+	}
 
 	public CampaignExecution(AbstractTouchpoint touchpoint, long erpCampaignId,
 			int units, long duration) {
@@ -82,6 +64,7 @@ public class CampaignExecution implements Serializable {
 	/**
 	 * check whether the execution is valid
 	 */
+	@JsonIgnore
 	public boolean isValid() {
 		return this.unitsLeft > 0
 				&& (duration == -1 || (System.currentTimeMillis() - startDate <= duration));
@@ -99,6 +82,54 @@ public class CampaignExecution implements Serializable {
 				+ ", "
 				+ (duration == -1 ? "<no time limit>" : (System.currentTimeMillis()
 						- startDate - duration)) + "]";
+	}
+
+	public void setTouchpoint(AbstractTouchpoint touchpoint) {
+		this.touchpoint = touchpoint;
+	}
+
+	public void setErpCampaignId(long erpCampaignId) {
+		this.erpCampaignId = erpCampaignId;
+	}
+
+	public void setUnits(int units) {
+		this.units = units;
+	}
+
+	public void setStartDate(long startDate) {
+		this.startDate = startDate;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	public void setUnitsLeft(int unitsLeft) {
+		this.unitsLeft = unitsLeft;
+	}
+
+	public AbstractTouchpoint getTouchpoint() {
+		return touchpoint;
+	}
+
+	public long getErpCampaignId() {
+		return erpCampaignId;
+	}
+
+	public int getUnits() {
+		return units;
+	}
+
+	public long getStartDate() {
+		return startDate;
+	}
+
+	public long getDuration() {
+		return duration;
+	}
+
+	public int getUnitsLeft() {
+		return unitsLeft;
 	}
 
 }

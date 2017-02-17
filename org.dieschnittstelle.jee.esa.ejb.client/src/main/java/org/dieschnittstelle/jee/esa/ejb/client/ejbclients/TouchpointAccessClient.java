@@ -15,8 +15,7 @@ public class TouchpointAccessClient implements TouchpointAccessRemote {
 	private TouchpointAccessRemote ejbProxy;
 	
 	public TouchpointAccessClient() throws Exception {
-		Context context = new InitialContext();
-		this.ejbProxy = (TouchpointAccessRemote) context.lookup(Constants.TOUCHPOINT_ACCESS_BEAN);
+		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(TouchpointAccessRemote.class,Constants.TOUCHPOINT_ACCESS_BEAN);
 	}
 	
 	

@@ -30,6 +30,11 @@ public class Constants {
 	public static final String STOCK_SYSTEM_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.StockSystemRemote";
 
 	/*
+	 * the base url of the web api
+	 */
+	public static final String WEB_API_BASE_URL = "http://localhost:8080/org.dieschnittstelle.jee.esa.ejb.webapp/api/";
+
+	/*
 	 * constants for the objects that are dealt with in the different accessors
 	 * to the beans
 	 */

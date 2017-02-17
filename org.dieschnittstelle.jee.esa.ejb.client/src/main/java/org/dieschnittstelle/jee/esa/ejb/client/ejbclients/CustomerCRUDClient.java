@@ -12,10 +12,7 @@ public class CustomerCRUDClient implements CustomerCRUDRemote {
 	private CustomerCRUDRemote ejbProxy;
 
 	public CustomerCRUDClient() throws Exception {
-		Context context = new InitialContext();
-
-		ejbProxy = (CustomerCRUDRemote) context
-				.lookup(Constants.CUSTOMER_CRUD_BEAN);
+		ejbProxy = EJBProxyFactory.getInstance().getProxy(CustomerCRUDRemote.class,Constants.CUSTOMER_CRUD_BEAN);
 	}
 
 	@Override

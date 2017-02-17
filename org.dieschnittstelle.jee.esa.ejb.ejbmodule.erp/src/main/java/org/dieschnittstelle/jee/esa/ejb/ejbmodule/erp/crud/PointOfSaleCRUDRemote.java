@@ -1,15 +1,26 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud;
 
 import javax.ejb.Remote;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 
 @Remote
+@Path("/pointsOfSale")
+@Produces({MediaType.APPLICATION_JSON})
+@Consumes({MediaType.APPLICATION_JSON})
 public interface PointOfSaleCRUDRemote {
 
+	@POST
 	public PointOfSale createPointOfSale(PointOfSale pos);
 
-	public PointOfSale readPointOfSale(long posId);
+	@GET
+	@Path("/{posId}")
+	public PointOfSale readPointOfSale(@PathParam("posId") long posId);
 
-	public boolean deletePointOfSale(long posId);
+	@DELETE
+	@Path("/{posId}")
+	public boolean deletePointOfSale(@PathParam("posId") long posId);
 
 }

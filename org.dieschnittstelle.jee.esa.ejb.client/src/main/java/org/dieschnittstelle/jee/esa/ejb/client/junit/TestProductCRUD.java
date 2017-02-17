@@ -5,6 +5,7 @@ import java.util.List;
 import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
+import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.ProductCRUDClient;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.Campaign;
@@ -20,6 +21,8 @@ public class TestProductCRUD {
 
 	@Before
 	public void prepareContext() throws Exception {
+		EJBProxyFactory.initialise();
+
 		client = new ProductCRUDClient();
 		Constants.resetEntities();
 	}

@@ -11,10 +11,8 @@ public class ProductCRUDClient implements ProductCRUDRemote {
 	private ProductCRUDRemote ejbProxy;
 
 	public ProductCRUDClient() throws Exception {
-		// obtain the beans using a jndi context
-//		Context context = new InitialContext();
-//		ejbProxy = (ProductCRUDRemote) context
-//				.lookup("");
+		// obtain a proxy specifying the ejb interface and uri
+//		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(null,"");
 	}
 
 	public AbstractProduct createProduct(AbstractProduct prod) {

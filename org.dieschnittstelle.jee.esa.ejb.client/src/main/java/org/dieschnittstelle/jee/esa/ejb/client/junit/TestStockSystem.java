@@ -5,6 +5,7 @@ import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 import java.util.List;
 
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
+import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.ProductCRUDClient;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.StockSystemClient;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.TouchpointAccessClient;
@@ -23,6 +24,8 @@ public class TestStockSystem {
 	
 	@Before
 	public void prepareContext() throws Exception {
+		EJBProxyFactory.initialise();
+
 		// we reset the ids on the local entities
 		Constants.resetEntities();	
 		// initialise the clients

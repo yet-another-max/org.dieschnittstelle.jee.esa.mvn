@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
@@ -37,7 +39,7 @@ public class CustomerTrackingStateless implements CustomerTrackingRemote {
 		
 		customerTransactionCRUD.createTransaction(transaction);
 	}
-	
+
 	public List<CustomerTransaction> readAllTransactions() {
 		//return transactions;
 		return new ArrayList<CustomerTransaction>();

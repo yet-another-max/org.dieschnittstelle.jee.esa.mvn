@@ -120,16 +120,21 @@ public class StockSystemHelper {
 
 	public void createTouchpoints() {
 		// create touchpoints
-		AbstractTouchpoint tp1 = touchpointAccess
-				.createTouchpoint(TOUCHPOINT_1);
-		TOUCHPOINT_1.setId(tp1.getId());
-		TOUCHPOINT_1.setErpPointOfSaleId(tp1.getErpPointOfSaleId());
-		AbstractTouchpoint tp2 = touchpointAccess
-				.createTouchpoint(TOUCHPOINT_2);
-		TOUCHPOINT_2.setId(tp2.getId());
-		TOUCHPOINT_2.setErpPointOfSaleId(tp2.getErpPointOfSaleId());
+		try {
+			AbstractTouchpoint tp1 = touchpointAccess
+					.createTouchpointAndPointOfSale(TOUCHPOINT_1);
+			TOUCHPOINT_1.setId(tp1.getId());
+			TOUCHPOINT_1.setErpPointOfSaleId(tp1.getErpPointOfSaleId());
+			AbstractTouchpoint tp2 = touchpointAccess
+					.createTouchpointAndPointOfSale(TOUCHPOINT_2);
+			TOUCHPOINT_2.setId(tp2.getId());
+			TOUCHPOINT_2.setErpPointOfSaleId(tp2.getErpPointOfSaleId());
 
-		System.out.println("\n***************** created touchpoints\n");
+			System.out.println("\n***************** created touchpoints\n");
+		}
+		catch (Exception e) {
+			throw new RuntimeException("got exception trying to create touchpoints: " + e,e);
+		}
 	}
 
 	public void createStock() {

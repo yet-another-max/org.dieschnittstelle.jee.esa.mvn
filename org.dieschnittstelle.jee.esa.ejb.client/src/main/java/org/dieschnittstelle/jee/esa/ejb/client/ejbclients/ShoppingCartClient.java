@@ -14,9 +14,8 @@ public class ShoppingCartClient implements ShoppingCartRemote {
 	private ShoppingCartRemote ejbProxy;
 
 	public ShoppingCartClient() throws Exception {
-		Context context = new InitialContext();
-		this.ejbProxy = (ShoppingCartRemote) context
-				.lookup(Constants.SHOPPING_CART_BEAN);
+		// for the time being, we will always use the ejb here...
+		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(ShoppingCartRemote.class,Constants.SHOPPING_CART_BEAN, false);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package org.dieschnittstelle.jee.esa.ejb.client.demos;
 
 import org.apache.log4j.Logger;
+import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 import org.dieschnittstelle.jee.esa.utils.Utils;
@@ -12,6 +13,7 @@ public class ShowConcurrentEntityAccess {
 			.getLogger(ShowConcurrentEntityAccess.class);
 
 	public static void main(String[] args) {
+		EJBProxyFactory.initialise();
 
 		try {
 			

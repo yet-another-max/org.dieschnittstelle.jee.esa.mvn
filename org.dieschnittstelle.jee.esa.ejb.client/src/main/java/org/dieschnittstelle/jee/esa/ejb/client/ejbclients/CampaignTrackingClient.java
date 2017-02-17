@@ -15,9 +15,7 @@ public class CampaignTrackingClient implements CampaignTrackingRemote {
 	private CampaignTrackingRemote ejbProxy;
 	
 	public CampaignTrackingClient() throws Exception {
-		Context context = new InitialContext();
-		ejbProxy = (CampaignTrackingRemote) context
-				.lookup(Constants.CAMPAIGN_TRACKING_BEAN);
+		ejbProxy = EJBProxyFactory.getInstance().getProxy(CampaignTrackingRemote.class,Constants.CAMPAIGN_TRACKING_BEAN);
 	}
 	
 	@Override

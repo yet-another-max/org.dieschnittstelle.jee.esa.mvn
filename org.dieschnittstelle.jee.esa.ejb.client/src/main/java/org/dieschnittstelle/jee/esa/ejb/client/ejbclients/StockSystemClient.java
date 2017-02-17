@@ -10,10 +10,8 @@ public class StockSystemClient implements StockSystemRemote {
 	private StockSystemRemote ejbProxy;
 	
 	public StockSystemClient() throws Exception {
-//		Context context = new InitialContext();
-//		
-//		this.ejbProxy = (StockSystemRemote) context
-//				.lookup("");
+		// obtain a proxy specifying the ejb interface and uri
+//		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(null,"");
 	}
 	
 	

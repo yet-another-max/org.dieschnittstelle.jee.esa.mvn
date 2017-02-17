@@ -5,16 +5,11 @@ import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
+import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.CampaignTrackingClient;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.CustomerCRUDClient;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.CustomerTransactionCRUDClient;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.ProductCRUDClient;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.StockSystemClient;
-import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.TouchpointAccessClient;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingBusinessDelegate;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSession;
 
@@ -25,6 +20,9 @@ public class TotalUsecase {
 	protected static Logger logger = Logger.getLogger(TotalUsecase.class);
 
 	public static void main(String[] args) {
+		// here, we will use ejb proxies for accessing the server-side components
+		EJBProxyFactory.initialise(WEB_API_BASE_URL,false);
+
 		try {
 			(new TotalUsecase()).runAll();
 		} catch (Exception e) {
@@ -169,6 +167,7 @@ public class TotalUsecase {
 			}
 		} catch (Exception e) {
 			logger.error("got exception during shopping: " + e, e);
+			if (this.stepping) step();
 		}
 	}
 

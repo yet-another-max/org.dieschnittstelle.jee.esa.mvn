@@ -14,9 +14,7 @@ public class CustomerTrackingClient implements CustomerTrackingRemote {
 	private CustomerTrackingRemote ejbProxy;
 	
 	public CustomerTrackingClient() throws Exception {
-		Context context = new InitialContext();
-		ejbProxy = (CustomerTrackingRemote) context
-				.lookup(Constants.CUSTOMER_TRACKING_BEAN);
+		ejbProxy = EJBProxyFactory.getInstance().getProxy(CustomerTrackingRemote.class,Constants.CUSTOMER_TRACKING_BEAN);
 	}
 	
 	@Override
