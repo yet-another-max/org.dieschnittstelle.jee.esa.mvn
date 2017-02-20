@@ -19,15 +19,12 @@ public class Constants {
 	/*
 	 * the bean identifiers
 	 */
-	public static final String SHOPPING_CART_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ShoppingCartStateful!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRemote?stateful";
-	public static final String CAMPAIGN_TRACKING_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CampaignTrackingSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote";
-	public static final String CUSTOMER_TRACKING_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/customerTrackingSystem!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingRemote";
-	public static final String CUSTOMER_CRUD_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDRemote";
-	public static final String TOUCHPOINT_CRUD_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.TouchpointCRUDRemote";
-	public static final String TOUCHPOINT_ACCESS_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote";
-	public static final String TRANSACTIONS_CRUD_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
-	public static final String POS_CRUD_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/PointOfSaleCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.PointOfSaleCRUDRemote";
-	public static final String STOCK_SYSTEM_BEAN = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/StockSystemSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.StockSystemRemote";
+	public static final String SHOPPING_CART_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ShoppingCartStateful!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRemote?stateful";
+	public static final String CAMPAIGN_TRACKING_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CampaignTrackingSingleton!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote";
+	public static final String CUSTOMER_TRACKING_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/customerTrackingSystem!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingRemote";
+	public static final String CUSTOMER_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDRemote";
+	public static final String TOUCHPOINT_ACCESS_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote";
+	public static final String TRANSACTIONS_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
 
 	/*
 	 * the base url of the web api

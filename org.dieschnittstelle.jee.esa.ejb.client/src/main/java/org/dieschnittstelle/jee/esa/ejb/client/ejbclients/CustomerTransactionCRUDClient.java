@@ -3,9 +3,6 @@ package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
@@ -20,7 +17,7 @@ public class CustomerTransactionCRUDClient implements CustomerTransactionCRUDRem
 	private CustomerTransactionCRUDRemote ejbProxy;
 	
 	public CustomerTransactionCRUDClient() throws Exception {
-		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(CustomerTransactionCRUDRemote.class,Constants.TRANSACTIONS_CRUD_BEAN);
+		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(CustomerTransactionCRUDRemote.class,Constants.TRANSACTIONS_CRUD_BEAN_URI);
 	}
 	
 	@Override

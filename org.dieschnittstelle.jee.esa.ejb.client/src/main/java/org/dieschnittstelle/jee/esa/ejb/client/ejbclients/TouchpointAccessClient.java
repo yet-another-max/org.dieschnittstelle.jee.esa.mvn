@@ -2,9 +2,6 @@ package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
@@ -15,7 +12,7 @@ public class TouchpointAccessClient implements TouchpointAccessRemote {
 	private TouchpointAccessRemote ejbProxy;
 	
 	public TouchpointAccessClient() throws Exception {
-		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(TouchpointAccessRemote.class,Constants.TOUCHPOINT_ACCESS_BEAN);
+		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(TouchpointAccessRemote.class,Constants.TOUCHPOINT_ACCESS_BEAN_URI);
 	}
 	
 	

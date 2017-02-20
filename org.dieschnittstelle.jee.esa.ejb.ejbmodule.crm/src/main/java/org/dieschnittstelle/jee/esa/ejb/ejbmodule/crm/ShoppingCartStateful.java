@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.*;
+import javax.persistence.*;
 
 
 import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
@@ -13,12 +14,23 @@ import org.apache.log4j.Logger;
 
 /**
  * provides shopping cart functionality
+ *
+ * note that this class is, at the same time, annotated as an entity class for supporting a RESTful handling
+ * of shopping cart functionality
+ *
+ * note that instances of this class EITHER behave as stateful ejbs OR as entities
  */
 @Stateful
+@Entity
 public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLocal {
+
+	@Id
+	@GeneratedValue
+	private long id;
 	
 	protected static Logger logger = Logger.getLogger(ShoppingCartStateful.class);
 
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<CrmProductBundle> productBundles = new ArrayList<CrmProductBundle>();
 	
 	public ShoppingCartStateful() {
@@ -48,7 +60,17 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 		return this.productBundles;
 	}
 
-	// lifecycle logging: jboss complains about usage of default transaction attribute (REQUIRED), hence we explicitly set allowed values
+	// entity: access the id
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	// lifecycle ejb logging: jboss complains about usage of default transaction attribute (REQUIRED), hence we explicitly set allowed values
 
 	@PostConstruct
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
@@ -73,5 +95,42 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	public void aktiviere() {
 		logger.info("@PostActivate");
 	}
+
+	// lifecycle entity logging:
+	@PostLoad
+	public void onPostLoad() {
+		logger.info("@PostLoad: " + this);
+	}
+
+	@PostPersist
+	public void onPostPersist() {
+		logger.info("@PostPersist: " + this);
+	}
+
+	@PostRemove
+	public void onPostRemove() {
+		logger.info("@PostRemove: " + this);
+	}
+
+	@PostUpdate
+	public void onPostUpdate() {
+		logger.info("@PostUpdate: " + this);
+	}
+
+	@PrePersist
+	public void onPrePersist() {
+		logger.info("@PrePersist: " + this);
+	}
+
+	@PreRemove
+	public void onPreRemove() {
+		logger.info("@PreRemove: " + this);
+	}
+
+	@PreUpdate
+	public void onPreUpdate() {
+		logger.info("@PreUpdate: " + this);
+	}
+
 
 }
