@@ -27,6 +27,9 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	@Id
 	@GeneratedValue
 	private long id;
+
+	// track the time when we were lastUpdated - also this is used for entity usage
+	private long lastUpdated;
 	
 	protected static Logger logger = Logger.getLogger(ShoppingCartStateful.class);
 
@@ -35,6 +38,7 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	
 	public ShoppingCartStateful() {
 		logger.info("<constructor>: " + this);
+		this.lastUpdated = System.currentTimeMillis();
 	}
 	
 	public void addProductBundle(CrmProductBundle product) {
@@ -70,6 +74,13 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 		this.id = id;
 	}
 
+	public long getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(long lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
 	// lifecycle ejb logging: jboss complains about usage of default transaction attribute (REQUIRED), hence we explicitly set allowed values
 
 	@PostConstruct

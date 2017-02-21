@@ -11,17 +11,17 @@ public class ProductCRUDClient implements ProductCRUDRemote {
 	private ProductCRUDRemote ejbProxy;
 
 	public ProductCRUDClient() throws Exception {
-		// obtain a proxy specifying the ejb interface and uri
+		// TODO: obtain a proxy specifying the ejb interface and uri. Let all subsequent methods use the proxy.
 //		this.ejbProxy = EJBProxyFactory.getInstance().getProxy(null,"");
 	}
 
 	public AbstractProduct createProduct(AbstractProduct prod) {
 
-		// JPA3: KOMMENTIEREN SIE DIE FOLGENDE ZUWEISUNG VON IDs UND DIE RETURN-ANWEISUNG AUS
+		// TODO: KOMMENTIEREN SIE DIE FOLGENDE ZUWEISUNG VON IDs UND DIE RETURN-ANWEISUNG AUS
 		prod.setId(Constants.nextId());
 		return prod;
 
-		// JPA3: KOMMENTIEREN SIE DEN FOLGENDEN CODE EIN		
+		// TODO: KOMMENTIEREN SIE DEN FOLGENDEN CODE EIN
 //		AbstractProduct created = ejbProxy.createProduct(prod);
 //		// as a side-effect we set the id of the created product on the argument before returning
 //		prod.setId(created.getId());
