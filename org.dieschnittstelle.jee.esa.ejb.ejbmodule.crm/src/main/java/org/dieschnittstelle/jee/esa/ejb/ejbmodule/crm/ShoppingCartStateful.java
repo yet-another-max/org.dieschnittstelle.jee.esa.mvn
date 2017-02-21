@@ -56,6 +56,8 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 		if (!bundleUpdate) {
 			this.productBundles.add(product);
 		}
+
+		this.lastUpdated = System.currentTimeMillis();
 	}
 	
 	public List<CrmProductBundle> getProductBundles() {

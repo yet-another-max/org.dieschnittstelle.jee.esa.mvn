@@ -3,6 +3,7 @@ package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
 
+import javax.annotation.Resource;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -24,6 +25,10 @@ public class ShoppingCartRESTServiceImpl implements ShoppingCartRESTService {
 
     @PersistenceContext(unitName = "crm_PU")
     private EntityManager em;
+
+    // here, the value of the env-entry idle-timeout specified in ejb-jar.xml will be injected
+    @Resource(name = "idle-timeout")
+    private long idleTimeout;
 
     public ShoppingCartRESTServiceImpl() {
         logger.info("<constructor>");
@@ -55,21 +60,20 @@ public class ShoppingCartRESTServiceImpl implements ShoppingCartRESTService {
         return true;
     }
 
-    @Schedule(second="*")
+    // if a task shall be scheduled every couple of seconds, also hour and minute need to be specied as "any" ('*')
+    // because these attributes default to 0
+    @Schedule(second="*/10", hour="*", minute = "*")
     public void removeIdleCarts() {
-        System.err.println("removeIdleCarts()");
-
-        // use some hard-coded timeout
-        long timeout = 10000;
+        logger.info("removeIdleCarts(): idleTimeout is set to: " + idleTimeout);
 
         // read all carts
         for (ShoppingCartStateful scart : (List<ShoppingCartStateful>)em.createQuery("from ShoppingCartStateful").getResultList()) {
-            if (System.currentTimeMillis() - scart.getLastUpdated() > timeout) {
-                logger.info("ShoppingCart has exceeded idle time. Will remove it: " + scart);
+            if (System.currentTimeMillis() - scart.getLastUpdated() > idleTimeout) {
+                logger.info("ShoppingCart has exceeded idle time. Will remove it: " + scart.getId());
                 deleteCart(scart.getId());
             }
             else {
-                logger.debug("ShoppingCart has not yet exceeded idle time. Keep it: " + scart);
+                logger.debug("ShoppingCart has not yet exceeded idle time. Keep it: " + scart.getId());
             }
         }
 
