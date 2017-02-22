@@ -73,7 +73,7 @@ public class ShoppingCartRESTServiceImpl implements ShoppingCartRESTService {
                 deleteCart(scart.getId());
             }
             else {
-                logger.debug("ShoppingCart has not yet exceeded idle time. Keep it: " + scart.getId());
+                logger.info("ShoppingCart has not yet exceeded idle time. Keep it: " + scart.getId());
             }
         }
 
