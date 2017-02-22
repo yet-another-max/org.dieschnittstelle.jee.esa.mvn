@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
@@ -65,7 +66,7 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 	/*
 	 * verify whether campaigns are still valid
 	 */
-	public void verifyCampaigns() {
+	public void verifyCampaigns() throws ShoppingException {
 		if (this.customer == null || this.touchpoint == null) {
 			throw new RuntimeException("cannot verify campaigns! No touchpoint has been set!");
 		}
@@ -78,7 +79,7 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 						+ availableCampaigns);
 				// we check whether we have sufficient campaign items available
 				if (availableCampaigns < productBundle.getUnits()) {
-					throw new RuntimeException("verifyCampaigns() failed for productBundle " + productBundle
+					throw new ShoppingException("verifyCampaigns() failed for productBundle " + productBundle
 							+ " at touchpoint " + this.touchpoint + "! Need " + productBundle.getUnits()
 							+ " instances of campaign, but only got: " + availableCampaigns);
 				}
@@ -86,7 +87,7 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 		}
 	}
 
-	public void purchase() {
+	public void purchase()  throws ShoppingException {
 		logger.info("purchase()");
 
 		if (this.customer == null || this.touchpoint == null) {

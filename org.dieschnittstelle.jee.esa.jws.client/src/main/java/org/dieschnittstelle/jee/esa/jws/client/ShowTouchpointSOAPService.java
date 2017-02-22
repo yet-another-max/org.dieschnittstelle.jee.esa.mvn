@@ -24,7 +24,7 @@ public class ShowTouchpointSOAPService {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//
+
 //		try {
 //
 //			// create an instance of the client-side web service class
@@ -94,11 +94,11 @@ public class ShowTouchpointSOAPService {
 //			 * UE JWS3: add a call to the update method of the web service, passing tp
 //			 */
 //
-//			show("TestTouchpointSOAPService: done.\n");
+//			logger.info("TestTouchpointSOAPService: done.\n");
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-//
+
 	}
 
 }

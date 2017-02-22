@@ -2,9 +2,6 @@ package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
@@ -15,9 +12,7 @@ public class CampaignTrackingClient implements CampaignTrackingRemote {
 	private CampaignTrackingRemote ejbProxy;
 	
 	public CampaignTrackingClient() throws Exception {
-		Context context = new InitialContext();
-		ejbProxy = (CampaignTrackingRemote) context
-				.lookup(Constants.CAMPAIGN_TRACKING_BEAN);
+		ejbProxy = EJBProxyFactory.getInstance().getProxy(CampaignTrackingRemote.class,Constants.CAMPAIGN_TRACKING_BEAN_URI);
 	}
 	
 	@Override

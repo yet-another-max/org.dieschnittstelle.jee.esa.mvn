@@ -1,8 +1,5 @@
 package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
@@ -12,10 +9,7 @@ public class CustomerCRUDClient implements CustomerCRUDRemote {
 	private CustomerCRUDRemote ejbProxy;
 
 	public CustomerCRUDClient() throws Exception {
-		Context context = new InitialContext();
-
-		ejbProxy = (CustomerCRUDRemote) context
-				.lookup(Constants.CUSTOMER_CRUD_BEAN);
+		ejbProxy = EJBProxyFactory.getInstance().getProxy(CustomerCRUDRemote.class,Constants.CUSTOMER_CRUD_BEAN_URI);
 	}
 
 	@Override

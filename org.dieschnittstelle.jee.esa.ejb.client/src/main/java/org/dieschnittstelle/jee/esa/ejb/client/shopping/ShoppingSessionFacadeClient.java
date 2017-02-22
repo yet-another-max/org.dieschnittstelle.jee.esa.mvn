@@ -1,6 +1,7 @@
 package org.dieschnittstelle.jee.esa.ejb.client.shopping;
 
 import org.apache.log4j.Logger;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
@@ -36,7 +37,7 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 	}
 
 	@Override
-	public void purchase() {
+	public void purchase() throws ShoppingException {
 	
 	}
 

@@ -15,7 +15,7 @@
 		no explicit buildpath dependencies outside of the the ejbmodules themselves. 
 		However, as the jrs rest api is exposed via the jrs module (which is
 		covered by the deployment tag) also here we need to prevent that the ear 
-		class loader is used! Otherwise instances of classes that are created by 
+ 		class loader is used! Otherwise instances of classes that are created by
 		reflection in jrs will raise class inconsistencies with the classes used
 		by the ejbmodules! - note further that the classpath issue is only relevant 
 		if we want to use local ejb interfaces. If we communicate via remote interfaces 

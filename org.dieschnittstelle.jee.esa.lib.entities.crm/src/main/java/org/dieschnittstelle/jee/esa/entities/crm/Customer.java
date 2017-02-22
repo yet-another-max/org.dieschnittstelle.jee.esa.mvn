@@ -20,6 +20,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.log4j.Logger;
 
@@ -70,6 +71,8 @@ public class Customer implements Serializable {
 	private Address address;
 
 	@ManyToMany(mappedBy="customers")
+	// we ignore this attribute as it will cause trouble when reading a customer via the rest service due to lazy loading being enabled by default
+	@JsonIgnore
 	private Collection<AbstractTouchpoint> touchpoints = new HashSet<AbstractTouchpoint>();
 
 	@ManyToOne
@@ -80,6 +83,8 @@ public class Customer implements Serializable {
 	 */
 	@OneToMany(mappedBy="customer", fetch=FetchType.LAZY)
 	//@OneToMany(mappedBy="customer", fetch=FetchType.EAGER)
+	// we also ignore this attribute (could be commented once eager loading is active)
+	@JsonIgnore
 	private Collection<CustomerTransaction> transactions;
 	
 	public void addTouchpoint(AbstractTouchpoint touchpoint) {

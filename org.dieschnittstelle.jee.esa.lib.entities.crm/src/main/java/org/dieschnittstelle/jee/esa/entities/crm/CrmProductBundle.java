@@ -59,6 +59,18 @@ public class CrmProductBundle implements Serializable {
 		this.isCampaign = isCampaign;
 	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setErpProductId(long erpProductId) {
+		this.erpProductId = erpProductId;
+	}
+
+	public void setCampaign(boolean campaign) {
+		isCampaign = campaign;
+	}
+
 	public long getId() {
 		return id;
 	}

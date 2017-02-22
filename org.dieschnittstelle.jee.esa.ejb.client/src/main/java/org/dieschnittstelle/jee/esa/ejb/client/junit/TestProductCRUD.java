@@ -5,6 +5,7 @@ import java.util.List;
 import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
+import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.ProductCRUDClient;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.Campaign;
@@ -20,6 +21,8 @@ public class TestProductCRUD {
 
 	@Before
 	public void prepareContext() throws Exception {
+		EJBProxyFactory.initialise();
+
 		client = new ProductCRUDClient();
 		Constants.resetEntities();
 	}
@@ -81,9 +84,13 @@ public class TestProductCRUD {
 				createdCampaign.getBundles().iterator().next().getProduct().getId() == PRODUCT_1
 						.getId());
 
+		/* PRIMARY KEY ASSIGNMENT */
+		CAMPAIGN_2.setId(client.createProduct(CAMPAIGN_2).getId());
+		assertEquals("id values for campaigns (and other products) are assigned independently from other entities)",1,CAMPAIGN_2.getId()-CAMPAIGN_1.getId());
+
 		/* DELETE */
 		client.deleteProduct(CAMPAIGN_1.getId());
-		assertEquals("product list is reduced by 1 on delete for campaigns", 2, client.readAllProducts().size()
+		assertEquals("product list is reduced by 1 on delete for campaigns", 3, client.readAllProducts().size()
 				- prodlistBefore.size());
 
 		assertNull("deleted campaign does not exist anymore", client.readProduct(CAMPAIGN_1.getId()));

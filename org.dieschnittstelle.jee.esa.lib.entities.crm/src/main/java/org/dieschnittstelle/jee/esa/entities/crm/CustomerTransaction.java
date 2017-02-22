@@ -58,7 +58,7 @@ public class CustomerTransaction implements Serializable {
 	private boolean completed;
 	
 	public CustomerTransaction() {
-		logger.info("constructor");
+		logger.info("<constructor>");
 	}
 	
 	public CustomerTransaction(Customer customer,AbstractTouchpoint tp,List<CrmProductBundle> products) {

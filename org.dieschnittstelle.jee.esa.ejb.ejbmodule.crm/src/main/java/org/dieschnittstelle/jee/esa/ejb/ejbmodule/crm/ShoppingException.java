@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
-public class ShoppingException extends /*Exception*/ RuntimeException {
+public class ShoppingException extends Exception {
 	
 	/**
 	 * 
