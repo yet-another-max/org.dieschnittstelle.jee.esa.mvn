@@ -97,11 +97,11 @@ public class ShowTouchpointService {
 			// UE SER1: Aendern Sie die URL von api->gui
 			HttpGet get = new HttpGet(
 					"http://localhost:8888/org.dieschnittstelle.jee.esa.ser/api/touchpoints");
+			// mittels der <request>.setHeader() Methode koennen Header-Felder
+			// gesetzt werden
+
 			// execute the method and obtain the response
 			HttpResponse response = client.execute(get);
-
-			// mittels der response.setHeader() Methode koennen Header-Felder
-			// gesetzt werden
 
 			// check the response status
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
