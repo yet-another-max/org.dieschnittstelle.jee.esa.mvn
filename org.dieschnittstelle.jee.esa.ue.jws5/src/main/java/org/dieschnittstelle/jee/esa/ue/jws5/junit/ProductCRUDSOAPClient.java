@@ -18,7 +18,7 @@ public class ProductCRUDSOAPClient {
 //
 //
 //		/*
-//		 * create a client for the web service using ResteasyClientBuilder and ResteasyWebTarget
+//		 * create a client for the web service using the service class and obtaining the port for product CRUD
 //       * DO NOT FORGET TO SPECIFY THE WSDL URL IN THE pom.xml FILE OF THE JWS PROJECT (search for TODO)
 //		 */
 //		serviceProxy = null;
