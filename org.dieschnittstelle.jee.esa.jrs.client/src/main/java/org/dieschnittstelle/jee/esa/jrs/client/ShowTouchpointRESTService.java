@@ -32,6 +32,8 @@ public class ShowTouchpointRESTService {
 		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/api/");
 		ITouchpointCRUDService serviceProxy = target.proxy(ITouchpointCRUDService.class);
 
+		show("serviceProxy: " + serviceProxy + " of class: " + serviceProxy.getClass());
+
 		// 1) read out all touchpoints
 		List<StationaryTouchpoint> touchpoints = serviceProxy.readAllTouchpoints();
 		logger.info("read touchpoints: " + touchpoints);
