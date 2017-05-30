@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="JWS" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 10.1.0.Final" ALTERNATIVE_JRE_ENABLED="false">
-    <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
       <artifact name="jws-webapp:war">
         <settings />

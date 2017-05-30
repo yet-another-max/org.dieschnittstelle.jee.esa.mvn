@@ -24,13 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="bas" />
         <module name="demo-bas" />
-        <module name="demo-jrs-api" />
-        <module name="demo-jrs-client" />
-        <module name="demo-jrs-webapp" />
-        <module name="demo-jws-client" />
-        <module name="demo-jws-webapp" />
-        <module name="demo-ser-client" />
-        <module name="demo-ser-webapp" />
         <module name="ejb-client" />
         <module name="ejb-earapp" />
         <module name="ejb-ejbmodule-crm" />
@@ -69,16 +62,6 @@
       <module name="build-jws" target="1.8" />
       <module name="build-ser" target="1.8" />
       <module name="demo-bas" target="1.8" />
-      <module name="demo-build-jrs" target="1.8" />
-      <module name="demo-build-jws" target="1.8" />
-      <module name="demo-jrs-api" target="1.8" />
-      <module name="demo-jrs-client" target="1.8" />
-      <module name="demo-jrs-webapp" target="1.8" />
-      <module name="demo-jws-client" target="1.8" />
-      <module name="demo-jws-webapp" target="1.8" />
-      <module name="demo-ser-client" target="1.8" />
-      <module name="demo-ser-runnable" target="1.8" />
-      <module name="demo-ser-webapp" target="1.8" />
       <module name="ejb-client" target="1.8" />
       <module name="ejb-earapp" target="1.8" />
       <module name="ejb-ejbmodule-crm" target="1.8" />
