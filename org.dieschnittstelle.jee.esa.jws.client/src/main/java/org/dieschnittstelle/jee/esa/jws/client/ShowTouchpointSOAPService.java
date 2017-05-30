@@ -12,8 +12,6 @@ import org.apache.log4j.Logger;
 //import org.dieschnittstelle.jee.esa.jws.Address;
 //import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebService;
 //import org.dieschnittstelle.jee.esa.jws.TouchpointCRUDWebServiceSOAP;
-//
-//import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class ShowTouchpointSOAPService {
 

@@ -42,8 +42,8 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <type id="javaeeApplication"/>
     <type id="ejb" />
+    <type id="javaeeApplication" />
     <type id="jpa" />
     <type id="web" />
   </component>
@@ -66,6 +66,15 @@
         <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/pom.xml" />
         <option value="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/pom.xml" />
         <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.bas/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser.runnable/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.api/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.client/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.runnable/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.client/pom.xml" />
+        <option value="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.runnable/pom.xml" />
       </list>
     </option>
   </component>

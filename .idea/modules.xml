@@ -2,36 +2,56 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" group="2_BAS"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.bas/bas.iml" group="2_BAS" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications/build-all-modules.iml" group="0_SHARED" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ejb/build-ejb.iml" group="7_EJB+JPA+ADD+PAT" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jrs/build-jrs.iml" group="4_JRS" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jsf/build-jsf.iml" group="11_JSF" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.jws/build-jws.iml" group="5_JWS" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.applications.ser/build-ser.iml" group="3_SER" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" group="7_EJB+JPA+ADD+PAT"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" group="7_EJB+JPA+ADD+PAT"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" group="7_EJB+JPA+ADD+PAT"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ejb-ejbmodule-erp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ejb-ejbmodule-erp.iml" group="7_EJB+JPA+ADD+PAT"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.webapp/ejb-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.webapp/ejb-webapp.iml" group="7_EJB+JPA+ADD+PAT"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.api/jrs-api.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.api/jrs-api.iml" group="4_JRS"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.client/jrs-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.client/jrs-client.iml" group="4_JRS"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs/jrs-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs/jrs-webapp.iml"  group="4_JRS"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf.cdi/jsf-cdi-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf.cdi/jsf-cdi-webapp.iml" group="11_JSF"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf/jsf-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf/jsf-webapp.iml" group="11_JSF"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws.client/jws-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws.client/jws-client.iml" group="5_JWS"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws/jws-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws/jws-webapp.iml" group="5_JWS"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.crm/lib-entities-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.crm/lib-entities-crm.iml" group="0_SHARED"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.erp/lib-entities-erp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.erp/lib-entities-erp.iml" group="0_SHARED"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" group="0_SHARED"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" group="3_SER"/>
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" group="3_SER"/>
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.bas/demo-bas.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.bas/demo-bas.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.runnable/demo-build-ejb.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.runnable/demo-build-ejb.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.runnable/demo-build-jrs.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.runnable/demo-build-jrs.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.runnable/demo-build-jws.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.runnable/demo-build-jws.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.client/demo-ejb-client.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.client/demo-ejb-client.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb/demo-ejb-earapp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb/demo-ejb-earapp.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/demo-ejb-ejbmodule-crm.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/demo-ejb-ejbmodule-crm.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/demo-ejb-ejbmodule-erp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/demo-ejb-ejbmodule-erp.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.api/demo-jrs-api.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.api/demo-jrs-api.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.client/demo-jrs-client.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs.client/demo-jrs-client.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs/demo-jrs-webapp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jrs/demo-jrs-webapp.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.client/demo-jws-client.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws.client/demo-jws-client.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws/demo-jws-webapp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.jws/demo-jws-webapp.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.lib.entities.erp/demo-lib-entities-erp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.lib.entities.erp/demo-lib-entities-erp.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser.client/demo-ser-client.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser.client/demo-ser-client.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser.runnable/demo-ser-runnable.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser.runnable/demo-ser-runnable.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser/demo-ser-webapp.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ser/demo-ser-webapp.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ue.add2/demo-ue-add2.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ue.add2/demo-ue-add2.iml" group="ejbdemo" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.wsv.client/demo-wsv-client.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.wsv.client/demo-wsv-client.iml" group="demos" />
+      <module fileurl="file://$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.uml/demo.org.dieschnittstelle.jee.esa.ejb.uml.iml" filepath="$PROJECT_DIR$/demo.org.dieschnittstelle.jee.esa.ejb.uml/demo.org.dieschnittstelle.jee.esa.ejb.uml.iml" group="uml" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.client/ejb-client.iml" group="7_EJB+JPA+ADD+PAT" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb/ejb-earapp.iml" group="7_EJB+JPA+ADD+PAT" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/ejb-ejbmodule-crm.iml" group="7_EJB+JPA+ADD+PAT" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ejb-ejbmodule-erp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp/ejb-ejbmodule-erp.iml" group="7_EJB+JPA+ADD+PAT" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.webapp/ejb-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ejb.webapp/ejb-webapp.iml" group="7_EJB+JPA+ADD+PAT" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.api/jrs-api.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.api/jrs-api.iml" group="4_JRS" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.client/jrs-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs.client/jrs-client.iml" group="4_JRS" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs/jrs-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jrs/jrs-webapp.iml" group="4_JRS" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf.cdi/jsf-cdi-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf.cdi/jsf-cdi-webapp.iml" group="11_JSF" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf/jsf-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jsf/jsf-webapp.iml" group="11_JSF" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws.client/jws-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws.client/jws-client.iml" group="5_JWS" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws/jws-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.jws/jws-webapp.iml" group="5_JWS" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.crm/lib-entities-crm.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.crm/lib-entities-crm.iml" group="0_SHARED" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.erp/lib-entities-erp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.entities.erp/lib-entities-erp.iml" group="0_SHARED" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.lib.utils/lib-esa-utils.iml" group="0_SHARED" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser.client/ser-client.iml" group="3_SER" />
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ser/ser-webapp.iml" group="3_SER" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add2/ue-add2.iml" group="9_ADD" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.add3/ue-add3.iml" group="9_ADD" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jsf5/ue-jsf5.iml" group="11_JSF" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws4/ue-jws4.iml" group="5_JWS" />
       <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.ue.jws5/ue-jws5.iml" group="5_JWS" />
-      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" group="6_WSV"/>
+      <module fileurl="file://$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" filepath="$PROJECT_DIR$/org.dieschnittstelle.jee.esa.wsv.client/wsv-client.iml" group="6_WSV" />
     </modules>
   </component>
 </project>
