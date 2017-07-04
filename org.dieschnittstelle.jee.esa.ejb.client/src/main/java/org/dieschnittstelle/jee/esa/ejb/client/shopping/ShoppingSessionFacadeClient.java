@@ -12,13 +12,11 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 			.getLogger(ShoppingSessionFacadeClient.class);
 
 	/*
-	 * use a proxy for the ShoppingSessionFacadeRemote interface
+	 * use a proxy for the ShoppingSessionFacade interface
 	 */
 
 	public ShoppingSessionFacadeClient() {
-		/* create a jndi context */
-		
-		/* lookup the bean and instantiate the proxy */
+		/* instantiate the proxy using the EJBProxyFactory (see the other client classes) */
 	}
 
 	@Override
