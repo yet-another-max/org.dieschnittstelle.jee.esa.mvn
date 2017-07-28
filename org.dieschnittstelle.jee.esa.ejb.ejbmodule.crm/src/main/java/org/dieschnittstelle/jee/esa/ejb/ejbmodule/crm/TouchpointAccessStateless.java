@@ -32,13 +32,13 @@ public class TouchpointAccessStateless implements
 	@Override
 	public AbstractTouchpoint createTouchpointAndPointOfSale(
 			AbstractTouchpoint touchpoint) throws ShoppingException {
-		logger.info("createTouchpoint(): " + touchpoint);
-		
-		logProductBundleKlass();
+		logger.info("createTouchpointAndPointOfSale(): " + touchpoint);
+
+//		logProductBundleKlass();
 
 		// we first create the posCRUD
 		PointOfSale pos = posCRUD.createPointOfSale(new PointOfSale());
-		logger.info("createTouchpoint(): created pointOfSale: "
+		logger.info("createTouchpointAndPointOfSale(): created pointOfSale: "
 				+ pos);
 
 		// we pass the id to the touchpoint
@@ -46,7 +46,7 @@ public class TouchpointAccessStateless implements
 
 		// then we persist the touchpoint
 		touchpoint = touchpointCRUD.createTouchpoint(touchpoint);
-		logger.info("createTouchpoint(): created touchpoint: "
+		logger.info("createTouchpointAndPointOfSale(): created touchpoint: "
 				+ touchpoint);
 
 		// return it
