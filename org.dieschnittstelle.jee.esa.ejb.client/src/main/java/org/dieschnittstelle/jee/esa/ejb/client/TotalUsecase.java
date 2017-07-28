@@ -152,6 +152,7 @@ public class TotalUsecase {
 
 	public void doShopping() {
 		try {
+			int shoppingcount = 0;
 			while (true) {
 				try {
 					// create a shopping session and initialise it such that
@@ -177,6 +178,7 @@ public class TotalUsecase {
 					session.addProduct(Constants.CAMPAIGN_1, 1);
 					session.addProduct(Constants.CAMPAIGN_2, 2);
 
+					System.out.println("\nWill finalise " + ++shoppingcount + "st/nd/rd shopping transaction...");
 					if (this.stepping) step();
 
 					// now try to commit the session
@@ -191,6 +193,7 @@ public class TotalUsecase {
 			}
 		} catch (Exception e) {
 			logger.error("got exception during shopping: " + e, e);
+			System.out.println("\nNote: if the previous step was the third attempt to finalise a shopping transaction, the exception 'verifyCampaigns() failed' is intended and indicates that the system is working properly.");
 			if (this.stepping) step();
 		}
 	}
@@ -214,8 +217,15 @@ public class TotalUsecase {
 
 		Customer cust = customerCRUD.readCustomer(Constants.CUSTOMER_1.getId());
 		logger.info("read remote customer object: " + cust);
-		trans = cust.getTransactions();
-		logger.info("read transactions from remote object: " + trans);
+
+		try {
+			trans = cust.getTransactions();
+			logger.info("read transactions from remote object: " + trans);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("\nNote: a LazyInitializationException in the previous step is intended. See UE JPA1 for further information.\n");
+		}
 
 	}
 
