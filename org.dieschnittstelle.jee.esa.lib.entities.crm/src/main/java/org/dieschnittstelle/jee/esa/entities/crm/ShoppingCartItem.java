@@ -22,9 +22,9 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
  * units for some erpProductId and also tracks wheher the product is a campaign
  */
 @Entity
-public class CrmProductBundle implements Serializable {
+public class ShoppingCartItem implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(CrmProductBundle.class);
+	protected static Logger logger = Logger.getLogger(ShoppingCartItem.class);
 
 
 	/**
@@ -45,15 +45,15 @@ public class CrmProductBundle implements Serializable {
 	@Transient
 	private AbstractProduct productObj;
 	
-	public CrmProductBundle() {
+	public ShoppingCartItem() {
 		logger.info("<constructor>");
 	}
 	
-	public CrmProductBundle(long erpProductId, int units) {
+	public ShoppingCartItem(long erpProductId, int units) {
 		this(erpProductId, units, false);
 	}
 
-	public CrmProductBundle(long erpProductId, int units, boolean isCampaign) {
+	public ShoppingCartItem(long erpProductId, int units, boolean isCampaign) {
 		this.erpProductId = erpProductId;
 		this.units = units;
 		this.isCampaign = isCampaign;
@@ -92,7 +92,7 @@ public class CrmProductBundle implements Serializable {
 	}
 
 	public String toString() {
-		return "[CrmProductBundle " + this.id + " (" + this.erpProductId + ":"
+		return "[ShoppingCartItem " + this.id + " (" + this.erpProductId + ":"
 				+ this.units + ")]";
 	}
 

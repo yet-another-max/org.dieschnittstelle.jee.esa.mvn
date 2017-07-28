@@ -1,13 +1,12 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
 import org.apache.log4j.Logger;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 
 import javax.annotation.Resource;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -43,15 +42,15 @@ public class ShoppingCartRESTServiceImpl implements ShoppingCartRESTService {
 
     // note that it is not necessary to explicitly call merge, as merging will done automatically once the transaction associated with this method is committed
     @Override
-    public void addProductBundle(long cartId, CrmProductBundle product) {
-        em.find(ShoppingCartStateful.class,cartId).addProductBundle(product);
+    public void addItem(long cartId, ShoppingCartItem product) {
+        em.find(ShoppingCartStateful.class,cartId).addItem(product);
 
 
     }
 
     @Override
-    public List<CrmProductBundle> getProductBundles(long cartId) {
-        return em.find(ShoppingCartStateful.class,cartId).getProductBundles();
+    public List<ShoppingCartItem> getItems(long cartId) {
+        return em.find(ShoppingCartStateful.class,cartId).getItems();
     }
 
     @Override

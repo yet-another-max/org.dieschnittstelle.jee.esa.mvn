@@ -51,7 +51,7 @@ public class CustomerTransaction implements Serializable {
 	 */
 	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
 	//@OneToMany
-	private List<CrmProductBundle> products = new ArrayList<CrmProductBundle>();
+	private List<ShoppingCartItem> items = new ArrayList<ShoppingCartItem>();
 
 	private int value;
 
@@ -61,10 +61,10 @@ public class CustomerTransaction implements Serializable {
 		logger.info("<constructor>");
 	}
 	
-	public CustomerTransaction(Customer customer,AbstractTouchpoint tp,List<CrmProductBundle> products) {
+	public CustomerTransaction(Customer customer,AbstractTouchpoint tp,List<ShoppingCartItem> products) {
 		this.customer = customer;
 		this.touchpoint = tp;
-		this.products = products;
+		this.items = products;
 		this.date = new Date();
 	}
 
@@ -118,15 +118,15 @@ public class CustomerTransaction implements Serializable {
 
 	public String toString() {
 		return "[CustomerTransaction " + this.id + " " + this.customer + " "
-				+ this.touchpoint + ", " + this.products + "]";
+				+ this.touchpoint + ", " + this.items + "]";
 	}
 
-	public List<CrmProductBundle> getProducts() {
-		return products;
+	public List<ShoppingCartItem> getItems() {
+		return items;
 	}
 
-	public void setProducts(List<CrmProductBundle> products) {
-		this.products = products;
+	public void setItems(List<ShoppingCartItem> items) {
+		this.items = items;
 	}
 	
 	/*

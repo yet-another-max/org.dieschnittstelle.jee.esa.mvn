@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRESTService;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRemote;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class ShoppingCartClient implements ShoppingCartRemote {
@@ -32,22 +32,21 @@ public class ShoppingCartClient implements ShoppingCartRemote {
 	}
 
 	@Override
-	public void addProductBundle(CrmProductBundle product) {
+	public void addItem(ShoppingCartItem product) {
 		if (ejbProxy != null) {
-			ejbProxy.addProductBundle(product);
+			ejbProxy.addItem(product);
 		}
 		else {
-			serviceProxy.addProductBundle(this.shoppingCartEntityId,product);
+			serviceProxy.addItem(this.shoppingCartEntityId,product);
 		}
 	}
 
-	@Override
-	public List<CrmProductBundle> getProductBundles() {
+	public List<ShoppingCartItem> getItems() {
 		if (ejbProxy != null) {
-			return ejbProxy.getProductBundles();
+			return ejbProxy.getItems();
 		}
 		else {
-			return serviceProxy.getProductBundles(this.shoppingCartEntityId);
+			return serviceProxy.getItems(this.shoppingCartEntityId);
 		}
 	}
 

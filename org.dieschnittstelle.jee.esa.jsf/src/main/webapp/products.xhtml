@@ -2,7 +2,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <head>
-<title>products.xhtml</title>
+<title>items.xhtml</title>
 </head>
 <body>
 	<h:form>
@@ -25,7 +25,7 @@
 		</h:dataTable>
 	</h:form>
 	<h:form>
-		<!--  add some textual information about the number of products in the cart. Here we directly access the model element for the shopping cart -->
+		<!--  add some textual information about the number of items in the cart. Here we directly access the model element for the shopping cart -->
 		<h:outputText value="#{shoppingCartModel.numOfProductsInCart}" />
 		<h:commandLink action="#{productsVC.gotoCart}"
 			value=" Produkte im Warenkorb" type="submit" />

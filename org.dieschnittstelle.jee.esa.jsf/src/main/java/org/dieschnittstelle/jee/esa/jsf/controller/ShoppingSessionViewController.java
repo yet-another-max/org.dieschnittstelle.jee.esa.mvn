@@ -18,7 +18,6 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -298,7 +297,7 @@ public class ShoppingSessionViewController {
 	 */
 	public String purchaseProducts() {
 		logger.info("purchaseProducts(): "
-				+ shoppingCartModel.getProductBundles());
+				+ shoppingCartModel.getItems());
 		
 		// we clear the shopping cart through invalidating the session, i.e. on the next request a new session should be created
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();

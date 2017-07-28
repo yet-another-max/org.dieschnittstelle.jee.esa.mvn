@@ -1,7 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
-import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartStateful;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -20,11 +19,11 @@ public interface ShoppingCartRESTService {
 
     @POST
     @Path("/{cartId}")
-    public void addProductBundle(@PathParam("cartId") long cartId, CrmProductBundle product);
+    public void addItem(@PathParam("cartId") long cartId, ShoppingCartItem product);
 
     @GET
     @Path("/{cartId}")
-    public List<CrmProductBundle> getProductBundles(@PathParam("cartId") long cartId);
+    public List<ShoppingCartItem> getItems(@PathParam("cartId") long cartId);
 
     @DELETE
     @Path("/{cartId}")

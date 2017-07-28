@@ -10,7 +10,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.jsf.Constants;
 import org.dieschnittstelle.jee.esa.jsf.model.ShoppingCartModel;
@@ -85,7 +85,7 @@ public class ProductsViewController {
 		logProductBundleKlass();
 		
 		AbstractProduct product = findProduct(Long.parseLong(id));
-		CrmProductBundle productBundle = new CrmProductBundle(product.getId(),
+		ShoppingCartItem productBundle = new ShoppingCartItem(product.getId(),
 				1);
 		productBundle.setProductObj(product);
 		shoppingCartModel.addProduct(productBundle);
@@ -95,15 +95,15 @@ public class ProductsViewController {
 	
 	private void logProductBundleKlass() {
 		StringBuffer log = new StringBuffer();
-		log.append(CrmProductBundle.class + "\n");
-		ClassLoader cl = CrmProductBundle.class.getClassLoader();
+		log.append(ShoppingCartItem.class + "\n");
+		ClassLoader cl = ShoppingCartItem.class.getClassLoader();
 		do {
 			log.append("\t"+ cl + "\n");
 			cl = cl.getParent();
 		}
 		while (cl != null);
 		
-		logger.info("class loader hierarchy of CrmProductBundle is: \n" + log);	
+		logger.info("class loader hierarchy of ShoppingCartItem is: \n" + log);
 	}
 
 	/**

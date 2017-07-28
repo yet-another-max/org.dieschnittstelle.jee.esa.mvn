@@ -9,7 +9,7 @@ import javax.jws.soap.SOAPBinding;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.TouchpointCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.PointOfSaleCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 import org.apache.log4j.Logger;
@@ -56,15 +56,15 @@ public class TouchpointAccessStateless implements
 	// for testing class loading
 	private void logProductBundleKlass() {
 		StringBuffer log = new StringBuffer();
-		log.append(CrmProductBundle.class + "\n");
-		ClassLoader cl = CrmProductBundle.class.getClassLoader();
+		log.append(ShoppingCartItem.class + "\n");
+		ClassLoader cl = ShoppingCartItem.class.getClassLoader();
 		do {
 			log.append("\t"+ cl + "\n");
 			cl = cl.getParent();
 		}
 		while (cl != null);
 		
-		logger.info("class loader hierarchy of CrmProductBundle is: \n" + log);	
+		logger.info("class loader hierarchy of ShoppingCartItem is: \n" + log);
 	}
 
 	@Override

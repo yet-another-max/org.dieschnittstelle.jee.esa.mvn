@@ -8,7 +8,7 @@ import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.CampaignTrackingClient;
@@ -60,7 +60,7 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 	}
 
 	public void addProduct(AbstractProduct product, int units) {
-		this.shoppingCart.addProductBundle(new CrmProductBundle(product.getId(), units, product instanceof Campaign));
+		this.shoppingCart.addItem(new ShoppingCartItem(product.getId(), units, product instanceof Campaign));
 	}
 
 	/*
@@ -71,16 +71,16 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 			throw new RuntimeException("cannot verify campaigns! No touchpoint has been set!");
 		}
 
-		for (CrmProductBundle productBundle : this.shoppingCart.getProductBundles()) {
-			if (productBundle.isCampaign()) {
+		for (ShoppingCartItem item : this.shoppingCart.getItems()) {
+			if (item.isCampaign()) {
 				int availableCampaigns = this.campaignTracking.existsValidCampaignExecutionAtTouchpoint(
-						productBundle.getErpProductId(), this.touchpoint);
-				logger.info("got available campaigns for product " + productBundle.getErpProductId() + ": "
+						item.getErpProductId(), this.touchpoint);
+				logger.info("got available campaigns for product " + item.getErpProductId() + ": "
 						+ availableCampaigns);
 				// we check whether we have sufficient campaign items available
-				if (availableCampaigns < productBundle.getUnits()) {
-					throw new ShoppingException("verifyCampaigns() failed for productBundle " + productBundle
-							+ " at touchpoint " + this.touchpoint + "! Need " + productBundle.getUnits()
+				if (availableCampaigns < item.getUnits()) {
+					throw new ShoppingException("verifyCampaigns() failed for productBundle " + item
+							+ " at touchpoint " + this.touchpoint + "! Need " + item.getUnits()
 							+ " instances of campaign, but only got: " + availableCampaigns);
 				}
 			}
@@ -103,7 +103,7 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 		checkAndRemoveProductsFromStock();
 
 		// then we add a new customer transaction for the current purchase
-		List<CrmProductBundle> products = this.shoppingCart.getProductBundles();
+		List<ShoppingCartItem> products = this.shoppingCart.getItems();
 		CustomerTransaction transaction = new CustomerTransaction(this.customer, this.touchpoint, products);
 		transaction.setCompleted(true);
 		customerTracking.createTransaction(transaction);
@@ -117,10 +117,10 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 	private void checkAndRemoveProductsFromStock() {
 		logger.info("checkAndRemoveProductsFromStock");
 
-		for (CrmProductBundle productBundle : this.shoppingCart.getProductBundles()) {
-			if (productBundle.isCampaign()) {
-				this.campaignTracking.purchaseCampaignAtTouchpoint(productBundle.getErpProductId(), this.touchpoint,
-						productBundle.getUnits());
+		for (ShoppingCartItem item : this.shoppingCart.getItems()) {
+			if (item.isCampaign()) {
+				this.campaignTracking.purchaseCampaignAtTouchpoint(item.getErpProductId(), this.touchpoint,
+						item.getUnits());
 				// wenn Sie eine Kampagne haben, muessen Sie hier
 				// 1) zunaechst das Campaign-Objekt anhand der erpProductId von productBundle auslesen
 				// 2) dann ueber die ProductBundle Objekte auf dem Campaign Objekt iterieren und

@@ -7,11 +7,9 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDLocal;
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
 import org.apache.log4j.Logger;
 
@@ -40,9 +38,9 @@ public class CustomerTrackingStateless implements CustomerTrackingRemote {
 
 		// in case of using the RESTful shopping cart implementation, product bundles will have been persisted and will
 		// be passed with a non-default id. In order to allow a unified treatment, we will keep the respective OneToMany
-		// relations to CrmProductBundle and will reset their ids before creating the transaction
-		for (CrmProductBundle bundle : transaction.getProducts()) {
-			bundle.setId(0);
+		// relations to ShoppingCartItem and will reset their ids before creating the transaction
+		for (ShoppingCartItem item : transaction.getItems()) {
+			item.setId(0);
 		}
 		
 		customerTransactionCRUD.createTransaction(transaction);

@@ -9,7 +9,7 @@ import javax.ejb.*;
 import javax.persistence.*;
 
 
-import org.dieschnittstelle.jee.esa.entities.crm.CrmProductBundle;
+import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.apache.log4j.Logger;
 
 /**
@@ -34,36 +34,36 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	protected static Logger logger = Logger.getLogger(ShoppingCartStateful.class);
 
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<CrmProductBundle> productBundles = new ArrayList<CrmProductBundle>();
+	private List<ShoppingCartItem> items = new ArrayList<ShoppingCartItem>();
 	
 	public ShoppingCartStateful() {
 		logger.info("<constructor>: " + this);
 		this.lastUpdated = System.currentTimeMillis();
 	}
 	
-	public void addProductBundle(CrmProductBundle product) {
-		logger.info("addProductBundle(): " + product);
+	public void addItem(ShoppingCartItem product) {
+		logger.info("addItem(): " + product);
 
 		// check whether we already have a bundle for the given product
 		boolean bundleUpdate = false;
-		for (CrmProductBundle bundle : productBundles) {
-			if (bundle.getErpProductId() == product.getErpProductId()) {
-				bundle.setUnits(bundle.getUnits()+product.getUnits());
+		for (ShoppingCartItem item : items) {
+			if (item.getErpProductId() == product.getErpProductId()) {
+				item.setUnits(item.getUnits()+product.getUnits());
 				bundleUpdate = true;
 				break;
 			}
 		}
 		if (!bundleUpdate) {
-			this.productBundles.add(product);
+			this.items.add(product);
 		}
 
 		this.lastUpdated = System.currentTimeMillis();
 	}
 	
-	public List<CrmProductBundle> getProductBundles() {
-		logger.info("getProductBundles()");
+	public List<ShoppingCartItem> getItems() {
+		logger.info("getItems()");
 
-		return this.productBundles;
+		return this.items;
 	}
 
 	// entity: access the id
