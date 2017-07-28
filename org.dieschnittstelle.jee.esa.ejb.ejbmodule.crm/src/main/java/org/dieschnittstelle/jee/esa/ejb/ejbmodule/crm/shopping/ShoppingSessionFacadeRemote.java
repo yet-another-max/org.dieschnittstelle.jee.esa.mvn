@@ -5,7 +5,7 @@ import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
-public interface ShoppingSessionFacade {
+public interface ShoppingSessionFacadeRemote {
 
 	public void setTouchpoint(AbstractTouchpoint touchpoint);
 	

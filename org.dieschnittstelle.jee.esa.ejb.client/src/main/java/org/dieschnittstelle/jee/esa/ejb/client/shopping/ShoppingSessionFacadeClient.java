@@ -12,7 +12,7 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 			.getLogger(ShoppingSessionFacadeClient.class);
 
 	/*
-	 * use a proxy for the ShoppingSessionFacade interface
+	 * use a proxy for the ShoppingSessionFacadeRemote interface
 	 */
 
 	public ShoppingSessionFacadeClient() {
