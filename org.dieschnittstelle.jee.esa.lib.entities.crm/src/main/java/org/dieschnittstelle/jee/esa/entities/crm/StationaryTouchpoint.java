@@ -40,7 +40,7 @@ public class StationaryTouchpoint extends AbstractTouchpoint  implements Seriali
 	 * see Customer->Address for a more intuitive handling of an "address" association as ManyToOne
 	 */
 	@OneToOne(cascade={CascadeType.ALL})
-	private Address location;
+	private Address address;
 	
 	public StationaryTouchpoint() {
 		logger.info("<constructor>");
@@ -53,19 +53,19 @@ public class StationaryTouchpoint extends AbstractTouchpoint  implements Seriali
 	public StationaryTouchpoint(int erpPointOfSaleId,String name,Address address) {
 		super.setErpPointOfSaleId(erpPointOfSaleId);
 		super.setName(name);
-		this.setLocation(address);
+		this.setAddress(address);
 	}
 	
 	public String toString() {
-		return "[StationaryTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.name + " " + this.location + "]";
+		return "[StationaryTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.name + " " + this.address + "]";
 	}
 	
-	public Address getLocation() {
-		return location;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setLocation(Address location) {
-		this.location = location;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	/*

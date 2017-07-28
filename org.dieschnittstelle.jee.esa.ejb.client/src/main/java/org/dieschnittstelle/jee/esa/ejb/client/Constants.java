@@ -103,9 +103,9 @@ public class Constants {
 	// be defaulted to any value different from 0 (e.g. -1)
 	public static void resetEntities() {
 		TOUCHPOINT_1.setId(0);
-		TOUCHPOINT_1.getLocation().setId(0);
+		TOUCHPOINT_1.getAddress().setId(0);
 		TOUCHPOINT_2.setId(0);
-		TOUCHPOINT_2.getLocation().setId(0);
+		TOUCHPOINT_2.getAddress().setId(0);
 		TOUCHPOINT_3.setId(0);
 		PRODUCT_1.setId(0);
 		PRODUCT_2.setId(0);

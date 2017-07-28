@@ -60,13 +60,13 @@ else {
 		<tr>
 			<td><%=touchpoint.getId()%></td>
 			<td><%=touchpoint.getName()%></td>
-			<td><%=((StationaryTouchpoint) touchpoint).getLocation()
+			<td><%=((StationaryTouchpoint) touchpoint).getAddress()
 							.getStreet()%>
-				<%=((StationaryTouchpoint) touchpoint).getLocation()
+				<%=((StationaryTouchpoint) touchpoint).getAddress()
 							.getHouseNr()%></td>
-			<td><%=((StationaryTouchpoint) touchpoint).getLocation()
+			<td><%=((StationaryTouchpoint) touchpoint).getAddress()
 							.getZipCode()%></td>
-			<td><%=((StationaryTouchpoint) touchpoint).getLocation()
+			<td><%=((StationaryTouchpoint) touchpoint).getAddress()
 							.getCity()%></td>
 			<td>
 				<!--  we add a delete button -->
