@@ -70,7 +70,7 @@ public class ShowTouchpointSOAPService {
 //			StationaryTouchpoint tp = new StationaryTouchpoint();
 //			tp.setId(-1);
 //			tp.setName("BHT SOAP Store");
-//			tp.setLocation(addr);
+//			tp.setAddress(addr);
 //
 //			tp = (StationaryTouchpoint) serviceProxy.createTouchpoint(tp);
 //			logger.info("created touchpoint: " + tp);
