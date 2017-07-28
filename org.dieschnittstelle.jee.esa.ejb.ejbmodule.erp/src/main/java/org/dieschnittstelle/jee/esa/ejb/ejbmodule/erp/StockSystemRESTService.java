@@ -5,8 +5,8 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import java.util.List;
 
 /**
- * TODO JPA4 alternative:
- * if you decide to expose your business logics using REST services rather than remote EJB interfaces:
+ * TODO:
+ * if you decide to expose the stock system functionality using REST services rather than remote EJB interfaces:
  * - declare the web api for this interface using JAX-RS
  * - implement the interface as an EJB of an appropriate type
  * - in the EJB, delegate method invocations to the corresponding methods of the StockSystem EJB
