@@ -1,5 +1,8 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
+import javax.ejb.ApplicationException;
+
+@ApplicationException(rollback=true)
 public class ShoppingException extends Exception {
 	
 	/**
