@@ -3,9 +3,9 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 //import org.apache.log4j.Logger;
 //import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 //import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
-//import org.dieschnittstelle.jee.esa.jws.ProductCRUDSOAPService;
+//import org.dieschnittstelle.jee.esa.jws.ProductCRUDWebServiceSOAP;
 //import org.dieschnittstelle.jee.esa.jws.ProductCRUDWebService;
-//
+
 //import java.util.List;
 
 public class ProductCRUDSOAPClient {
@@ -18,7 +18,7 @@ public class ProductCRUDSOAPClient {
 //
 //
 //		/*
-//		 * create a client for the web service using the service class and obtaining the port for product CRUD
+//		 * create a client for the web service using the service class and obtaining the port for the SOAP binding
 //       * DO NOT FORGET TO SPECIFY THE WSDL URL IN THE pom.xml FILE OF THE JWS PROJECT (search for TODO)
 //		 */
 //		serviceProxy = null;
