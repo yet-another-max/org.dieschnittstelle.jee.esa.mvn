@@ -57,7 +57,7 @@ public class TotalUsecase {
 
 		System.out.println("\n%%%%%%%%%%%% TotalUsecase: " + (this.provokeErrorOnPurchase ? "ShoppingException will be provoked (ADD4)" : "will run regularly") + ", " + (this.useShoppingSessionFacade ? "remote ShoppingSessionFacade will be used (PAT)" : "will use local ShoppingSession implementation") + " %%%%%%%%%%%\n\n");
 
-		step();
+		if (this.stepping) step();
 
 		try {
 			createProducts();

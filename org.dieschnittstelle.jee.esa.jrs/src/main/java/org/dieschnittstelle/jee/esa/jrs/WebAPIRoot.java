@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ApplicationPath("/api")
-public class MyResteasyApplication extends Application {
+public class WebAPIRoot extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
