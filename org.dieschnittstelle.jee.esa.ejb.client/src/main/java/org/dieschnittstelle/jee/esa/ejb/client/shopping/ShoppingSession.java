@@ -118,28 +118,24 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 		logger.info("checkAndRemoveProductsFromStock");
 
 		for (ShoppingCartItem item : this.shoppingCart.getItems()) {
+
+			// ermitteln Sie das AbstractProduct für das gegebene item. Nutzen Sie dafür dessen erpProductId und die ProductCRUD EJB
+
 			if (item.isCampaign()) {
 				this.campaignTracking.purchaseCampaignAtTouchpoint(item.getErpProductId(), this.touchpoint,
 						item.getUnits());
 				// wenn Sie eine Kampagne haben, muessen Sie hier
-				// 1) zunaechst das Campaign-Objekt anhand der erpProductId von productBundle auslesen
-				// 2) dann ueber die ProductBundle Objekte auf dem Campaign Objekt iterieren und
-				// 3) fuer jedes ProductBundle das betreffende Produkt in der auf dem Bundle angegebenen Anzahl, multipliziert mit dem Wert von 
+				// 1) dann ueber die ProductBundle Objekte auf dem Campaign Objekt iterieren und
+				// 2) fuer jedes ProductBundle das betreffende Produkt in der auf dem Bundle angegebenen Anzahl, multipliziert mit dem Wert von
 				// productBundle.getUnits() aus dem Warenkorb, 
 				// - hinsichtlich Verfuegbarkeit ueberpruefen, und
-				// - falls verfuegbar aus dem Warenlager entfernen 
+				// - falls verfuegbar aus dem Warenlager entfernen - nutzen Sie dafür die StockSystem EJB
 				// (Anm.: productBundle.getUnits() sagt Ihnen, wie oft ein Produkt, im vorliegenden Fall eine Kampagne, im
 				// Warenkorb liegt)
 			} else {
 				// andernfalls (wenn keine Kampagne vorliegt) muessen Sie
-				// 1) das Produkt (dann IndividualisedProductItem) anhand der erpProductId von productBundle auslesen, und
-				// 2) das Produkt in der in productBundle.getUnits() angegebenen Anzahl hinsichtlich Verfuegbarkeit ueberpruefen und 
-				// 3) das Produkt, falls verfuegbar, aus dem Warenlager entfernen
-
-				// Schritt 1) koennen Sie ggf. auch mit Typ AbstractProduct vor
-				// die if/else Verzweigung bezueglich isCampaign() platzieren -
-				// in jedem Fall benoetigen Sie hierfuer Zugriff auf Ihre
-				// ProductCRUD EJB
+				// 1) das Produkt in der in productBundle.getUnits() angegebenen Anzahl hinsichtlich Verfuegbarkeit ueberpruefen und
+				// 2) das Produkt, falls verfuegbar, aus dem Warenlager entfernen
 			}
 
 		}
