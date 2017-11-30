@@ -10,7 +10,7 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 
 public class ProductCRUDSOAPClient {
 
-//	private ProductCRUDWebService serviceProxy;
+//	private ProductCRUDWebServiceSOAP serviceProxy;
 //
 //	protected static Logger logger = Logger.getLogger(ProductCRUDSOAPClient.class);
 //
