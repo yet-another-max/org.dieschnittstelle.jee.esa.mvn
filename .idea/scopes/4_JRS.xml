@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="4_JRS" pattern="file[group:0_SHARED]:*//*||file[group:4_JRS]:*//*" />
+</component>

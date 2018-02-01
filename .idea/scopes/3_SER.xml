@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="3_SER" pattern="file[lib-entities-crm]:*/||file[lib-esa-utils]:*/||file[group:3_SER]:*//*" />
+</component>
