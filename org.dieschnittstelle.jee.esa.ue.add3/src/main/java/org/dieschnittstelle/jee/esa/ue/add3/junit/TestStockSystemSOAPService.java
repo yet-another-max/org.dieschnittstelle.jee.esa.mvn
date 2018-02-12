@@ -14,7 +14,7 @@ import java.util.List;
 /*
  * 
  */
-public class TestStockSystemWebService {
+public class TestStockSystemSOAPService {
 	
 //	private StockSystemRemote serviceProxy;
 //

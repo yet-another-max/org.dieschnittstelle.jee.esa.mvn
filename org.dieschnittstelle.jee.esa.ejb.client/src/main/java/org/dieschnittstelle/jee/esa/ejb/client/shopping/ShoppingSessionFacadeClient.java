@@ -12,12 +12,14 @@ public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 			.getLogger(ShoppingSessionFacadeClient.class);
 
 	/*
-	 * use a proxy for the ShoppingSessionFacadeRemote interface
+	 * TODO use a proxy for the ShoppingSessionFacadeRemote interface
 	 */
 
 	public ShoppingSessionFacadeClient() {
-		/* instantiate the proxy using the EJBProxyFactory (see the other client classes) */
+		/* TODO: instantiate the proxy using the EJBProxyFactory (see the other client classes) */
 	}
+
+	/* TODO: implement the following methods using the proxy */
 
 	@Override
 	public void setTouchpoint(AbstractTouchpoint touchpoint) {

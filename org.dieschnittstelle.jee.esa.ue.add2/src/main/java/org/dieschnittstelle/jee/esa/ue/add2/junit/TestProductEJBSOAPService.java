@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 // TODO: remove the comments
 // TODO: import all required classes from the generated packages
 
-public class TestProductCRUD {
+public class TestProductEJBSOAPService {
 
 
 //	private ProductCRUDClient client;
