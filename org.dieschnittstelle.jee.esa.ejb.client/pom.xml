@@ -95,7 +95,7 @@
         </dependency>
         <dependency>
             <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
-            <artifactId>lib-esa-utils</artifactId>
+            <artifactId>lib-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

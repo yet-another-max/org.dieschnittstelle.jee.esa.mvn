@@ -56,7 +56,7 @@
                         </jarModule>
                         <jarModule>
                             <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
-                            <artifactId>lib-esa-utils</artifactId>
+                            <artifactId>lib-utils</artifactId>
                             <bundleDir>lib</bundleDir>
                             <bundleFileName>org.dieschnittstelle.jee.esa.utils.jar</bundleFileName>
                         </jarModule>
@@ -141,7 +141,7 @@
         </dependency>
         <dependency>
             <groupId>org.dieschnittstelle.jee.esa.shared</groupId>
-            <artifactId>lib-esa-utils</artifactId>
+            <artifactId>lib-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
