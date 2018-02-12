@@ -7,7 +7,13 @@ import java.util.Collection;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSessionFacadeClient;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.CampaignExecution;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
@@ -30,6 +36,9 @@ public class TotalUsecase {
 			e.printStackTrace();
 		}
 	}
+
+	// for demonstrating async ejb / ejb clients
+	private boolean async = false;
 	
 	// declare the session as stepping or not
 	private boolean stepping = true;
@@ -41,13 +50,13 @@ public class TotalUsecase {
 	// TODO: ADD4: set to true for testing success-case for transactions and ShoppingException
 	private boolean useShoppingSessionFacade = false /*true*/;
 
-	// declare the attributes that will be instantiated with the ejb clients
-	private ProductCRUDClient productCRUD;
-	private TouchpointAccessClient touchpointAccess;
-	private StockSystemClient stockSystem;
-	private CustomerCRUDClient customerCRUD;
-	private CampaignTrackingClient campaignTracking;
-	private CustomerTransactionCRUDClient transactionCRUD;
+	// declare the attributes that will be instantiated with the ejb clients - note that the attributes use the remote interface types
+	private ProductCRUDRemote productCRUD;
+	private TouchpointAccessRemote touchpointAccess;
+	private StockSystemRemote stockSystem;
+	private CustomerCRUDRemote customerCRUD;
+	private CampaignTrackingRemote campaignTracking;
+	private CustomerTransactionCRUDRemote transactionCRUD;
 
 	public TotalUsecase() throws Exception {
 		instantiateClients();
@@ -79,7 +88,12 @@ public class TotalUsecase {
 	public void instantiateClients() throws Exception {
 		// instantiate the clients
 		productCRUD = new ProductCRUDClient();
-		touchpointAccess = new TouchpointAccessClient();
+		if (async) {
+			touchpointAccess = new TouchpointAccessClientAsync();
+		}
+		else {
+			touchpointAccess = new TouchpointAccessClient();
+		}
 		stockSystem = new StockSystemClient();
 		customerCRUD = new CustomerCRUDClient();
 		campaignTracking = new CampaignTrackingClient();

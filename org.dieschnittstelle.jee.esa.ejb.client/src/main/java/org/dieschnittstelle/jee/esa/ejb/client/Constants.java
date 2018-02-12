@@ -24,6 +24,7 @@ public class Constants {
 	public static final String CUSTOMER_TRACKING_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/customerTrackingSystem!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CustomerTrackingRemote";
 	public static final String CUSTOMER_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDRemote";
 	public static final String TOUCHPOINT_ACCESS_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote";
+	public static final String TOUCHPOINT_ACCESS_ASYNC_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/TouchpointAccessStatelessAsync!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemoteAsync";
 	public static final String TRANSACTIONS_CRUD_BEAN_URI = "ejb:org.dieschnittstelle.jee.esa.ejb/org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm/CustomerTransactionCRUDStateless!org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote";
 
 	/*
