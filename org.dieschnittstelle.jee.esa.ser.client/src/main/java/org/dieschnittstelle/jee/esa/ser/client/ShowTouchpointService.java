@@ -9,6 +9,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.concurrent.FutureCallback;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.apache.http.nio.client.HttpAsyncClient;
@@ -84,6 +85,13 @@ public class ShowTouchpointService {
 				"BHT Verkaufsstand", addr);
 
 		createNewTouchpoint(tp);
+
+		try {
+			client.close();
+		}
+		catch (IOException ioe) {
+			logger.error("got IOException trying to close client: " + ioe,ioe);
+		}
 
 		show("TestTouchpointService: done.\n");
 	}
