@@ -67,7 +67,7 @@ public class JAXRSClientInterpreter implements InvocationHandler {
         // TODO check whether we handle the toString method and give some appropriate return value
 
         // use a default http client
-        HttpClient client = Http.createClient();
+        HttpClient client = Http.createSyncClient();
 
         // TODO: create the url using baseurl and commonpath (further segments may be added if the method has an own @Path annotation)
         String url = null;

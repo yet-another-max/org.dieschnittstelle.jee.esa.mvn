@@ -38,7 +38,7 @@
 		<description></description>
 		<display-name>TouchpointWebServiceServlet</display-name>
 		<servlet-name>TouchpointWebServiceServlet</servlet-name>
-		<servlet-class>org.dieschnittstelle.jee.esa.ser.TouchpointWebServiceServlet</servlet-class>
+		<servlet-class>org.dieschnittstelle.jee.esa.ser.TouchpointServiceServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TouchpointWebServiceServlet</servlet-name>

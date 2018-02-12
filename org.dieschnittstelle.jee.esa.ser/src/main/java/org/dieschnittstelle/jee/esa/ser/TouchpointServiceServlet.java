@@ -10,12 +10,12 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 import org.apache.log4j.Logger;
 
-public class TouchpointWebServiceServlet extends HttpServlet {
+public class TouchpointServiceServlet extends HttpServlet {
 
 	protected static Logger logger = Logger
-			.getLogger(TouchpointWebServiceServlet.class);
+			.getLogger(TouchpointServiceServlet.class);
 
-	public TouchpointWebServiceServlet() {
+	public TouchpointServiceServlet() {
 		show("TouchpointWebServiceServlet: constructor invoked\n");
 	}
 	
