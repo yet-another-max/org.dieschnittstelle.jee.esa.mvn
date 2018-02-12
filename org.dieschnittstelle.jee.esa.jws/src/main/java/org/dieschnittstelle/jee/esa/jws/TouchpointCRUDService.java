@@ -87,6 +87,18 @@ public class TouchpointCRUDService {
 
 	@WebMethod
 	public boolean deleteTouchpoint(long id) {
+		logger.info("deleteTouchpoint(): sleeping...");
+
+		// for demonstrating async processing, we include a sleep here
+		try {
+			Thread.sleep(2000);
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		logger.info("deleteTouchpoint(): continuing...");
+
 		// obtain the CRUD executor from the servlet context
 		GenericCRUDExecutor<AbstractTouchpoint> touchpointCRUD = (GenericCRUDExecutor<AbstractTouchpoint>) ((ServletContext) wscontext
 				.getMessageContext().get(MessageContext.SERVLET_CONTEXT))

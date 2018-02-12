@@ -32,6 +32,12 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>http://localhost:8080/org.dieschnittstelle.jee.esa.jws/TouchpointCRUDWebService?wsdl</wsdl>
+                                    <!-- the following element references an additional binding file that provides further parameters to the sourcecode generation.
+                                         here, we specify settings that will result in generating an asynchronous access variant -->
+                                    <extraargs>
+                                        <extraarg>-b</extraarg>
+                                        <extraarg>${basedir}/async_binding.xml</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
