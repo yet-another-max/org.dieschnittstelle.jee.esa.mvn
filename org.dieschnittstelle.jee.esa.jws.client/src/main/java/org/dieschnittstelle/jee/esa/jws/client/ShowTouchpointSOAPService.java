@@ -58,7 +58,6 @@ public class ShowTouchpointSOAPService {
 //				System.out.println("/>");
 //				System.in.read();
 //			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 //
@@ -82,7 +81,6 @@ public class ShowTouchpointSOAPService {
 //				System.out.println("/>");
 //				System.in.read();
 //			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 //			// change the name
