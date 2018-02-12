@@ -22,6 +22,7 @@ import org.apache.log4j.Logger;
  * @author joern
  *
  */
+
 public class HttpTrafficLoggingFilter implements Filter {
 
 	/**

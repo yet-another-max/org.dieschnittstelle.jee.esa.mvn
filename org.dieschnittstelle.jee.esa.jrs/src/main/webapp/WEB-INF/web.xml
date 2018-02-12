@@ -21,6 +21,7 @@
         <display-name>HttpTrafficLoggingFilter</display-name>
         <filter-name>HttpTrafficLoggingFilter</filter-name>
         <filter-class>org.dieschnittstelle.jee.esa.ser.HttpTrafficLoggingFilter</filter-class>
+        <async-supported>true</async-supported>
     </filter>
     <filter-mapping>
         <filter-name>HttpTrafficLoggingFilter</filter-name>

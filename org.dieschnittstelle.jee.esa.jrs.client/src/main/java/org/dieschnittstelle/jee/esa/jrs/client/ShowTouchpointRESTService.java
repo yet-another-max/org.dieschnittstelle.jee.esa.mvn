@@ -23,13 +23,15 @@ public class ShowTouchpointRESTService {
 	 */
 	public static void main(String[] args) {
 
+		// for demo purposes: control whether we are accessing the synchronous or the asynchronous service
+		boolean async = false;
 
 		/*
 		 * create a client for the web service passing the interface
 		 * this uses the most recent resteasy client api rather than the deprecated ProxyFactory.create() method
 		 */
 		ResteasyClient client = new ResteasyClientBuilder().build();
-		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/api/");
+		ResteasyWebTarget target = client.target("http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/api/" + (async ? "async/" : ""));
 		ITouchpointCRUDService serviceProxy = target.proxy(ITouchpointCRUDService.class);
 
 		show("serviceProxy: " + serviceProxy + " of class: " + serviceProxy.getClass());
