@@ -1,21 +1,25 @@
 package org.dieschnittstelle.jee.esa.ser;
 
-import java.io.ObjectOutputStream;
+import org.apache.http.HttpStatus;
+import org.apache.log4j.Logger;
 
+import javax.servlet.AsyncContext;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ObjectOutputStream;
 
-import static org.dieschnittstelle.jee.esa.utils.Utils.*;
+import static org.dieschnittstelle.jee.esa.utils.Utils.show;
 
-import org.apache.log4j.Logger;
-
-public class TouchpointServiceServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/api/async/touchpoints", asyncSupported = true)
+public class TouchpointServiceServletAsync extends HttpServlet {
 
 	protected static Logger logger = Logger
-			.getLogger(TouchpointServiceServlet.class);
+			.getLogger(TouchpointServiceServletAsync.class);
 
-	public TouchpointServiceServlet() {
+	public TouchpointServiceServletAsync() {
 		show("TouchpointServiceServlet: constructor invoked\n");
 	}
 	
@@ -25,27 +29,25 @@ public class TouchpointServiceServlet extends HttpServlet {
 
 		logger.info("doGet()");
 
-		// we assume here that GET will only be used to return the list of all
-		// touchpoints
+		AsyncContext asyncCtx = request.startAsync();
+		RequestDispatcher dispatcher = asyncCtx.getRequest().getRequestDispatcher("/api/touchpoints");
 
-		// obtain the executor for reading out the touchpoints
-		TouchpointCRUDExecutor exec = (TouchpointCRUDExecutor) getServletContext()
-				.getAttribute("touchpointCRUD");
-		try {
-			// set the status
-			response.setStatus(HttpServletResponse.SC_OK);
-			// obtain the output stream from the response and write the list of
-			// touchpoints into the stream
-			ObjectOutputStream oos = new ObjectOutputStream(
-					response.getOutputStream());
-			// write the object
-			oos.writeObject(exec.readAllTouchpoints());
-			oos.close();
-		} catch (Exception e) {
-			String err = "got exception: " + e;
-			logger.error(err, e);
-			throw new RuntimeException(e);
-		}
+		new Thread(()->{
+			logger.info("doGet(): sleeping...");
+			try {
+				Thread.sleep(2000);
+			}
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			logger.info("doGet(): continuing...");
+			try {
+				dispatcher.forward(asyncCtx.getRequest(), asyncCtx.getResponse());
+			}
+			catch (Exception e) {
+				response.setStatus(HttpStatus.SC_INTERNAL_SERVER_ERROR);
+			}
+		}).start();
 
 	}
 	

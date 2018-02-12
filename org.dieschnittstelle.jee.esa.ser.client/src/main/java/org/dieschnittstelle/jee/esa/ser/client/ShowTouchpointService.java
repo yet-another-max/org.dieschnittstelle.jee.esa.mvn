@@ -36,7 +36,7 @@ public class ShowTouchpointService {
 	}
 
 	/**
-	 * the http client that can be used for accessing the service on tomcat
+	 * the http client that can be used for accessing the service on tomcat - note that we are usying an async client here
 	 */
 	private CloseableHttpAsyncClient client;
 	
@@ -102,6 +102,10 @@ public class ShowTouchpointService {
 	 * @return
 	 */
 	public List<AbstractTouchpoint> readAllTouchpoints() {
+
+		// demonstrate access to the asynchronously running servlet (client-side access is asynchronous in any case)
+		boolean async = false;
+
 		logger.info("readAllTouchpoints()");
 
 		try {
@@ -110,15 +114,21 @@ public class ShowTouchpointService {
 
 			// UE SER1: Aendern Sie die URL von api->gui
 			HttpGet get = new HttpGet(
-					"http://localhost:8888/org.dieschnittstelle.jee.esa.ser/api/touchpoints");
+					"http://localhost:8888/org.dieschnittstelle.jee.esa.ser/api/" + (async ? "async/touchpoints" : "touchpoints"));
+
+			logger.info("readAllTouchpoints(): about to execute request: " + get);
+
 			// mittels der <request>.setHeader() Methode koennen Header-Felder
 			// gesetzt werden
 
 			// execute the method and obtain the response - for AsyncClient this will be a future from
 			// which the response object can be obtained synchronously calling get() - alternatively, a FutureCallback can
 			// be passed to the execute() method
-			Future<HttpResponse> responseFuture = client.execute(get,null);
+			Future<HttpResponse> responseFuture = client.execute(get, null);
+			logger.info("readAllTouchpoints(): received response future...");
+
 			HttpResponse response = responseFuture.get();
+			logger.info("readAllTouchpoints(): received response value");
 
 			// check the response status
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {

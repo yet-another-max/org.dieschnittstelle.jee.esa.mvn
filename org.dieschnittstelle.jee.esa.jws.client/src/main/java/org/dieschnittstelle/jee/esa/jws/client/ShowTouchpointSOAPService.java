@@ -58,7 +58,7 @@ public class ShowTouchpointSOAPService {
 //					Response<DeleteTouchpointResponse> deleteResponse = serviceProxy.deleteTouchpointAsync(tp.getId());
 //					logger.info("delete async: received response future: " + deleteResponse);
 //					deleteResponse.get();
-//					logger.info("delete async: received response value.");
+//					logger.info("delete async: received response value");
 //				}
 //				else {
 //					serviceProxy.deleteTouchpoint(tp.getId());

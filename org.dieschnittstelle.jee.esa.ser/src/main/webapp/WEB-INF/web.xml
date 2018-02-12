@@ -16,6 +16,7 @@
 		<display-name>HttpTrafficLoggingFilter</display-name>
 		<filter-name>HttpTrafficLoggingFilter</filter-name>
 		<filter-class>org.dieschnittstelle.jee.esa.ser.HttpTrafficLoggingFilter</filter-class>
+		<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>
 		<filter-name>HttpTrafficLoggingFilter</filter-name>
@@ -36,12 +37,13 @@
 	<!-- the servlet that provides programmatic touchpoint access as a web service -->
 	<servlet>
 		<description></description>
-		<display-name>TouchpointWebServiceServlet</display-name>
-		<servlet-name>TouchpointWebServiceServlet</servlet-name>
+		<display-name>TouchpointServiceServlet</display-name>
+		<servlet-name>TouchpointServiceServlet</servlet-name>
 		<servlet-class>org.dieschnittstelle.jee.esa.ser.TouchpointServiceServlet</servlet-class>
+		<async-supported>true</async-supported>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>TouchpointWebServiceServlet</servlet-name>
+		<servlet-name>TouchpointServiceServlet</servlet-name>
 		<url-pattern>/api/touchpoints/*</url-pattern>
 	</servlet-mapping>
 	<!--  the filter that blocks access to the gui servlet for clients without html capabilities -->
