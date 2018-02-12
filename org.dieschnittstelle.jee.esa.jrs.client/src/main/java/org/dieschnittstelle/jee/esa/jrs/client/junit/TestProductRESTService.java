@@ -15,14 +15,14 @@ import org.junit.Test;
 
 public class TestProductRESTService {
 	
-	private ProductCRUDClient client;
+	private ProductCRUDRESTClient client;
 	
 	private IndividualisedProductItem PRODUCT_1 = new IndividualisedProductItem("Schrippe",	ProductType.ROLL, 720);
 	private IndividualisedProductItem PRODUCT_2 = new IndividualisedProductItem("Kirschplunder",ProductType.PASTRY, 1080);
 	
 	@Before
 	public void prepareContext() throws Exception {
-		client = new ProductCRUDClient();
+		client = new ProductCRUDRESTClient();
 	}
 		
 	@Test

@@ -8,13 +8,13 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
 import org.dieschnittstelle.jee.esa.jrs.IProductCRUDService;
 
-public class ProductCRUDClient {
+public class ProductCRUDRESTClient {
 
 	private IProductCRUDService serviceProxy;
 	
-	protected static Logger logger = Logger.getLogger(ProductCRUDClient.class);
+	protected static Logger logger = Logger.getLogger(ProductCRUDRESTClient.class);
 
-	public ProductCRUDClient() throws Exception {
+	public ProductCRUDRESTClient() throws Exception {
 
 
 		/*

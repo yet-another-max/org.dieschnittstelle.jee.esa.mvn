@@ -3,14 +3,14 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 //import org.apache.log4j.Logger;
 //import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 //import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
-//import org.dieschnittstelle.jee.esa.jws.ProductCRUDWebServiceSOAP;
+//import org.dieschnittstelle.jee.esa.jws.IProductCRUDService;
 //import org.dieschnittstelle.jee.esa.jws.ProductCRUDWebService;
-
+//
 //import java.util.List;
 
 public class ProductCRUDSOAPClient {
 
-//	private ProductCRUDWebServiceSOAP serviceProxy;
+//	private IProductCRUDService serviceProxy;
 //
 //	protected static Logger logger = Logger.getLogger(ProductCRUDSOAPClient.class);
 //

@@ -16,7 +16,7 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 /*
  * UE JWS5: rufen Sie hier den in JWS4 implementierten Web Service auf.
  */
-public class TestProductCRUDSOAPService {
+public class TestProductSOAPService {
 
 //	private ProductCRUDSOAPClient client;
 //

@@ -22,10 +22,10 @@ import org.dieschnittstelle.jee.esa.entities.erp.ProductType;
 
 /*
  * UE JWS4: machen Sie die Funktionalitaet dieser Klasse als Web Service verfuegbar und verwenden Sie fuer 
- * die Umetzung der beiden Methoden die Instanz von GenericCRUDExecutor<AbstractProduct>, 
+ * die Umetzung der Methoden die Instanz von GenericCRUDExecutor<AbstractProduct>,
  * die Sie aus dem ServletContext auslesen koennen
  */
-public class ProductCRUDWebServiceSOAP {
+public class ProductCRUDService {
 
 	public List<AbstractProduct> readAllProducts() {
 		return new ArrayList();
