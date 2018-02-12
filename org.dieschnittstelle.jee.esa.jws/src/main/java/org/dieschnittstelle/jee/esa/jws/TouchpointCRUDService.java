@@ -17,17 +17,17 @@ import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
 import org.apache.log4j.Logger;
 
-@WebService(targetNamespace = "http://dieschnittstelle.org/jee/esa/jws", serviceName = "TouchpointCRUDWebService")
+@WebService(targetNamespace = "http://dieschnittstelle.org/jee/esa/jws", name = "ITouchpointCRUDService", serviceName = "TouchpointCRUDWebService", portName = "TouchpointCRUDPort")
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
-public class TouchpointCRUDWebServiceSOAP {
+public class TouchpointCRUDService {
 
 	protected static Logger logger = Logger
-			.getLogger(TouchpointCRUDWebServiceSOAP.class);
+			.getLogger(TouchpointCRUDService.class);
 
 	@Resource
 	private WebServiceContext wscontext;
 
-	public TouchpointCRUDWebServiceSOAP() {
+	public TouchpointCRUDService() {
 		logger.info("<constructor>");
 	}
 

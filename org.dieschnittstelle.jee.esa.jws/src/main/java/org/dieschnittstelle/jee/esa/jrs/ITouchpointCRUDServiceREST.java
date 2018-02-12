@@ -15,7 +15,7 @@ import javax.ws.rs.Produces;
 @Path("/touchpoints")
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
-public interface ITouchpointCRUDWebServiceREST {
+public interface ITouchpointCRUDServiceREST {
 	
 	@GET
 	public List<StationaryTouchpoint> readAllTouchpoints();
