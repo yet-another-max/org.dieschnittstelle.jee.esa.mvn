@@ -13,7 +13,7 @@ import org.dieschnittstelle.jee.esa.entities.erp.ProductType;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestProductCRUDService {
+public class TestProductRESTService {
 	
 	private ProductCRUDClient client;
 	
