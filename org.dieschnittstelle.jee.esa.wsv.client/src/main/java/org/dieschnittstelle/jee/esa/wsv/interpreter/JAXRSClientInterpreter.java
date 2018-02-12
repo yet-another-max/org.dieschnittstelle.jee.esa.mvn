@@ -23,9 +23,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import org.dieschnittstelle.jee.esa.utils.Http;
 import org.dieschnittstelle.jee.esa.wsv.interpreter.json.JSONObjectSerialiser;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
@@ -67,7 +67,7 @@ public class JAXRSClientInterpreter implements InvocationHandler {
         // TODO check whether we handle the toString method and give some appropriate return value
 
         // use a default http client
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = Http.createClient();
 
         // TODO: create the url using baseurl and commonpath (further segments may be added if the method has an own @Path annotation)
         String url = null;

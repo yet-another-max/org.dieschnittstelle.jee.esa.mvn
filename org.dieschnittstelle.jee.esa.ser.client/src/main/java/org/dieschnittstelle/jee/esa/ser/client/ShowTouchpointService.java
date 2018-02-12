@@ -3,17 +3,21 @@ package org.dieschnittstelle.jee.esa.ser.client;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
+import java.util.concurrent.Future;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.apache.http.impl.nio.client.HttpAsyncClients;
+import org.apache.http.nio.client.HttpAsyncClient;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
+import org.dieschnittstelle.jee.esa.utils.Http;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
@@ -33,7 +37,7 @@ public class ShowTouchpointService {
 	/**
 	 * the http client that can be used for accessing the service on tomcat
 	 */
-	private HttpClient client;
+	private CloseableHttpAsyncClient client;
 	
 	/**
 	 * the attribute that controls whether we are running through (when called from the junit test) or not
@@ -48,13 +52,15 @@ public class ShowTouchpointService {
 		 * create a http client and access the web application to read out the
 		 * list of touchpoints
 		 */
-		client = new DefaultHttpClient();
+		client = Http.createAsyncClient();
 	}
 
 	/**
 	 * run
 	 */
 	public void run() {
+
+		client.start();
 
 		// 1) read out all touchpoints
 		List<AbstractTouchpoint> touchpoints = readAllTouchpoints();
@@ -100,8 +106,11 @@ public class ShowTouchpointService {
 			// mittels der <request>.setHeader() Methode koennen Header-Felder
 			// gesetzt werden
 
-			// execute the method and obtain the response
-			HttpResponse response = client.execute(get);
+			// execute the method and obtain the response - for AsyncClient this will be a future from
+			// which the response object can be obtained synchronously calling get() - alternatively, a FutureCallback can
+			// be passed to the execute() method
+			Future<HttpResponse> responseFuture = client.execute(get,null);
+			HttpResponse response = responseFuture.get();
 
 			// check the response status
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
