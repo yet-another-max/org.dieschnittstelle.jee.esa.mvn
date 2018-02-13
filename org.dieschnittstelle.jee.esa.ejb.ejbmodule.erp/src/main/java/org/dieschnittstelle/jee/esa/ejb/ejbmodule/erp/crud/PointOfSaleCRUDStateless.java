@@ -46,7 +46,7 @@ public class PointOfSaleCRUDStateless implements PointOfSaleCRUDRemote, PointOfS
 
 	@Override
 	public List<PointOfSale> readAllPointsOfSale() {
-		return em.createQuery("FROM PointOfSale").getResultList();
+		return em.createQuery("SELECT p FROM PointOfSale AS p").getResultList();
 	}
 
 }

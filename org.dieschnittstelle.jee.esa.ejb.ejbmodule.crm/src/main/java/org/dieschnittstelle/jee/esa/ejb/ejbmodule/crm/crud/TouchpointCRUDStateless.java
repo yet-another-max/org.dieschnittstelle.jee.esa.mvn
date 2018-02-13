@@ -63,7 +63,7 @@ public class TouchpointCRUDStateless implements TouchpointCRUDRemote,
 
 	@Override
 	public List<AbstractTouchpoint> readAllTouchpoints() {
-		Query query = em.createQuery("FROM AbstractTouchpoint");
+		Query query = em.createQuery("SELECT t FROM AbstractTouchpoint AS t");
 
 		List<AbstractTouchpoint> tps = (List<AbstractTouchpoint>) query
 				.getResultList();

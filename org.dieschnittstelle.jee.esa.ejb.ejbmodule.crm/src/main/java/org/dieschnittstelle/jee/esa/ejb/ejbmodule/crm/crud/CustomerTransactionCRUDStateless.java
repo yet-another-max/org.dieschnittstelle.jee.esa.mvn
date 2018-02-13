@@ -79,7 +79,7 @@ public class CustomerTransactionCRUDStateless implements
 		logger.info("readAllTransactionsForCustomer(): " + customer);
 
 		Query query = em
-				.createQuery("SELECT t FROM CustomerTransaction t WHERE t.customer = "
+				.createQuery("SELECT t FROM CustomerTransaction AS t WHERE t.customer = "
 						+ customer.getId());
 		logger.info("readAllTransactionsForCustomer(): created query: " + query);
 
@@ -99,7 +99,7 @@ public class CustomerTransactionCRUDStateless implements
 				+ touchpoint + " / " + customer);
 
 		Query query = em
-				.createQuery("SELECT t FROM CustomerTransaction t WHERE t.customer = "
+				.createQuery("SELECT t FROM CustomerTransaction AS t WHERE t.customer = "
 						+ customer.getId()
 						+ " AND t.touchpoint = "
 						+ touchpoint.getId());
