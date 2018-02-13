@@ -42,8 +42,6 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	}
 	
 	public void addItem(ShoppingCartItem product) {
-		logger.info("addItem(): " + product);
-
 		// check whether we already have a bundle for the given product
 		boolean bundleUpdate = false;
 		for (ShoppingCartItem item : items) {
@@ -61,8 +59,6 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	}
 	
 	public List<ShoppingCartItem> getItems() {
-		logger.info("getItems()");
-
 		return this.items;
 	}
 

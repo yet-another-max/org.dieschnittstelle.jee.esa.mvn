@@ -43,8 +43,6 @@ public class CampaignTrackingSingleton implements CampaignTrackingRemote {
 	 */
 	@javax.ejb.Lock(javax.ejb.LockType.WRITE)
 	public void addCampaignExecution(CampaignExecution campaign) {
-		logger.info("addCampaignExecution(): " + campaign);
-		
 		if (!this.campaignExecutionsAtTouchpoint.containsKey(campaign
 				.getTouchpoint().getId())) {
 			this.campaignExecutionsAtTouchpoint.put(campaign.getTouchpoint()
@@ -63,8 +61,6 @@ public class CampaignTrackingSingleton implements CampaignTrackingRemote {
 	@javax.ejb.AccessTimeout(value=5,unit=java.util.concurrent.TimeUnit.SECONDS)
 	public int existsValidCampaignExecutionAtTouchpoint(long erpProductId,
 			AbstractTouchpoint tp) {
-		logger.info("existsValidCampaignExecutionAtTouchpoint(): " + erpProductId + "@" + tp);
-
 		Map<Long, CampaignExecution> campaignExecutions = this.campaignExecutionsAtTouchpoint
 				.get(tp.getId());
 		if (campaignExecutions == null) {
@@ -90,8 +86,6 @@ public class CampaignTrackingSingleton implements CampaignTrackingRemote {
 	@javax.ejb.Lock(javax.ejb.LockType.WRITE)
 	public void purchaseCampaignAtTouchpoint(long erpProductId,
 			AbstractTouchpoint tp, int units) {
-		logger.info("purchaseCampaignAtTouchpoint(): " + erpProductId + "@" + tp + ":" + units);
-		
 		this.campaignExecutionsAtTouchpoint.get(tp.getId()).get(erpProductId)
 				.purchase(units);
 	}

@@ -34,8 +34,6 @@ public class CustomerTrackingStateless implements CustomerTrackingRemote {
 	}
 
 	public void createTransaction(CustomerTransaction transaction) {
-		logger.info("createTransaction(): " + transaction);
-
 		// in case of using the RESTful shopping cart implementation, product bundles will have been persisted and will
 		// be passed with a non-default id. In order to allow a unified treatment, we will keep the respective OneToMany
 		// relations to ShoppingCartItem and will reset their ids before creating the transaction

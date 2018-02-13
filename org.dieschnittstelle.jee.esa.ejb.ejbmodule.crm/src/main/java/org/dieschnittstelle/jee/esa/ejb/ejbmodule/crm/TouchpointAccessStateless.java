@@ -32,8 +32,6 @@ public class TouchpointAccessStateless implements
 	@Override
 	public AbstractTouchpoint createTouchpointAndPointOfSale(
 			AbstractTouchpoint touchpoint) throws ShoppingException {
-		logger.info("createTouchpointAndPointOfSale(): " + touchpoint);
-
 //		logProductBundleKlass();
 
 		// we first create the posCRUD

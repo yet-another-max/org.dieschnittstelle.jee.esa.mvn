@@ -26,8 +26,6 @@ public class CustomerTransactionCRUDStateless implements
 
 	@Override
 	public boolean createTransaction(CustomerTransaction transaction) {
-		logger.info("createTransaction(): " + transaction);
-
 		// check whether the transaction fields are detached or not
 		logger.info("createTransaction(): customer attached (before): "
 				+ em.contains(transaction.getCustomer()));
@@ -46,15 +44,12 @@ public class CustomerTransactionCRUDStateless implements
 		// persit the transaction
 		em.persist(transaction);
 				
-		logger.info("createTransaction(): done.");
-
 		return true;
 	}
 
 	@Override
 	public Collection<CustomerTransaction> readAllTransactionsForTouchpoint(
 			AbstractTouchpoint touchpoint) {
-		logger.info("readAllTransactionsForTouchpoint(): " + touchpoint);
 		// check the transactions on the touchpoint
 		logger.info("readAllTransactionsForTouchpoint(): before merge transactions are: "
 				+ touchpoint.getTransactions());
@@ -76,8 +71,6 @@ public class CustomerTransactionCRUDStateless implements
 	@Override
 	public Collection<CustomerTransaction> readAllTransactionsForCustomer(
 			Customer customer) {
-		logger.info("readAllTransactionsForCustomer(): " + customer);
-
 		Query query = em
 				.createQuery("SELECT t FROM CustomerTransaction AS t WHERE t.customer = "
 						+ customer.getId());
@@ -95,9 +88,6 @@ public class CustomerTransactionCRUDStateless implements
 	@Override
 	public List<CustomerTransaction> readAllTransactionsForTouchpointAndCustomer(
 			AbstractTouchpoint touchpoint, Customer customer) {
-		logger.info("readAllTransactionsForTouchpointAndCustomer(): "
-				+ touchpoint + " / " + customer);
-
 		Query query = em
 				.createQuery("SELECT t FROM CustomerTransaction AS t WHERE t.customer = "
 						+ customer.getId()
