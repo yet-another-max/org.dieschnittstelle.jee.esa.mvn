@@ -47,7 +47,7 @@ public class MobileTouchpoint extends AbstractTouchpoint {
 	}
 
 	public String toString() {
-		return "[MobileTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.mobilePhoneIds + "]";
+		return "<MobileTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.mobilePhoneIds + ">";
 	}
 
 	/*

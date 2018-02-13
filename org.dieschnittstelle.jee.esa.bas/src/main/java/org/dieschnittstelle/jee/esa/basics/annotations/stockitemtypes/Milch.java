@@ -53,7 +53,7 @@ public class Milch {
 	 * our own toString method
 	 */
 	public String toString() {
-		return "[Milch " + this.markenname + " " + this.menge + "]";
+		return "<Milch " + this.markenname + " " + this.menge + ">";
 	}
 
 }

@@ -57,7 +57,7 @@ public class StationaryTouchpoint extends AbstractTouchpoint  implements Seriali
 	}
 	
 	public String toString() {
-		return "[StationaryTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.name + " " + this.address + "]";
+		return "<StationaryTouchpoint " + this.id + "/" + this.erpPointOfSaleId + " " + this.name + " " + this.address + ">";
 	}
 	
 	public Address getAddress() {

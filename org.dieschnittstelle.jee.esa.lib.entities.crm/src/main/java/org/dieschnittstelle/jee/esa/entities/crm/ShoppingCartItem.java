@@ -92,8 +92,8 @@ public class ShoppingCartItem implements Serializable {
 	}
 
 	public String toString() {
-		return "[ShoppingCartItem " + this.id + " (" + this.erpProductId + ":"
-				+ this.units + ")]";
+		return "<ShoppingCartItem " + this.id + " (" + this.erpProductId + ":"
+				+ this.units + ")>";
 	}
 
 	/*

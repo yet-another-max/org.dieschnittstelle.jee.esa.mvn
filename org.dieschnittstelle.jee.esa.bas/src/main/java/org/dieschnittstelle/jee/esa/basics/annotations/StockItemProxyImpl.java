@@ -143,7 +143,7 @@ public class StockItemProxyImpl implements IStockItem {
 	 */
 	@Override
 	public String toString() {
-		return "[StockItemProxy " + this.proxiedObject.toString() + "]";
+		return "<StockItemProxy " + this.proxiedObject.toString() + ">";
 	}
 	
 	@Override

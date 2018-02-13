@@ -76,7 +76,7 @@ public class Address extends Location  implements Serializable {
 	}
 	
 	public String toString() {
-		return "[Address " + this.getId() + ", " + this.street + " " + this.houseNr + ", " + this.zipCode + " " + this.city + "]";
+		return "<Address " + this.getId() + ", " + this.street + " " + this.houseNr + ", " + this.zipCode + " " + this.city + ">";
 	}
 	
 	public boolean equals(Object other) {

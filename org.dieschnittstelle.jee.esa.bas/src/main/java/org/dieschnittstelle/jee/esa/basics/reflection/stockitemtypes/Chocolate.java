@@ -51,7 +51,7 @@ public class Chocolate implements IStockItem {
 	
 	@Override
 	public String toString() {
-		return String.format("[Chocolate %s %d %d]", this.brandname, this.units, this.price);
+		return String.format("<Chocolate %s %d %d>", this.brandname, this.units, this.price);
 	}
 
 	public String getBrandname() {

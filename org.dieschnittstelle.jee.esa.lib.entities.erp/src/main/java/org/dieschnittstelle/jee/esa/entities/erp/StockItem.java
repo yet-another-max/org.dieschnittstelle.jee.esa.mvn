@@ -108,8 +108,8 @@ public class StockItem {
 	}
 
 	public String toString() {
-		return "[StockItem " + this.price + ", " + this.product + "@"
-				+ this.pos + ":" + this.units + "]";
+		return "<StockItem " + this.price + ", " + this.product + "@"
+				+ this.pos + ":" + this.units + ">";
 	}
 
 	public int getUnits() {

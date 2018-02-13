@@ -117,8 +117,8 @@ public class CustomerTransaction implements Serializable {
 	}
 
 	public String toString() {
-		return "[CustomerTransaction " + this.id + " " + this.customer + " "
-				+ this.touchpoint + ", " + this.items + "]";
+		return "<CustomerTransaction " + this.id + " " + this.customer + " "
+				+ this.touchpoint + ", " + this.items + ">";
 	}
 
 	public List<ShoppingCartItem> getItems() {
