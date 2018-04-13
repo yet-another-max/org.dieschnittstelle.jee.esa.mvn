@@ -11,13 +11,22 @@ public class Utils {
 
 	protected static Logger logger = Logger.getLogger(Utils.class);
 
-	/**
-	 * this method has been proved very useful for live demos in WS14/15
-	 * @param content
+	/*
+	 * display some message, possibly using java string format
 	 */
-	public static void show(Object content) {
-		logger.info("------------ " + content + "\n");
+	public static void show(Object msg,Object... args) {
+		String formatedmsg = "------------ ";
+
+		if (msg != null && msg instanceof String && args != null && args.length > 0) {
+			formatedmsg += String.format((String)msg,args);
+		}
+		else {
+			formatedmsg += msg;
+		}
+
+		logger.info(formatedmsg + "\n");
 	}
+
 
 	/** 
 	 * also this method is useful for demos
