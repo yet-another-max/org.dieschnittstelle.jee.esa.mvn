@@ -7,12 +7,8 @@ import java.util.concurrent.Future;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.concurrent.FutureCallback;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
-import org.apache.http.impl.nio.client.HttpAsyncClients;
-import org.apache.http.nio.client.HttpAsyncClient;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
@@ -54,6 +50,7 @@ public class ShowTouchpointService {
 		 * list of touchpoints
 		 */
 		client = Http.createAsyncClient();
+		client.start();
 	}
 
 	/**
@@ -61,7 +58,7 @@ public class ShowTouchpointService {
 	 */
 	public void run() {
 
-		client.start();
+//		client.start();
 
 		// 1) read out all touchpoints
 		List<AbstractTouchpoint> touchpoints = readAllTouchpoints();
