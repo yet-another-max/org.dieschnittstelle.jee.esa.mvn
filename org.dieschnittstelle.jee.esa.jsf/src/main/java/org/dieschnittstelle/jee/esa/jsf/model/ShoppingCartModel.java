@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingCartLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 /**
  * this class works as a presentation-side proxy of the shopping cart EJB business component
@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 @SessionScoped
 public class ShoppingCartModel {
 	
-	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShoppingCartModel.class);
+	protected static Logger logger = Logger.getLogger(ShoppingCartModel.class);
 
 	/*
 	 * show by-reference vs. by-value semantics of local vs. remote!

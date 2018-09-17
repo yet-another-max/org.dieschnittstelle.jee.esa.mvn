@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.jsf.controller;
 
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessLocal;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
@@ -27,7 +27,7 @@ import java.util.Map;
 //@SessionScoped
 public class ShoppingSessionViewController {
 
-	private static Logger logger = org.apache.logging.log4j.LogManager
+	private static Logger logger = Logger
 			.getLogger(ShoppingSessionViewController.class);
 
 	/*

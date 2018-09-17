@@ -16,14 +16,14 @@ import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 import org.dieschnittstelle.jee.esa.entities.erp.StockItem;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 /* declare the class as named component using CDI annotations */
 @Named("vc")
 /* TODO declare the class as application scoped using the CDI annotation */
 public class StockSystemViewController {
 
-	protected static Logger logger = org.apache.logging.log4j.LogManager
+	protected static Logger logger = Logger
 			.getLogger(StockSystemViewController.class);
 
 	/*
