@@ -39,8 +39,7 @@ public class ReflectedStockItemBuilder implements IStockItemBuilder {
 							.getTextContent();
 					String elementName = ((Element) children.item(i))
 							.getTagName();
-					logger.debug("found element " + elementName
-							+ " with content: " + elementContent);
+					logger.debug("found element {} with content: {}", elementName, elementContent);
 					instanceAttributes.put(elementName, elementContent);
 				} else {
 					// logger.debug("found node " + children.item(i)
