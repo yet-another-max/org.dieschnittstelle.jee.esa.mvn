@@ -238,7 +238,7 @@ public class TotalUsecase {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("\nNote: a LazyInitializationException in the previous step is intended. See UE JPA1 for further information.\n");
+			System.out.println("\nNote: a LazyInitializationException is intended here. See UE JPA1 for further information.\n");
 		}
 
 	}
