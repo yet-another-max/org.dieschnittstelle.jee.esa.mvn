@@ -17,11 +17,11 @@ import com.fasterxml.jackson.databind.node.BooleanNode;
 import com.fasterxml.jackson.databind.node.NumericNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.TextNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class JSONObjectSerialiser {
 
-	protected static final Logger logger = Logger
+	protected static final Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(JSONObjectSerialiser.class);
 
 	private static final ObjectMapper mapper = new ObjectMapper();

@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 
 import javax.annotation.Resource;
@@ -20,7 +20,7 @@ import java.util.List;
 @Startup
 public class ShoppingCartRESTServiceImpl implements ShoppingCartRESTService {
 
-    protected static Logger logger = Logger.getLogger(ShoppingCartRESTServiceImpl.class);
+    protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShoppingCartRESTServiceImpl.class);
 
     @PersistenceContext(unitName = "crm_PU")
     private EntityManager em;

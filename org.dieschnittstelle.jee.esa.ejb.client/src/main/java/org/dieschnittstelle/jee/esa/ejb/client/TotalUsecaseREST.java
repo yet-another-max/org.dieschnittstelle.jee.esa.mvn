@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.client;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingBusinessDelegate;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSession;
@@ -16,7 +16,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.step;
 
 public class TotalUsecaseREST {
 
-	protected static Logger logger = Logger.getLogger(TotalUsecaseREST.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(TotalUsecaseREST.class);
 
 	public static void main(String[] args) {
 		// here, we will use ejb proxies for accessing the server-side components

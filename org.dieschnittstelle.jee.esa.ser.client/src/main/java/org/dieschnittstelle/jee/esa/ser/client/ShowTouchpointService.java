@@ -10,7 +10,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
@@ -20,7 +20,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class ShowTouchpointService {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ShowTouchpointService.class);
 
 	/**

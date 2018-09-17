@@ -14,7 +14,7 @@ import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 /**
@@ -24,7 +24,7 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 @Entity
 public class ShoppingCartItem implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(ShoppingCartItem.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShoppingCartItem.class);
 
 
 	/**

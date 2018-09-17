@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.node.NullNode;
 import com.fasterxml.jackson.databind.node.NumericNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.TextNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * 
@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  */
 public class JSONObjectMapper {
 
-	protected static final Logger logger = Logger
+	protected static final Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(JSONObjectMapper.class);
 
 	private static JSONObjectMapper instance;
@@ -167,7 +167,7 @@ public class JSONObjectMapper {
 	 * create an object from a json node
 	 * 
 	 * @param json
-	 * @param the type of object to be created - we assume that this is either a
+	 * @param type of object to be created - we assume that this is either a
 	 *        class or a parameterized type whose raw type is a class
 	 * @return
 	 * @throws ObjectMappingException

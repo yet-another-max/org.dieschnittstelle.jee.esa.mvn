@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * provides shopping cart functionality
@@ -31,7 +31,7 @@ public class ShoppingCartStateful implements ShoppingCartRemote, ShoppingCartLoc
 	// track the time when we were lastUpdated - also this is used for entity usage
 	private long lastUpdated;
 	
-	protected static Logger logger = Logger.getLogger(ShoppingCartStateful.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShoppingCartStateful.class);
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<ShoppingCartItem> items = new ArrayList<ShoppingCartItem>();

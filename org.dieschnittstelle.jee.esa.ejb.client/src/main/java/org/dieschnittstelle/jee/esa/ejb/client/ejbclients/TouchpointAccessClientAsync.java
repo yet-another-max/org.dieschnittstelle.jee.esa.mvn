@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.TouchpointAccessRemote;
@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 
 public class TouchpointAccessClientAsync implements TouchpointAccessRemote {
 
-	protected static Logger logger = Logger.getLogger(TouchpointAccessRemoteAsync.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(TouchpointAccessRemoteAsync.class);
 
 	private TouchpointAccessRemoteAsync ejbProxy;
 

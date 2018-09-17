@@ -3,7 +3,7 @@ package org.dieschnittstelle.jee.esa.wsv.client;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.wsv.client.service.ITouchpointCRUDService;
@@ -14,7 +14,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class AccessRESTServiceWithInterpreter {
 
-    protected static Logger logger = Logger
+    protected static Logger logger = org.apache.logging.log4j.LogManager
             .getLogger(AccessRESTServiceWithInterpreter.class);
 
     /**

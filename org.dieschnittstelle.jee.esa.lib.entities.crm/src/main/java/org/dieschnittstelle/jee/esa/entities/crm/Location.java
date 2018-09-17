@@ -17,7 +17,7 @@ import javax.persistence.PreUpdate;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Entity
 // this may result in problems with hibernate, see http://stackoverflow.com/questions/916169/cannot-use-identity-column-key-generation-with-union-subclass-table-per-clas
@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Location implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(Location.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(Location.class);
 
 	/**
 	 * 

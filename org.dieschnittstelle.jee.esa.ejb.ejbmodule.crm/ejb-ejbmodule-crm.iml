@@ -18,7 +18,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.ws:jaxws-api:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.bind:jaxb-api:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.bind:jsr173_api:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.logging.log4j:log4j-api:2.11.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.logging.log4j:log4j-core:2.11.1" level="project" />
     <orderEntry type="module" module-name="ejb-ejbmodule-erp" scope="PROVIDED" />
     <orderEntry type="module" module-name="lib-entities-crm" scope="PROVIDED" />
     <orderEntry type="module" module-name="lib-entities-erp" scope="PROVIDED" />

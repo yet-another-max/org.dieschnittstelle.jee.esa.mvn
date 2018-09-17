@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * allows read/write access to a customer's shopping history
@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 @Stateless(name="customerTrackingSystem")
 public class CustomerTrackingStateless implements CustomerTrackingRemote {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(CustomerTrackingStateless.class);
 
 	/**

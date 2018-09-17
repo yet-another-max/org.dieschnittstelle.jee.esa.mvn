@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
@@ -28,7 +28,7 @@ public class TouchpointCRUDExecutor {
 	/**
 	 * the logger
 	 */
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointCRUDExecutor.class);
 
 	/**

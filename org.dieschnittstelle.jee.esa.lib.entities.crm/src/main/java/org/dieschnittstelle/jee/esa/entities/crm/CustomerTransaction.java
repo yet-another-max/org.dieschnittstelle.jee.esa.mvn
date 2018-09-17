@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class CustomerTransaction implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(CustomerTransaction.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(CustomerTransaction.class);
 
 	/**
 	 * 

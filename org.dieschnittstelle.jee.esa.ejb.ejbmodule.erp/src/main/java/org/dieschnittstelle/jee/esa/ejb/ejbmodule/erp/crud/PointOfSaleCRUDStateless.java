@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * very rudimentary implementation without any logging... 
@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 @Stateless
 public class PointOfSaleCRUDStateless implements PointOfSaleCRUDRemote, PointOfSaleCRUDLocal {
 
-	protected static Logger logger = Logger.getLogger(PointOfSaleCRUDStateless.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(PointOfSaleCRUDStateless.class);
 	
 	@PersistenceContext(unitName = "erp_PU")
 	private EntityManager em;

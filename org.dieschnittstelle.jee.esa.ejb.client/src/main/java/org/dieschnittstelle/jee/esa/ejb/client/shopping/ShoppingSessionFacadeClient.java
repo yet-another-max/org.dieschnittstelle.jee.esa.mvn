@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.client.shopping;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
@@ -8,7 +8,7 @@ import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 public class ShoppingSessionFacadeClient implements ShoppingBusinessDelegate {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ShoppingSessionFacadeClient.class);
 
 	/*

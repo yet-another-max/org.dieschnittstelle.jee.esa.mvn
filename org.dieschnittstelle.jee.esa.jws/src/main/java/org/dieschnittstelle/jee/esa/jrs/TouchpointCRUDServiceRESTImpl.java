@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Context;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
 
 public class TouchpointCRUDServiceRESTImpl implements ITouchpointCRUDServiceREST {
 	
-	protected static Logger logger = Logger.getLogger(TouchpointCRUDServiceRESTImpl.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(TouchpointCRUDServiceRESTImpl.class);
 	
 	/**
 	 * this accessor will be provided by the ServletContext, to which it is written by the TouchpointServletContextListener

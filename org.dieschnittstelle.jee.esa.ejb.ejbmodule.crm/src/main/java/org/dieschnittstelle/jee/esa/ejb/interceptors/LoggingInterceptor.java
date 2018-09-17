@@ -9,13 +9,13 @@ import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import javax.transaction.Transactional;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Interceptor
 @Transactional
 public class LoggingInterceptor {
 
-	protected static Logger logger = Logger.getLogger(LoggingInterceptor.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(LoggingInterceptor.class);
 
 	/*
 	 * a map of loggers
@@ -34,7 +34,7 @@ public class LoggingInterceptor {
 	private synchronized Logger createNewLogger(Class<?> klass) {
 		logger.info("createNewLogger(): class is: " + klass);
 
-		Logger logger = Logger.getLogger(klass);
+		Logger logger = org.apache.logging.log4j.LogManager.getLogger(klass);
 		loggers.put(klass, logger);
 
 		return logger;

@@ -4,7 +4,7 @@ import static org.dieschnittstelle.jee.esa.ejb.client.Constants.*;
 
 import java.util.Collection;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.*;
 import org.dieschnittstelle.jee.esa.ejb.client.shopping.ShoppingSessionFacadeClient;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.CampaignTrackingRemote;
@@ -24,7 +24,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class TotalUsecase {
 
-	protected static Logger logger = Logger.getLogger(TotalUsecase.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(TotalUsecase.class);
 
 	public static void main(String[] args) {
 		// here, we will use ejb proxies for accessing the server-side components

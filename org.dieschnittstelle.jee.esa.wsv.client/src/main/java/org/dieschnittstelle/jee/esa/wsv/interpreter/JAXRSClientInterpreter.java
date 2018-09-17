@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -37,7 +37,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 public class JAXRSClientInterpreter implements InvocationHandler {
 
     // use a logger
-    protected static Logger logger = Logger.getLogger(JAXRSClientInterpreter.class);
+    protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(JAXRSClientInterpreter.class);
 
     // declare a baseurl
     private String baseurl;

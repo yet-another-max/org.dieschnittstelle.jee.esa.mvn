@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 
-//import org.apache.log4j.Logger;
+//import org.apache.logging.log4j.Logger;
 //import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 //import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 //import org.dieschnittstelle.jee.esa.jws.IProductCRUDService;
@@ -12,7 +12,7 @@ public class ProductCRUDSOAPClient {
 
 //	private IProductCRUDService serviceProxy;
 //
-//	protected static Logger logger = Logger.getLogger(ProductCRUDSOAPClient.class);
+//	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ProductCRUDSOAPClient.class);
 //
 //	public ProductCRUDSOAPClient() throws Exception {
 //

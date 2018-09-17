@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
 
 /**
@@ -53,7 +53,7 @@ import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEntity {
 
-	protected static Logger logger = Logger.getLogger(AbstractTouchpoint.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(AbstractTouchpoint.class);
 
 
 	/**

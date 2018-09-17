@@ -1,6 +1,7 @@
 package org.dieschnittstelle.jee.esa.utils;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
 
@@ -9,7 +10,7 @@ import java.io.IOException;
  */
 public class Utils {
 
-	protected static Logger logger = Logger.getLogger(Utils.class);
+	protected static Logger logger = LogManager.getLogger(Utils.class);
 
 	/*
 	 * display some message, possibly using java string format

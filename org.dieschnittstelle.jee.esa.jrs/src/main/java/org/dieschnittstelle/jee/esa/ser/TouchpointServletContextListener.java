@@ -7,11 +7,11 @@ import javax.servlet.ServletContextListener;
 
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class TouchpointServletContextListener implements ServletContextListener {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointServletContextListener.class);
 
 	@Override

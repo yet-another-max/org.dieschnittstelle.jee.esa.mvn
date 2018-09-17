@@ -25,7 +25,7 @@ import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerCRUDLocal;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.jsf.model.ShoppingCartModel;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 // see the faces-config.xml where the following properties are declared as well as the managed property for the shoppingCartModel
 @Named("shoppingSessionVC")
@@ -37,7 +37,7 @@ public class ShoppingSessionViewController implements Serializable {
 	 */
 	private static final long serialVersionUID = -1818907735343597898L;
 
-	private static Logger logger = Logger
+	private static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ShoppingSessionViewController.class);
 
 	/*

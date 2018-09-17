@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import javax.persistence.*;
 
 public class ProductBundle implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(ProductBundle.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ProductBundle.class);
 
 	/**
 	 * 

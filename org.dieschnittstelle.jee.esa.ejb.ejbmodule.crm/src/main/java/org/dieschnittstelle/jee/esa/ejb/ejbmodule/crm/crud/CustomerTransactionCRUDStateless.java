@@ -11,14 +11,14 @@ import javax.persistence.Query;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 
 @Stateless
 public class CustomerTransactionCRUDStateless implements
 		CustomerTransactionCRUDLocal, CustomerTransactionCRUDRemote {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(CustomerTransactionCRUDStateless.class);
 
 	@PersistenceContext(unitName = "crm_PU")

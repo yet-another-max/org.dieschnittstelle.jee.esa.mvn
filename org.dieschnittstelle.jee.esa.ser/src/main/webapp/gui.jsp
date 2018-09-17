@@ -1,11 +1,11 @@
 <%@page
 	import="org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint,org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint,java.util.List"%>
-<%@ page import="org.apache.log4j.Logger" %>
+<%@ page import="org.apache.logging.log4j.Logger" %>
 <%@ page import="org.dieschnittstelle.jee.esa.ser.TouchpointServiceServlet" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!-- declare a logger -->
-<% Logger logger = Logger
+<% Logger logger = org.apache.logging.log4j.LogManager
 		.getLogger("org.dieschnittstelle.jee.esa.ser#gui.jsp"); %>
 <!-- check whether a redirect shall be initiated, in which case we will not generate markup -->
 <% if (request.getAttribute("redirectToRoot") != null)

@@ -15,7 +15,7 @@ import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.jsf.Constants;
 import org.dieschnittstelle.jee.esa.jsf.model.ShoppingCartModel;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Named("productsVC")
 @ApplicationScoped
@@ -25,7 +25,7 @@ public class ProductsViewController implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7695178028647542526L;
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ProductsViewController.class);
 
 

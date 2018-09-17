@@ -9,13 +9,13 @@ import javax.persistence.Query;
 
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Stateless
 public class TouchpointCRUDStateless implements TouchpointCRUDRemote,
 		TouchpointCRUDLocal {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointCRUDStateless.class);
 
 	@PersistenceContext(unitName = "crm_PU")

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * example of a filter, taken from Crawford/Kaplan, JEE Design Patterns, 2003
@@ -28,7 +28,7 @@ public class HttpTrafficLoggingFilter implements Filter {
 	/**
 	 * the logger
 	 */
-	protected static Logger logger = Logger.getLogger(HttpTrafficLoggingFilter.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(HttpTrafficLoggingFilter.class);
 
 	/**
 	 * the config passed with the init method

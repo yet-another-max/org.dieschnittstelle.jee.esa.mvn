@@ -2,7 +2,7 @@ package org.dieschnittstelle.jee.esa.jrs.client.junit;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
@@ -12,7 +12,7 @@ public class ProductCRUDRESTClient {
 
 	private IProductCRUDService serviceProxy;
 	
-	protected static Logger logger = Logger.getLogger(ProductCRUDRESTClient.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ProductCRUDRESTClient.class);
 
 	public ProductCRUDRESTClient() throws Exception {
 

@@ -13,7 +13,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Entity
 public class PointOfSale implements Serializable {
@@ -23,7 +23,7 @@ public class PointOfSale implements Serializable {
 	 */
 	private static final long serialVersionUID = -3397160788902953608L;
 	
-	protected static Logger logger = Logger.getLogger(PointOfSale.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(PointOfSale.class);
 	
 	@Id
 	@GeneratedValue

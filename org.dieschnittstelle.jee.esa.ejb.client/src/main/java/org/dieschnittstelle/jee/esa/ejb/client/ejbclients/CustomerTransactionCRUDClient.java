@@ -3,7 +3,7 @@ package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.crud.CustomerTransactionCRUDRemote;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
@@ -12,7 +12,7 @@ import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 
 public class CustomerTransactionCRUDClient implements CustomerTransactionCRUDRemote {
 
-	protected static Logger logger = Logger.getLogger(CustomerTransactionCRUDClient.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(CustomerTransactionCRUDClient.class);
 
 	private CustomerTransactionCRUDRemote ejbProxy;
 	

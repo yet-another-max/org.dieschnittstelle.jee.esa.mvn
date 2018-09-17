@@ -22,7 +22,7 @@ import javax.persistence.PreUpdate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /*
  * 
@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
 @Entity
 public class Customer implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(Customer.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(Customer.class);
 
 
 	/**

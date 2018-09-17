@@ -4,7 +4,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.basics.IStockItem;
 import org.dieschnittstelle.jee.esa.basics.IStockItemBuilder;
 import org.w3c.dom.Element;
@@ -13,7 +13,7 @@ import org.w3c.dom.NodeList;
 public class AnnotatedStockItemBuilder implements IStockItemBuilder {
 
 	// the logger
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(AnnotatedStockItemBuilder.class);
 
 	private static XPath xpathEvaluator;

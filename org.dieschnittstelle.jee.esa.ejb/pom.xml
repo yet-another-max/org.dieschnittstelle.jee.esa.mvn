@@ -60,6 +60,17 @@
                             <bundleDir>lib</bundleDir>
                             <bundleFileName>org.dieschnittstelle.jee.esa.utils.jar</bundleFileName>
                         </jarModule>
+                        <!-- we need to add the log4j 2 libraries -->
+                        <jarModule>
+                            <groupId>org.apache.logging.log4j</groupId>
+                            <artifactId>log4j-api</artifactId>
+                            <bundleDir>lib</bundleDir>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>org.apache.logging.log4j</groupId>
+                            <artifactId>log4j-core</artifactId>
+                            <bundleDir>lib</bundleDir>
+                        </jarModule>
                     </modules>
                     <earName>org.dieschnittstelle.jee.esa.ejb</earName>
                     <finalName>org.dieschnittstelle.jee.esa.ejb</finalName>
@@ -93,6 +104,8 @@
                                 <delete file="${user.dir}/../${ant.projectName}/target/${project.build.finalName}/META-INF/application.xml"/>
                                 <!-- remove the existing .ear file -->
                                 <delete file="${user.dir}/../${ant.projectName}/target/${project.build.finalName}.ear"/>
+                                <!-- create a jar file from the log4j propertie and add it to the lib directory -->
+                                <jar basedir="${user.dir}/../${ant.projectName}/src/main/resources/" destfile="${user.dir}/target/${project.build.finalName}/lib/log4j2.properties.jar"/>
                                 <!-- create the ear again -->
                                 <jar basedir="${user.dir}/../${ant.projectName}/target/${project.build.finalName}" destfile="${user.dir}/target/${ant.earName}.ear"/>
                                 <!-- and copy it using the default name (this is required in order for the multi-module build to succeed -->
@@ -154,6 +167,16 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
         </dependency>
 
     </dependencies>

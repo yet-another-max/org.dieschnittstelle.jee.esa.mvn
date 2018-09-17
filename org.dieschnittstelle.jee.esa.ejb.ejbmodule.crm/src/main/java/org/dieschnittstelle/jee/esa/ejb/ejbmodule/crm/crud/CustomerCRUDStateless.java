@@ -5,12 +5,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @Stateless
 public class CustomerCRUDStateless implements CustomerCRUDRemote, CustomerCRUDLocal {
 
-	protected static Logger logger = Logger.getLogger(CustomerCRUDStateless.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(CustomerCRUDStateless.class);
 	
 	@PersistenceContext(unitName = "crm_PU")
 	private EntityManager em;

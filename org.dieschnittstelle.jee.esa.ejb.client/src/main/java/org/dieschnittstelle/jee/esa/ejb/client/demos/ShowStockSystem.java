@@ -5,7 +5,7 @@ import static org.dieschnittstelle.jee.esa.ejb.client.Constants.PRODUCT_2;
 import static org.dieschnittstelle.jee.esa.ejb.client.Constants.TOUCHPOINT_1;
 import static org.dieschnittstelle.jee.esa.ejb.client.Constants.TOUCHPOINT_2;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.ShoppingException;
 import org.dieschnittstelle.jee.esa.utils.Utils;
@@ -17,7 +17,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class ShowStockSystem {
 
-	protected static Logger logger = Logger.getLogger(ShowStockSystem.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShowStockSystem.class);
 
 	public static void main(String[] args) {
 		EJBProxyFactory.initialise();

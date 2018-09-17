@@ -12,14 +12,14 @@ import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 //@Entity
 @Table(name = "stock")
 @IdClass(ProductAtPosPK.class)
 public class StockItem {
 
-	protected static Logger logger = Logger.getLogger(StockItem.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(StockItem.class);
 
 	@Id
 	@ManyToOne

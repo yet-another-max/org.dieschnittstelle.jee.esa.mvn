@@ -1,7 +1,7 @@
 package org.dieschnittstelle.jee.esa.ejb.client.ejbclients;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
@@ -28,7 +28,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.show;
  */
 public class EJBProxyFactory {
 
-    protected static Logger logger = Logger.getLogger(EJBProxyFactory.class);
+    protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(EJBProxyFactory.class);
 
     // some custom runtime exception
     private static class EJBProxyException extends RuntimeException {

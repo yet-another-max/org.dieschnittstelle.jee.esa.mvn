@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.Address;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 
@@ -13,7 +13,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
 public class TouchpointGUIServlet extends HttpServlet {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointGUIServlet.class);
 
 	public TouchpointGUIServlet() {

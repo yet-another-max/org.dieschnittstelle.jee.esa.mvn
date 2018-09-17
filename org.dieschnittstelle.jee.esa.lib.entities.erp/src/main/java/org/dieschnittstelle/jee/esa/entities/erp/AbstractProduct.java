@@ -3,7 +3,7 @@ package org.dieschnittstelle.jee.esa.entities.erp;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
 
 /*
@@ -12,7 +12,7 @@ import org.dieschnittstelle.jee.esa.entities.GenericCRUDEntity;
 //@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include=JsonTypeInfo.As.PROPERTY, property="@class")
 public abstract class AbstractProduct implements Serializable, GenericCRUDEntity {
 
-	protected static Logger logger = Logger.getLogger(AbstractProduct.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(AbstractProduct.class);
 
 	/**
 	 * 

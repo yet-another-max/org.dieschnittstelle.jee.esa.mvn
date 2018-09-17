@@ -7,11 +7,12 @@ import javax.servlet.ServletContextListener;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TouchpointServletContextListener implements ServletContextListener {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = LogManager
 			.getLogger(TouchpointServletContextListener.class);
 
 	public TouchpointServletContextListener() {

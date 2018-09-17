@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.ejb.client.demos;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.EJBProxyFactory;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.ejb.client.Constants;
@@ -9,7 +9,7 @@ import org.dieschnittstelle.jee.esa.ejb.client.ejbclients.CustomerCRUDClient;
 
 public class ShowConcurrentEntityAccess {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ShowConcurrentEntityAccess.class);
 
 	public static void main(String[] args) {

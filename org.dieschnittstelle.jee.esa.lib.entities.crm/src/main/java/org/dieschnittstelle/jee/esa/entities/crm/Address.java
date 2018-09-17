@@ -1,7 +1,7 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
 import java.io.Serializable;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import javax.persistence.Entity;
 
@@ -11,7 +11,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 @Entity
 public class Address extends Location  implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(Address.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(Address.class);
 
 	/**
 	 * 

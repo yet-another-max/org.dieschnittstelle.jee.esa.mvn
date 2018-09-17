@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.entities.crm;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
 @DiscriminatorValue("stationary")
 public class StationaryTouchpoint extends AbstractTouchpoint  implements Serializable {
 
-	protected static Logger logger = Logger.getLogger(StationaryTouchpoint.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(StationaryTouchpoint.class);
 
 	/**
 	 * 

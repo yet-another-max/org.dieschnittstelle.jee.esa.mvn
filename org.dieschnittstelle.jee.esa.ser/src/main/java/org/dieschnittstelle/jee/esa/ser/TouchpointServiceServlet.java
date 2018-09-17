@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class TouchpointServiceServlet extends HttpServlet {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointServiceServlet.class);
 
 	public TouchpointServiceServlet() {

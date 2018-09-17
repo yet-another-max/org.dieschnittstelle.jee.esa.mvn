@@ -1,6 +1,6 @@
 package org.dieschnittstelle.jee.esa.jrs;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
@@ -22,7 +22,7 @@ import java.util.List;
 @Produces({MediaType.APPLICATION_JSON})
 public class TouchpointCRUDServiceImplAsync {
 
-	protected static Logger logger = Logger.getLogger(TouchpointCRUDServiceImplAsync.class);
+	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(TouchpointCRUDServiceImplAsync.class);
 
 	private ITouchpointCRUDService service;
 

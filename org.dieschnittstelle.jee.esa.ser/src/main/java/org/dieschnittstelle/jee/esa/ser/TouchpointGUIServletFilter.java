@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * checks whether the gui servlet is accessed by a user agent that accepts html
@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
  */
 public class TouchpointGUIServletFilter implements Filter {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointGUIServletFilter.class);
 
 	public TouchpointGUIServletFilter() {

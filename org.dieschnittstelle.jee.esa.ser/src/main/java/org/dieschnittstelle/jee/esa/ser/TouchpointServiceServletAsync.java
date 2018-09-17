@@ -1,7 +1,7 @@
 package org.dieschnittstelle.jee.esa.ser;
 
 import org.apache.http.HttpStatus;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.RequestDispatcher;
@@ -16,7 +16,7 @@ import static org.dieschnittstelle.jee.esa.utils.Utils.show;
 @WebServlet(urlPatterns = "/api/async/touchpoints", asyncSupported = true)
 public class TouchpointServiceServletAsync extends HttpServlet {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointServiceServletAsync.class);
 
 	public TouchpointServiceServletAsync() {

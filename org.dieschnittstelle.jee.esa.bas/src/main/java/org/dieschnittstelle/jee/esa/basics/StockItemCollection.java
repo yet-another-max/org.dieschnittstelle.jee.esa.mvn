@@ -8,7 +8,8 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -16,7 +17,7 @@ import org.w3c.dom.NodeList;
 public class StockItemCollection {
 	
 	// the log4j logger	
-	protected static Logger logger = Logger.getLogger(StockItemCollection.class);
+	protected static Logger logger = LogManager.getLogger(StockItemCollection.class);
 
 	// the file to read in
 	private String collectionFilePath;

@@ -15,13 +15,13 @@ import javax.xml.ws.handler.MessageContext;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 @WebService(targetNamespace = "http://dieschnittstelle.org/jee/esa/jws", name = "ITouchpointCRUDService", serviceName = "TouchpointCRUDWebService", portName = "TouchpointCRUDPort")
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public class TouchpointCRUDService {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(TouchpointCRUDService.class);
 
 	@Resource

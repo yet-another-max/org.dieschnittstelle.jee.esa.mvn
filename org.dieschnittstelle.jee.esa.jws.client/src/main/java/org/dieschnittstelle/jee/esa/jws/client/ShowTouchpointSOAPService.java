@@ -3,7 +3,7 @@ package org.dieschnittstelle.jee.esa.jws.client;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 // TODO: entfernen Sie die Kommentare für die folgenden Imports und die Implementierung der main-Methode
 
@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
 
 public class ShowTouchpointSOAPService {
 
-	protected static Logger logger = Logger
+	protected static Logger logger = org.apache.logging.log4j.LogManager
 			.getLogger(ShowTouchpointSOAPService.class);
 
 	/**
