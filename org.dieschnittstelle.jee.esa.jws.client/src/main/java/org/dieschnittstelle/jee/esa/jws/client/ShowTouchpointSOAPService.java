@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 // TODO: entfernen Sie die Kommentare für die folgenden Imports und die Implementierung der main-Methode
 
-//import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
-//import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
+//import org.dieschnittstelle.jee.esa.entities.crm.ws.AbstractTouchpoint;
+//import org.dieschnittstelle.jee.esa.entities.crm.ws.StationaryTouchpoint;
 //import org.dieschnittstelle.jee.esa.jws.*;
 
 //import javax.xml.ws.Response;

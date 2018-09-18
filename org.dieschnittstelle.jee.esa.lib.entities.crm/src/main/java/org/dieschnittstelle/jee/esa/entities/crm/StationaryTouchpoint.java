@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author kreutel
  */
 @XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(namespace = "http://dieschnittstelle.org/jee/esa/entities/crm")
+@XmlType(namespace = "http://dieschnittstelle.org/jee/esa/entities/crm/ws")
 @Entity
 @DiscriminatorValue("stationary")
 public class StationaryTouchpoint extends AbstractTouchpoint  implements Serializable {
