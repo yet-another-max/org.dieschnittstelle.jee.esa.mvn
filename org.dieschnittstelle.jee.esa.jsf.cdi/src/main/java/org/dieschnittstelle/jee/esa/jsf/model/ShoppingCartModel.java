@@ -67,7 +67,7 @@ public class ShoppingCartModel implements Serializable {
 	}
 
 	public int getPriceOfProductsInCart() {
-		logger.info("countProductsInCart()");
+		logger.info("getPriceOfProductsInCart()");
 		int totalPrice = 0;
 		for (ShoppingCartItem item : shoppingCart.getItems()) {
 			totalPrice += item.getUnits()

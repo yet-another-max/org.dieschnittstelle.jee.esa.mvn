@@ -136,6 +136,9 @@ public class ShoppingCartItem implements Serializable {
 	}
 
 	public AbstractProduct getProductObj() {
+		if (productObj == null) {
+			throw new RuntimeException("ShoppingCartItem.productObj is transient and has not been set! Use erpProductId to access product.");
+		}
 		return productObj;
 	}
 
