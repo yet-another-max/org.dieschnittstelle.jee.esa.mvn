@@ -7,9 +7,9 @@ package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 //import static org.junit.Assert.assertNull;
 //import static org.junit.Assert.assertTrue;
 //
-//import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
-//import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
-//import org.dieschnittstelle.jee.esa.entities.erp.ProductType;
+//import org.dieschnittstelle.jee.esa.entities.erp.ws.AbstractProduct;
+//import org.dieschnittstelle.jee.esa.entities.erp.ws.IndividualisedProductItem;
+//import org.dieschnittstelle.jee.esa.entities.erp.ws.ProductType;
 //import org.junit.Before;
 //import org.junit.Test;
 

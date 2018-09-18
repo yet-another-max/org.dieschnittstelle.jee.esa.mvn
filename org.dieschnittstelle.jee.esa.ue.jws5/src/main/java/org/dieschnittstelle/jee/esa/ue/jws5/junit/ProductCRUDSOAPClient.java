@@ -1,8 +1,8 @@
 package org.dieschnittstelle.jee.esa.ue.jws5.junit;
 
 //import org.apache.logging.log4j.Logger;
-//import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
-//import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
+//import org.dieschnittstelle.jee.esa.entities.erp.ws.AbstractProduct;
+//import org.dieschnittstelle.jee.esa.entities.erp.ws.IndividualisedProductItem;
 //import org.dieschnittstelle.jee.esa.jws.IProductCRUDService;
 //import org.dieschnittstelle.jee.esa.jws.ProductCRUDWebService;
 //
