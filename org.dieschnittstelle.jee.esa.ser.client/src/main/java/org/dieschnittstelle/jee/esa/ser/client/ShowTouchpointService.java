@@ -58,8 +58,6 @@ public class ShowTouchpointService {
 	 */
 	public void run() {
 
-//		client.start();
-
 		// 1) read out all touchpoints
 		List<AbstractTouchpoint> touchpoints = readAllTouchpoints();
 
@@ -200,7 +198,9 @@ public class ShowTouchpointService {
 
 			// set the entity on the request
 
-			// execute the request, which will return a HttpResponse object
+			// execute the request, which will return a Future<HttpResponse> object
+
+			// get the response from the Future object
 
 			// log the status line
 
