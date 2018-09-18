@@ -74,37 +74,37 @@ public class StockItem {
 
 	@PostLoad
 	public void onPostLoad() {
-		logger.info("onPostLoad(): " + this);
+		logger.info("@PostLoad(): " + this);
 	}
 
 	@PostPersist
 	public void onPostPersist() {
-		logger.info("onPostPersist(): " + this);
+		logger.info("@PostPersist(): " + this);
 	}
 
 	@PostRemove
 	public void onPostRemove() {
-		logger.info("onPostRemove(): " + this);
+		logger.info("@PostRemove(): " + this);
 	}
 
 	@PostUpdate
 	public void onPostUpdate() {
-		logger.info("onPostUpdate(): " + this);
+		logger.info("@PostUpdate(): " + this);
 	}
 
 	@PrePersist
 	public void onPrePersist() {
-		logger.info("onPrePersist(): " + this);
+		logger.info("@PrePersist(): " + this);
 	}
 
 	@PreRemove
 	public void onPreRemove() {
-		logger.info("onPreRemove(): " + this);
+		logger.info("@PreRemove(): " + this);
 	}
 
 	@PreUpdate
 	public void onPreUpdate() {
-		logger.info("onPreUpdate(): " + this);
+		logger.info("@PreUpdate(): " + this);
 	}
 
 	public String toString() {
