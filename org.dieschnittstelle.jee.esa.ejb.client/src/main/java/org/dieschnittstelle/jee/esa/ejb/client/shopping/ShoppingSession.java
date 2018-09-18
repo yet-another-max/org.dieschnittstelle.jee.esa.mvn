@@ -119,23 +119,23 @@ public class ShoppingSession implements ShoppingBusinessDelegate {
 
 		for (ShoppingCartItem item : this.shoppingCart.getItems()) {
 
-			// TODO: ermitteln Sie das AbstractProduct für das gegebene item. Nutzen Sie dafür dessen erpProductId und die ProductCRUD EJB
+			// TODO: ermitteln Sie das AbstractProduct für das gegebene ShoppingCartItem. Nutzen Sie dafür dessen erpProductId und die ProductCRUD EJB
 
 			if (item.isCampaign()) {
 				this.campaignTracking.purchaseCampaignAtTouchpoint(item.getErpProductId(), this.touchpoint,
 						item.getUnits());
 				// TODO: wenn Sie eine Kampagne haben, muessen Sie hier
-				// 1) dann ueber die ProductBundle Objekte auf dem Campaign Objekt iterieren und
+				// 1) ueber die ProductBundle Objekte auf dem Campaign Objekt iterieren, und
 				// 2) fuer jedes ProductBundle das betreffende Produkt in der auf dem Bundle angegebenen Anzahl, multipliziert mit dem Wert von
-				// productBundle.getUnits() aus dem Warenkorb, 
+				// item.getUnits() aus dem Warenkorb,
 				// - hinsichtlich Verfuegbarkeit ueberpruefen, und
-				// - falls verfuegbar aus dem Warenlager entfernen - nutzen Sie dafür die StockSystem EJB
-				// (Anm.: productBundle.getUnits() sagt Ihnen, wie oft ein Produkt, im vorliegenden Fall eine Kampagne, im
+				// - falls verfuegbar, aus dem Warenlager entfernen - nutzen Sie dafür die StockSystem EJB
+				// (Anm.: item.getUnits() gibt Ihnen Auskunft darüber, wie oft ein Produkt, im vorliegenden Fall eine Kampagne, im
 				// Warenkorb liegt)
 			} else {
 				// TODO: andernfalls (wenn keine Kampagne vorliegt) muessen Sie
-				// 1) das Produkt in der in productBundle.getUnits() angegebenen Anzahl hinsichtlich Verfuegbarkeit ueberpruefen und
-				// 2) das Produkt, falls verfuegbar, aus dem Warenlager entfernen
+				// 1) das Produkt in der in item.getUnits() angegebenen Anzahl hinsichtlich Verfuegbarkeit ueberpruefen und
+				// 2) das Produkt, falls verfuegbar, in der entsprechenden Anzahl aus dem Warenlager entfernen
 			}
 
 		}
