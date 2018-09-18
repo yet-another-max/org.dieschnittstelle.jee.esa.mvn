@@ -45,10 +45,20 @@ public class ShowTouchpointService {
 	 * constructor
 	 */
 	public ShowTouchpointService() {
-		/*
-		 * create a http client and access the web application to read out the
-		 * list of touchpoints
-		 */
+
+	}
+
+	/*
+	 * create the http client - this will be done for each request
+	 */
+	public void createClient() {
+		if (client != null && client.isRunning()) {
+			try {
+				client.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		client = Http.createAsyncClient();
 		client.start();
 	}
@@ -98,10 +108,15 @@ public class ShowTouchpointService {
 	 */
 	public List<AbstractTouchpoint> readAllTouchpoints() {
 
+		logger.info("readAllTouchpoints()");
+
+		createClient();
+
+		logger.debug("client running: {}",client.isRunning());
+
 		// demonstrate access to the asynchronously running servlet (client-side access is asynchronous in any case)
 		boolean async = false;
 
-		logger.info("readAllTouchpoints()");
 
 		try {
 
@@ -165,6 +180,10 @@ public class ShowTouchpointService {
 	public void deleteTouchpoint(AbstractTouchpoint tp) {
 		logger.info("deleteTouchpoint(): will delete: " + tp);
 
+		createClient();
+
+		logger.debug("client running: {}",client.isRunning());
+
 		// once you have received a response this is necessary to be able to
 		// use the client for subsequent requests:
 		// EntityUtils.consume(response.getEntity());
@@ -183,6 +202,10 @@ public class ShowTouchpointService {
 	 */
 	public AbstractTouchpoint createNewTouchpoint(AbstractTouchpoint tp) {
 		logger.info("createNewTouchpoint(): will create: " + tp);
+
+		createClient();
+
+		logger.debug("client running: {}",client.isRunning());
 
 		try {
 
