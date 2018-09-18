@@ -240,7 +240,7 @@ public class ShowTouchpointService {
 			// cleanup the request
 			// EntityUtils.consume(response.getEntity());
 
-			// return the object that you hae read from the response
+			// return the object that you have read from the response
 			return null;
 		} catch (Exception e) {
 			logger.error("got exception: " + e, e);
