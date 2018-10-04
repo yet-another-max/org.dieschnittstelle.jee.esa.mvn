@@ -511,8 +511,5 @@
         </outbound-socket-binding>
     </socket-binding-group>
     <deployments>
-        <deployment name="org.dieschnittstelle.jee.esa.ejb.ear" runtime-name="org.dieschnittstelle.jee.esa.ejb.ear">
-            <fs-archive path="/Users/master/Documents/jkwrite/bht/runtime/workspaces/esaworkspave_w18/org.dieschnittstelle.jee.esa.mvn/org.dieschnittstelle.jee.esa.ejb/target/org.dieschnittstelle.jee.esa.ejb.ear"/>
-        </deployment>
     </deployments>
 </server>
