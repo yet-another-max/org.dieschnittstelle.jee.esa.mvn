@@ -34,7 +34,7 @@
 		<servlet-name>TouchpointGUIServlet</servlet-name>
 		<url-pattern>/gui/touchpoints/*</url-pattern>
 	</servlet-mapping>
-	<!-- the servlet that provides programmatic touchpoint access as a web service -->
+	<!-- the servlet that provides programmatic touchpoint access by a web api -->
 	<servlet>
 		<description></description>
 		<display-name>TouchpointServiceServlet</display-name>
