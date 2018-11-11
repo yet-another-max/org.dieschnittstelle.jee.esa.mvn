@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.List;
 import java.util.concurrent.Future;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
+import org.apache.http.*;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
@@ -191,6 +191,22 @@ public class ShowTouchpointService {
 		// use the client for subsequent requests:
 		// EntityUtils.consume(response.getEntity());
 
+		try{
+			HttpDelete delete = new HttpDelete("http://localhost:8888/org.dieschnittstelle.jee.esa.ser/api/touchpoints/" + Long.toString(tp.getId()));
+			Future<HttpResponse> responseFuture = client.execute(delete, null);
+			logger.info("deleteTouchpoint(" + tp.toString() + "): received response future...");
+
+			HttpResponse response = responseFuture.get();
+			logger.info("deleteTouchpoint(" + tp.toString() + "): received response value");
+
+			if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK)
+				show("successfully deleted touchpoint " + tp.toString());
+			else
+				show("could not delete touchpoint " + tp.toString() + ".\nreceived statuscode " + response.getStatusLine());
+
+		}catch(Exception e){
+
+		}
 	}
 
 	/**

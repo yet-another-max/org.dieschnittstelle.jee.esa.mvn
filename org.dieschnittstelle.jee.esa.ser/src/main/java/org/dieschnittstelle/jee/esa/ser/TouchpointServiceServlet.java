@@ -95,6 +95,24 @@ public class TouchpointServiceServlet extends HttpServlet {
 
 	}
 
+	@Override
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response){
+	    TouchpointCRUDExecutor executor = (TouchpointCRUDExecutor) getServletContext().getAttribute("touchpointCRUD");
+	    try{
 
-	
+	    	String idString = request.getPathInfo().replace("/", "");
+
+	        long id = Long.parseLong(idString);
+
+			boolean result = executor.deleteTouchpoint(id);
+			if(result)
+				response.setStatus(HttpStatus.SC_OK);
+			else
+				response.setStatus(HttpStatus.SC_NOT_FOUND);
+
+		}catch (Exception e){
+	        logger.error(e.getMessage(), e);
+	        throw new RuntimeException(e);
+		}
+	}
 }
