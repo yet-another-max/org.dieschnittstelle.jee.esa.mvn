@@ -1,14 +1,20 @@
 package org.dieschnittstelle.jee.esa.ser;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static org.dieschnittstelle.jee.esa.utils.Utils.*;
 
+import org.apache.http.HttpStatus;
 import org.apache.logging.log4j.Logger;
+import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 
 public class TouchpointServiceServlet extends HttpServlet {
 
@@ -49,8 +55,7 @@ public class TouchpointServiceServlet extends HttpServlet {
 
 	}
 	
-	/*
-	@Override	
+	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) {
 
@@ -59,27 +64,36 @@ public class TouchpointServiceServlet extends HttpServlet {
 
 		// obtain the executor for reading out the touchpoints from the servlet context using the touchpointCRUD attribute
 
+		TouchpointCRUDExecutor executor = (TouchpointCRUDExecutor) getServletContext().getAttribute("touchpointCRUD");
+
 		try {
 			// create an ObjectInputStream from the request's input stream
+			ObjectInputStream ois = new ObjectInputStream(request.getInputStream());
 		
 			// read an AbstractTouchpoint object from the stream
+			AbstractTouchpoint tp = (AbstractTouchpoint)ois.readObject();
 		
 			// call the create method on the executor and take its return value
+			AbstractTouchpoint result = executor.createTouchpoint(tp);
 		
 			// set the response status as successful, using the appropriate
 			// constant from HttpServletResponse
+			response.setStatus(HttpStatus.SC_OK);
 		
 			// then write the object to the response's output stream, using a
 			// wrapping ObjectOutputStream
+			ServletOutputStream sos = response.getOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(sos);
+
 		
 			// ... and write the object to the stream
-		
+			oos.writeObject(result);
+
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 
 	}
-	*/
 
 
 	
