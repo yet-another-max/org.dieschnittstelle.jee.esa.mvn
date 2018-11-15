@@ -1,5 +1,6 @@
 package org.dieschnittstelle.jee.esa.jrs;
 
+import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.StationaryTouchpoint;
 
 import javax.ws.rs.*;
@@ -28,5 +29,8 @@ public interface ITouchpointCRUDService {
 	/*
 	 * UE JRS1: add a new annotated method for using the updateTouchpoint functionality of TouchpointCRUDExecutor and implement it
 	 */
-	
+	@PUT
+	StationaryTouchpoint updateObject(StationaryTouchpoint touchpoint);
+
+
 }
