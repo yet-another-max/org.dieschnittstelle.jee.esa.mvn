@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.entities.GenericCRUDExecutor;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
-import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
+import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -28,20 +28,20 @@ public class ProductCRUDServiceImpl implements IProductCRUDService {
 	}
 
 	@Override
-	public IndividualisedProductItem createProduct(
-			IndividualisedProductItem prod) {
-	    return (IndividualisedProductItem)productCRUD.createObject(prod);
+	public AbstractProduct createProduct(
+			AbstractProduct prod) {
+	    return (AbstractProduct)productCRUD.createObject(prod);
 	}
 
 	@Override
-	public List<IndividualisedProductItem> readAllProducts() {
+	public List<AbstractProduct> readAllProducts() {
 	    return (List)productCRUD.readAllObjects();
 	}
 
 	@Override
-	public IndividualisedProductItem updateProduct(long id,
-			IndividualisedProductItem update) {
-	    return (IndividualisedProductItem)productCRUD.updateObject(update);
+	public AbstractProduct updateProduct(long id,
+			AbstractProduct update) {
+	    return (AbstractProduct)productCRUD.updateObject(update);
 	}
 
 	@Override
@@ -50,8 +50,8 @@ public class ProductCRUDServiceImpl implements IProductCRUDService {
 	}
 
 	@Override
-	public IndividualisedProductItem readProduct(long id) {
-	    return (IndividualisedProductItem)productCRUD.readObject(id);
+	public AbstractProduct readProduct(long id) {
+	    return (AbstractProduct)productCRUD.readObject(id);
 	}
 	
 }
