@@ -19,6 +19,7 @@ import javax.persistence.PostUpdate;
 import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
+import javax.xml.bind.annotation.XmlType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -28,6 +29,7 @@ import org.apache.logging.log4j.Logger;
  * 
  */
 @Entity
+@XmlType(namespace = "http://dieschnittstelle.org/jee/esa/entities/crm/ws")
 public class Customer implements Serializable {
 
 	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(Customer.class);

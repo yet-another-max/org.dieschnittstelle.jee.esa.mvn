@@ -111,4 +111,11 @@ public class TouchpointCRUDService {
 	 * UE JWS3: erweitern Sie den Service
 	 */
 
+	@WebMethod
+	public AbstractTouchpoint updateTouchpoint(AbstractTouchpoint updatedTouchpoint){
+		GenericCRUDExecutor<AbstractTouchpoint> executer = (GenericCRUDExecutor<AbstractTouchpoint>)((ServletContext) wscontext
+		.getMessageContext().get(MessageContext.SERVLET_CONTEXT))
+		.getAttribute("touchpointCRUD");
+		return (StationaryTouchpoint) executer.updateObject(updatedTouchpoint);
+	}
 }
