@@ -1,24 +1,27 @@
 package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp;
 
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.PointOfSaleCRUDLocal;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.PointOfSaleCRUDStateless;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.StockItemCRUDLocal;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.StockItemCRUDStateless;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 import org.dieschnittstelle.jee.esa.entities.erp.StockItem;
 
 import javax.ejb.EJB;
+import javax.ejb.EJBs;
 import javax.ejb.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
-public class StockSystemSingleton implements StockSystemRemote {
+public class StockSystemSingleton implements StockSystemRemote, StockSystemLocal{
 
     @EJB
-    private StockItemCRUDStateless stockItemCRUD;
+    StockItemCRUDLocal stockItemCRUD;
 
     @EJB
-    private PointOfSaleCRUDStateless posCRUD;
+    PointOfSaleCRUDLocal posCRUD;
 
     @Override
     public void addToStock(IndividualisedProductItem product, long pointOfSaleId, int units) {
@@ -104,5 +107,10 @@ public class StockSystemSingleton implements StockSystemRemote {
             }
         }
         return result;
+    }
+
+    @Override
+    public List<StockItem> getCompleteStock() {
+        return stockItemCRUD.readAllStockItems();
     }
 }
