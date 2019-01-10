@@ -18,7 +18,9 @@ public class StockItemCRUDStateless implements StockItemCRUDLocal{
 
     @Override
     public StockItem createStockItem(StockItem item) {
-        em.persist(item);
+        em.merge(item.getProduct());
+        em.merge(item.getPos());
+        em.merge(item);
         return item;
     }
 
@@ -37,16 +39,16 @@ public class StockItemCRUDStateless implements StockItemCRUDLocal{
 
     @Override
     public List<StockItem> readAllStockItems() {
-        return em.createQuery("SELECT i FROM stock AS i").getResultList();
+        return em.createQuery("FROM StockItem").getResultList();
     }
 
     @Override
     public List<StockItem> readStockItemsForProduct(IndividualisedProductItem prod) {
-        return em.createQuery("SELECT s FROM stock AS s WHERE product = " + Long.toString(prod.getId())).getResultList();
+        return em.createQuery("FROM StockItem item WHERE item.product = " + Long.toString(prod.getId())).getResultList();
     }
 
     @Override
     public List<StockItem> readStockItemsForPointOfSale(PointOfSale pos) {
-        return em.createQuery("SELECT s FROM stock AS s WHERE pos = " + Long.toString(pos.getId())).getResultList();
+        return em.createQuery("FROM StockItem item WHERE item.pos = " + Long.toString(pos.getId())).getResultList();
     }
 }

@@ -32,6 +32,7 @@ public class StockSystemSingleton implements StockSystemRemote, StockSystemLocal
                 item = new StockItem();
                 item.setProduct(product);
                 item.setPos(pos);
+                item.setUnits(units);
                 stockItemCRUD.createStockItem(item);
             }else{
                 item.setUnits(item.getUnits() + units);
