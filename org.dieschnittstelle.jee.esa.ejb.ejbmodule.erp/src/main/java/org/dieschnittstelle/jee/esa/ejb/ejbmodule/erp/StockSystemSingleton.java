@@ -8,13 +8,13 @@ import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
 import org.dieschnittstelle.jee.esa.entities.erp.StockItem;
 
-import javax.ejb.EJB;
-import javax.ejb.EJBs;
-import javax.ejb.Singleton;
+import javax.ejb.*;
+import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
+@WebService(endpointInterface = "org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote")
 public class StockSystemSingleton implements StockSystemRemote, StockSystemLocal{
 
     @EJB

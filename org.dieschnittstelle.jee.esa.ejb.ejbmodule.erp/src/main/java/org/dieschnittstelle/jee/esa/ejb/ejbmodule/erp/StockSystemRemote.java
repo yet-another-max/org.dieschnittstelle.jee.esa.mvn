@@ -5,6 +5,9 @@ import java.util.List;
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
 
 import javax.ejb.Remote;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 
 /**
  * TODO JPA4:
@@ -12,6 +15,8 @@ import javax.ejb.Remote;
  * local interface below, comments will give some hints at how the implementation could be done
  */
 @Remote
+@WebService
+@SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public interface StockSystemRemote {
 
 	/**
@@ -24,6 +29,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @param units
 	 */
+	@WebMethod
     void addToStock(IndividualisedProductItem product, long pointOfSaleId, int units);
 
 	/**
@@ -35,6 +41,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @param units
 	 */
+	@WebMethod
     void removeFromStock(IndividualisedProductItem product, long pointOfSaleId, int units);
 
 	/**
@@ -47,6 +54,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @return
 	 */
+	@WebMethod
     List<IndividualisedProductItem> getProductsOnStock(long pointOfSaleId);
 
 	/**
@@ -58,6 +66,7 @@ public interface StockSystemRemote {
 	 *
 	 * @return
 	 */
+	@WebMethod
     List<IndividualisedProductItem> getAllProductsOnStock();
 
 	/**
@@ -70,6 +79,7 @@ public interface StockSystemRemote {
 	 * @param pointOfSaleId
 	 * @return
 	 */
+	@WebMethod
     int getUnitsOnStock(IndividualisedProductItem product, long pointOfSaleId);
 
 	/**
@@ -80,6 +90,7 @@ public interface StockSystemRemote {
 	 * @param product
 	 * @return
 	 */
+	@WebMethod
     int getTotalUnitsOnStock(IndividualisedProductItem product);
 
 	/**
@@ -91,6 +102,7 @@ public interface StockSystemRemote {
 	 * @param product
 	 * @return
 	 */
+	@WebMethod
     List<Long> getPointsOfSale(IndividualisedProductItem product);
 
 }
