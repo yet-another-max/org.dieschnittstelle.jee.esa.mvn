@@ -3,11 +3,14 @@ package org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp;
 import java.util.List;
 
 import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
+import org.dieschnittstelle.jee.esa.entities.erp.PointOfSale;
+import org.dieschnittstelle.jee.esa.entities.erp.ProductBundle;
 
 import javax.ejb.Remote;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import javax.xml.bind.annotation.XmlSeeAlso;
 
 /**
  * TODO JPA4:
@@ -16,6 +19,7 @@ import javax.jws.soap.SOAPBinding;
  */
 @Remote
 @WebService
+//@XmlSeeAlso({IndividualisedProductItem.class})
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 public interface StockSystemRemote {
 

@@ -2,6 +2,9 @@ package org.dieschnittstelle.jee.esa.ue.add3.junit;
 
 import static org.junit.Assert.*;
 
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemRemote;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemSingletonService;
+import org.dieschnittstelle.jee.esa.entities.erp.ws.IndividualisedProductItem;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +25,8 @@ public class TestStockSystemSOAPService {
 	@Before
 	public void prepareContext() {
 		// TODO instantiate the serviceProxy by instantiating the generated web service class and getting the port for StockSystemRemote
-		serviceProxy = null;
+		StockSystemSingletonService service = new StockSystemSingletonService();
+		serviceProxy = service.getStockSystemSingletonPort();
 	}
 
 	@Test
