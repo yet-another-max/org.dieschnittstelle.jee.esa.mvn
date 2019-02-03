@@ -2,13 +2,19 @@ package org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.shopping;
 
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.jee.esa.ejb.ejbmodule.crm.*;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.StockSystemLocal;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDLocal;
+import org.dieschnittstelle.jee.esa.ejb.ejbmodule.erp.crud.ProductCRUDStateless;
 import org.dieschnittstelle.jee.esa.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.jee.esa.entities.crm.Customer;
 import org.dieschnittstelle.jee.esa.entities.crm.CustomerTransaction;
 import org.dieschnittstelle.jee.esa.entities.crm.ShoppingCartItem;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.Campaign;
+import org.dieschnittstelle.jee.esa.entities.erp.IndividualisedProductItem;
+import org.dieschnittstelle.jee.esa.entities.erp.ProductBundle;
 
+import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import java.util.List;
@@ -27,9 +33,16 @@ public class ShoppingSessionFacadeStateful implements ShoppingSessionFacadeRemot
     @EJB
     private CampaignTrackingLocal campaignTrackingSystem;
 
+    @EJB
+    private ProductCRUDLocal productCRUD;
+
+    @EJB
+    private StockSystemLocal stockSystemLocal;
+
     private Customer customer;
     private AbstractTouchpoint touchpoint;
     private List<AbstractProduct> products;
+    private boolean finished = false;
 
     @Override
     public void setTouchpoint(AbstractTouchpoint touchpoint) {
@@ -60,6 +73,15 @@ public class ShoppingSessionFacadeStateful implements ShoppingSessionFacadeRemot
         transaction.setCompleted(true);
         customerTrackingSystem.createTransaction(transaction);
         logger.info("purchase() done.\n");
+        finished = true;
+    }
+
+    @PreDestroy
+    private void finish(){
+        if(!finished){
+            CustomerTransaction transaction = new CustomerTransaction(customer, touchpoint, shoppingCart.getItems());
+            customerTrackingSystem.createTransaction(transaction);
+        }
     }
 
     private void verifyCampaigns() throws ShoppingException{
@@ -81,10 +103,28 @@ public class ShoppingSessionFacadeStateful implements ShoppingSessionFacadeRemot
     private void checkAndRemoveProductsFromStock(){
         logger.info("checkAndRemoveProductsFromStock()");
         for(ShoppingCartItem item : this.shoppingCart.getItems()){
-            if(item.isCampaign()){
+            AbstractProduct product = productCRUD.readProduct(item.getErpProductId());
+            if(product == null){
+                throw new RuntimeException("The product in the shoppingcart does not exsist! " + item);
+            }
+            if(item.isCampaign() && product instanceof Campaign){
                 this.campaignTrackingSystem.purchaseCampaignAtTouchpoint(item.getErpProductId(), this.touchpoint, item.getUnits());
+                Campaign campaign = (Campaign) product;
+                for(ProductBundle bundle : campaign.getBundles()){
+                    int count = bundle.getUnits() * item.getUnits();
+                    int available = stockSystemLocal.getUnitsOnStock(bundle.getProduct(), touchpoint.getErpPointOfSaleId());
+                    if(available >= count){
+                        stockSystemLocal.removeFromStock(bundle.getProduct(), touchpoint.getErpPointOfSaleId(), count);
+                    }
+                }
             }else{
-
+                if(product instanceof IndividualisedProductItem){
+                    IndividualisedProductItem individualProd = (IndividualisedProductItem) product;
+                    int available = stockSystemLocal.getUnitsOnStock(individualProd, touchpoint.getErpPointOfSaleId());
+                    if(available >= item.getUnits()){
+                        stockSystemLocal.removeFromStock(individualProd, touchpoint.getErpPointOfSaleId(), item.getUnits());
+                    }
+                }
             }
         }
     }

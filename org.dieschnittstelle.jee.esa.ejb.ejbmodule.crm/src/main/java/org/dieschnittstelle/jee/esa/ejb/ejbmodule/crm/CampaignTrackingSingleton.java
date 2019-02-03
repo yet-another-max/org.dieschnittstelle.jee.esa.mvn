@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger;
  */
 @Startup
 @javax.ejb.ConcurrencyManagement(javax.ejb.ConcurrencyManagementType.CONTAINER)
-public class CampaignTrackingSingleton implements CampaignTrackingRemote {
+public class CampaignTrackingSingleton implements CampaignTrackingRemote, CampaignTrackingLocal {
 
 	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(CampaignTrackingSingleton.class);
 	
@@ -89,7 +89,8 @@ public class CampaignTrackingSingleton implements CampaignTrackingRemote {
 		this.campaignExecutionsAtTouchpoint.get(tp.getId()).get(erpProductId)
 				.purchase(units);
 	}
-	
+
+	@Override
 	public List<CampaignExecution> getAllCampaignExecutions() {
 		List<CampaignExecution> campaigns = new ArrayList<CampaignExecution>();
 		for (long tpid : campaignExecutionsAtTouchpoint.keySet()) {

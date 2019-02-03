@@ -11,5 +11,5 @@ public interface CampaignTrackingLocal {
     public void addCampaignExecution(CampaignExecution campaign);
     public int existsValidCampaignExecutionAtTouchpoint(long erpProductID, AbstractTouchpoint tp);
     public void purchaseCampaignAtTouchpoint(long erpProductID, AbstractTouchpoint tp, int units);
-    public List<CampaignExecution> getAllCampaignExexutions();
+    public List<CampaignExecution> getAllCampaignExecutions();
 }
