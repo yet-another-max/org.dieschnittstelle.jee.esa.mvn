@@ -1,6 +1,7 @@
 package org.dieschnittstelle.jee.esa.wsv.client;
 
 import java.io.IOException;
+import java.lang.reflect.Proxy;
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
@@ -26,12 +27,13 @@ public class AccessRESTServiceWithInterpreter {
 		 * TODO: create an instance of the invocation handler passing the service
 		 * interface and the base url
 		 */
-        JAXRSClientInterpreter invocationHandler = null;
+        //JAXRSClientInterpreter invocationHandler = null;
+        JAXRSClientInterpreter invocationHandler = new JAXRSClientInterpreter(ITouchpointCRUDService.class, "http://localhost:8888/org.dieschnittstelle.jee.esa.jrs/");
 
 		/*
 		 * TODO: create a client for the web service using Proxy.newProxyInstance()
 		 */
-        ITouchpointCRUDService serviceProxy = null;
+        ITouchpointCRUDService serviceProxy = (ITouchpointCRUDService) Proxy.newProxyInstance(ITouchpointCRUDService.class.getClassLoader(), new Class[] {ITouchpointCRUDService.class}, invocationHandler);
 
         show("serviceProxy: " + serviceProxy);
 
@@ -61,23 +63,23 @@ public class AccessRESTServiceWithInterpreter {
         show("created: " + tp);
 
         // TODO: comment-in the call to read() once this is handled
-//		/*
-//		 * 4) read out the new touchpoint
-//		 */
-//		show("read created: " + serviceProxy.readTouchpoint(tp.getId()));
-//
+		/*
+		 * 4) read out the new touchpoint
+		 */
+		show("read created: " + serviceProxy.readTouchpoint(tp.getId()));
+
 
         // TODO: comment-in the call to update() once this is handled
-//		/*
-//		 * 5) update the touchpoint
-//		 */
-//		// change the name
-//		step();
-//		tp.setName("BHT Mensa");
-//
-//
-//		tp = serviceProxy.updateTouchpoint(tp.getId(), tp);
-//		show("updated: " + tp);
+		/*
+		 * 5) update the touchpoint
+		 */
+		// change the name
+		step();
+		tp.setName("BHT Mensa");
+
+
+		tp = serviceProxy.updateTouchpoint(tp.getId(), tp);
+		show("updated: " + tp);
 
     }
 
