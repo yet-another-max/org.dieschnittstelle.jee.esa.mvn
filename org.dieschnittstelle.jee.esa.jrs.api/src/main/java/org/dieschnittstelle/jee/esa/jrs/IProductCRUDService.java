@@ -1,5 +1,6 @@
 package org.dieschnittstelle.jee.esa.jrs;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 import org.dieschnittstelle.jee.esa.entities.erp.AbstractProduct;
 
